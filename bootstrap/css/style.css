@@ -40,7 +40,6 @@ img {
     height: auto;
 }
 
-.navbar-default {
-  background-color: #FDFFFF;
-  border-radius: 0;
+.jumbotron text-center {
+  color: #FDFFFF ! important;
 }
