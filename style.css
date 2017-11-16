@@ -1,32 +1,30 @@
 ﻿.title {
     color: #FDFFFF ! important;
     font-family: felix titling, sans-serif;
-    font-size: 50px;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    font-size: 80px !important;
+    margin-top: 50px;
+}
+
+.line {
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .button {
     display: inline;
-    text-decoration-color: #FDFFFF ! important;
     background-color: #7DDFAF;
     padding-right: 10px;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-left:20px;
-    margin-right: 20px;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 body {
     background-color: #4E79C6 !important;
 }
 
-img {
-    width: 300px;
-    height:auto;
-    margin-top: 100px;
-}
 .bio {
     margin-top: 200px;
 }
@@ -35,11 +33,27 @@ img {
     margin-top: 200px;
 }
 
+.profile {
+    width: 25%;
+    height:auto;
+    margin-top: 100px! important;
+}
+
 .australia {
-    width: 75%;
+    width: 55%;
+    height: auto;
+    margin-top: 100px;
+}
+
+.planes {
+    width: 55%;
     height: auto;
 }
 
 .jumbotron text-center {
   color: #FDFFFF ! important;
+}
+.paragraph {
+    margin-left: 22.5%;
+    margin-right: 22.5%;
 }
