@@ -10,10 +10,6 @@
     margin-top: 75px;
 }
 
-.resline {
-    margin-bottom: 50px;
-    margin-top: 50px;
-}
 .button {
     display: inline;
     background-color: #7DDFAF;
@@ -34,9 +30,13 @@ body {
 }
 
 .profile {
-    width: 20%;
-    height:auto;
-    margin-top: 100px! important;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+profile:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
 .img {
@@ -50,7 +50,6 @@ img:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
-
 .planes {
     width: 50%;
     height: auto;
@@ -59,6 +58,20 @@ img:hover {
 .jumbotron text-center {
   color: #FDFFFF ! important;
 }
+
+.resline {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.container {
+    color: black;
+}
+
+.sections {
+    font-family: felix titling, sans-serif;
+}
+
 .paragraph {
     margin-left: 25%;
     margin-right: 25%;
