@@ -10,6 +10,10 @@
     margin-top: 75px;
 }
 
+.resline {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
 .button {
     display: inline;
     background-color: #7DDFAF;
@@ -35,14 +39,20 @@ body {
     margin-top: 100px! important;
 }
 
-.australia {
-    width: 55%;
-    height: auto;
-    margin-top: 100px;
+.img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
 }
 
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+
 .planes {
-    width: 60%;
+    width: 50%;
     height: auto;
 }
 
@@ -50,8 +60,8 @@ body {
   color: #FDFFFF ! important;
 }
 .paragraph {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 .google-maps {
@@ -59,14 +69,14 @@ body {
         padding-bottom: 75%;
         height: 0;
         overflow: hidden;
-        margin-bottom: -28%;
+        margin-bottom: -35%;
     }
     .google-maps iframe {
         position: absolute;
         top: 0;
         left: 0;
-        width: 60% !important;
-        height: 60% !important;
-        margin-left: 20%;
-        margin-right: 20%;
+        width: 50% !important;
+        height: 50% !important;
+        margin-left: 25%;
+        margin-right: 25%;
     }
