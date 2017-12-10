@@ -62,7 +62,7 @@ body {
     margin-right: 25%;
 }
 
-.google-maps {
+.maps {
         position: relative;
         padding-bottom: 75%;
         height: 0;
@@ -70,7 +70,7 @@ body {
         margin-bottom: -35%;
 }
 
- .google-maps iframe {
+ .maps iframe {
         position: absolute;
         top: 0;
         left: 0;
