@@ -1,45 +1,81 @@
 ﻿.title {
     color: #FDFFFF ! important;
     font-family: felix titling, sans-serif;
-    font-size: 50px;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    font-size: 80px !important;
+    margin-top: 50px;
+}
+
+.line {
+    margin-bottom: 50px;
+    margin-top: 75px;
 }
 
 .button {
     display: inline;
-    text-decoration-color: #FDFFFF ! important;
     background-color: #7DDFAF;
     padding-right: 10px;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-left:20px;
-    margin-right: 20px;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 body {
     background-color: #4E79C6 !important;
 }
 
-img {
-    width: 300px;
-    height:auto;
-    margin-top: 100px;
-}
-.bio {
-    margin-top: 200px;
-}
-
 .maps {
     margin-top: 200px;
 }
 
-.australia {
-    width: 75%;
+.profile {
+    width: 20%;
+    height:auto;
+    margin-top: 50px! important;
+}
+
+.planes {
+    width: 50%;
     height: auto;
 }
 
 .jumbotron text-center {
   color: #FDFFFF ! important;
 }
+
+.resline {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.container {
+    color: black;
+}
+
+.sections {
+    font-family: felix titling, sans-serif;
+}
+
+.paragraph {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.maps {
+        position: relative;
+        padding-bottom: 75%;
+        height: 0;
+        overflow: hidden;
+        margin-bottom: -35%;
+}
+
+ .maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50% !important;
+        height: 50% !important;
+        margin-left: 25%;
+        margin-right: 25%;
+ }
