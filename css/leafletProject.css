@@ -10,7 +10,7 @@ html, body, #map {
 }
 
 #banner{
-    z-index: 1500 !important;
+    z-index: 1000 !important;
     height: 10%;
     width: 40%;
     font-size: 18px;

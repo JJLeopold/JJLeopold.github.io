@@ -281,7 +281,6 @@ function createLegend(map, attributes){
     updateLegend(map, attributes[0]);
 };
 
-
 //Calculate the max, mean, and min values for a given attribute
 function getCircleValues(map, attribute){
     //start with min at highest possible and max at lowest possible number
@@ -315,7 +314,6 @@ function getCircleValues(map, attribute){
         min: min
     };
 };
-
 
 //Update the legend with new attribute
 function updateLegend(map, attribute){
