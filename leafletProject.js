@@ -160,7 +160,7 @@ $('#panel').append('<input id="range-slider" type="range">');
 //Import GeoJSON data
 function getData(map){
     //Example 3.3 line 8...load the data
-    $.ajax("data/CityData.geojson", {
+    $.ajax("data/Cities.geojson", {
         dataType: "geojson",
         success: function(response){
             //create an attributes array
