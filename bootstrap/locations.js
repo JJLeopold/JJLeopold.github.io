@@ -12,10 +12,20 @@ var locationsData = {"type":"FeatureCollection","features":[
     
 {"type":"Feature","id":"6","properties":{"name":"The Summit Medical Fitness Center","density":1082 },"geometry":{"type":"Polygon","coordinates":[[[-114.328134,48.217002],[-114.326191,48.216851],[-114.326191,48.215200],[-114.327698,48.215240],[-114.327630,48.216224],[-114.328224,48.216303]]]}},
     
-{"type":"Feature","id":"6","properties":{"name":"Signature Theatres","density":1082 },"geometry":{"type":"Polygon","coordinates":[[[-114.327482,48.234903],[-114.325982,48.234903],[-114.325982,48.233592],[-114.327482,48.233592]]]}},
+{"type":"Feature","id":"6","properties":{"name":"Signature Theatres","density":1082 },"geometry":{"type":"Polygon","coordinates":[[[-114.327600,48.235050],[-114.325982,48.235050],[-114.325982,48.233592],[-114.327600,48.233592]]]}},
     
 {"type":"Feature","id":"6","properties":{"name":"Glacier Memorial Gardens","density":1082 },"geometry":{"type":"Polygon","coordinates":[[[-114.330232,48.247673],[-114.326407,48.247673],[-114.326407,48.245552],[-114.330232,48.245552]]]}},
     
 {"type":"Feature","id":"6","properties":{"name":"Kalispell Ford","density":1082 },"geometry":{"type":"Polygon","coordinates":[[[-114.330234,48.254881],[-114.327641,48.254881],[-114.327641,48.253568],[-114.330234,48.253568]]]}},
+    
+{"type":"Feature","id":"6","properties":{"name":"FVCC","density":1082 },"geometry":{"type":"Polygon","coordinates":[[[-114.330381,48.230734],[-114.323212,48.230734],[-114.323212,48.225959],[-114.330381,48.225959]]]}},
+    
+{"type":"Feature","id":"6","properties":{"name":"Costco","density":1082 },"geometry":{"type":"Polygon","coordinates":[[[-114.334836,48.235303],[-114.331846,48.235303],[-114.331846,48.233482],[-114.334836,48.233482]]]}},
+    
+{"type":"Feature","id":"6","properties":{"name":"Petco","density":1082 },"geometry":{"type":"Polygon","coordinates":[[[-114.330008,48.239396],[-114.328768,48.239396],[-114.328768,48.238762],[-114.330008,48.238762]]]}},
+    
+{"type":"Feature","id":"6","properties":{"name":"Mackenzie River Pizza, Grill & Pub","density":1082 },"geometry":{"type":"Polygon","coordinates":[[[-114.332550,48.238000],[-114.331850,48.238000],[-114.331850,48.237424],[-114.332550,48.237424]]]}},
+    
+{"type":"Feature","id":"6","properties":{"name":"Target","density":1082 },"geometry":{"type":"Polygon","coordinates":[[[-114.328654,48.236253],[-114.325332,48.236253],[-114.325332,48.235213],[-114.328654,48.235213]]]}},
     
 ]};
