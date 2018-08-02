@@ -16,7 +16,7 @@ banner{
     font-weight: bold;
     background-color: #0033FF;
     opacity: .85;
-    position: absolute;
+    position: top;
     padding-top: 1%;
     padding-left: 1%;
     padding-right: 1%;
@@ -25,45 +25,84 @@ banner{
     text-align: center;
     margin-bottom: 800px;
     margin-left: 34%;
-    border-radius: 0%; 
+    border-radius: 0%;
 }
 
 
 #me {
-    background-color: #0033FF;
-    opacity: .85 !important;
+    background-color: #FF3621;
+    opacity: .90 !important;
     z-index: 500 !important;
-    height: 15%;
-    width: 50%;
+    height: 75px;
+    width: 22%;
     border-radius: 0%;
     border-width: 0px;
     position: absolute;
     bottom: 0;
-    margin-right: 40%;
-    margin-left: 25%;
-    margin-bottom: 20px;
+    margin-right: 37.5%;
+    margin-left: 37.5%;
+    margin-bottom: 30px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 27px;
     color: white;
-    border-radius: 0%;
+    border-radius: 5%;
 }
 
 
-add {
-    background-color: #0033FF;
-    opacity: .85 !important;
+#add {
+    background-color: #27D780;
+    opacity: .90 !important;
     z-index: 500 !important;
-    height: 80px;
-    width: 18%;
-    border-radius: 0%;
-    border-width: 0px;
+    height: 60px;
+    width: 8%;
     position: absolute;
-    bottom: 0;
-    margin-left: 80%;
-    margin-right: 2%;
-    margin-bottom: 20px;
+    top: 15px;
+    right: 15px;
     cursor: pointer;
-    font-size: 25px;
-    color: white;
-    border-radius: 0%;
+    font-size: 14px;
+    color: white !important;
+    text-align: center;
+    padding-top: 20px;
+    border-radius: 5%;
+    font-weight: 700;
+}
+
+
+
+#submit {
+    background-color: #27D780;
+    opacity: .75 !important;
+    z-index: 500 !important;
+    height: 60px;
+    width: 8%;
+    position: absolute;
+    bottom: 40px;
+    left: 40%;
+    cursor: pointer;
+    font-size: 14px;
+    color: white !important;
+    text-align: center;
+    padding-top: 20px;
+    text-decoration: none;
+    border-radius: 5%;
+    font-weight: 700;
+}
+
+#back {
+    background-color: #0033FF;
+    opacity: .75 !important;
+    z-index: 500 !important;
+    height: 60px;
+    width: 8%;
+    position: absolute;
+    bottom: 40px;
+    left: 52%;
+    cursor: pointer;
+    font-size: 14px;
+    color: white !important;
+    text-align: center;
+    padding-top: 20px;
+    text-decoration: none;
+    border-radius: 5%;
+    font-weight: 700;
 }

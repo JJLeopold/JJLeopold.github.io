@@ -448,7 +448,7 @@ module.exports = leafletPip;
 
 },{}],3:[function(require,module,exports){
 var leafletPip = require('../'),
-    map = L.map('map').setView([40, -96], 4),
+    map = L.map('map').setView([37.5, -97], 4),
     gjLayer = L.geoJson(locationsData);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg').addTo(map);
@@ -456,16 +456,25 @@ L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o
 gjLayer.addTo(map);
     
 document.getElementById('me').onclick = function() {
+
+    map.locate();
+    map.on('locationfound', function(e) {
+    map.fitBounds(e.bounds);
+    });
+    
     navigator.geolocation.getCurrentPosition(function(pos) {
         var res = leafletPip.pointInLayer(
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
         if (res.length) {
             document.getElementById('me').innerHTML = res[0].feature.properties.name;
+
         } else {
             document.getElementById('me').innerHTML = 'Out of Bounds';
-        }
+        }  
     });
 };
+    
+L.control.locate().addTo(map);
 
 },{"../":1}]},{},[3]);
 

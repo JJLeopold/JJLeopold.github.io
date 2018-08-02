@@ -204,7 +204,7 @@
 /* cursors */
 
 .leaflet-interactive {
-	cursor: pointer;
+	cursor: crosshair;
 	}
 .leaflet-grab {
 	cursor: -webkit-grab;
@@ -291,7 +291,7 @@
 	display: block;
 	}
 .leaflet-bar a:hover {
-	background-color: #f4f4f4;
+	background-color: #FF3621;
 	}
 .leaflet-bar a:first-child {
 	border-top-left-radius: 4px;
