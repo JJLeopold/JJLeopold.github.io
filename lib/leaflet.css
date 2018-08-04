@@ -203,16 +203,14 @@
 
 /* cursors */
 
-.leaflet-interactive {
-	cursor: crosshair;
-	}
+
 .leaflet-grab {
 	cursor: -webkit-grab;
 	cursor:    -moz-grab;
 	}
 .leaflet-crosshair,
 .leaflet-crosshair .leaflet-interactive {
-	cursor: crosshair;
+	cursor: auto;
 	}
 .leaflet-popup-pane,
 .leaflet-control {
