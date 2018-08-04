@@ -41,4 +41,7 @@ var locationsData = {"type":"FeatureCollection","features":[
 {"type":"Feature","id":"6","properties":{"name":"Mackenzie River Pizza, Grill & Pub","density":1082 },"geometry":{"type":"Polygon","coordinates":[[[-114.332550,48.238000],[-114.331850,48.238000],[-114.331850,48.237424],[-114.332550,48.237424]]]}},
     
 {"type":"Feature","id":"6","properties":{"name":"Target","density":1082 },"geometry":{"type":"Polygon","coordinates":[[[-114.328654,48.236253],[-114.325332,48.236253],[-114.325332,48.235213],[-114.328654,48.235213]]]}},
+    
+{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"The Tilford's House"},"geometry":{"type":"Polygon","coordinates":[[[-104.88364756107332,39.376183170406605],[-104.88332569599153,39.376191463767995],[-104.88333106040956,39.375838995040475],[-104.88333106040956,39.375838995040475],[-104.88359928131104,39.375834848338975],[-104.88359928131104,39.375834848338975],[-104.88364756107332,39.376183170406605]]]}}]},
+    
 ]};
