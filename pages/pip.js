@@ -448,7 +448,7 @@ module.exports = leafletPip;
 
 },{}],3:[function(require,module,exports){
 var leafletPip = require('../'),
-    map = L.map('map').setView([37.5, -97], 3),
+    map = L.map('map').setView([37.5, -97], 4),
     gjLayer = L.geoJson(locationsData);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg').addTo(map);
@@ -456,11 +456,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o
 gjLayer.addTo(map);
     
 document.getElementById('me').onclick = function() {
-
-    map.locate();
-    map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds, { maxZoom: 17 });
-    });
     
     navigator.geolocation.getCurrentPosition(function(pos) {
         var res = leafletPip.pointInLayer(
@@ -472,6 +467,11 @@ document.getElementById('me').onclick = function() {
             document.getElementById('me').innerHTML = 'Out of Bounds';
         }  
     });
+    
+    map.locate();
+    map.on('locationfound', function(e) {
+    map.flyToBounds(e.bounds, { maxZoom: 16, duration: 5 });
+    });
 };
     
 var lc = L.control.locate({
@@ -480,14 +480,15 @@ var lc = L.control.locate({
         title: "Find Me!"
     },
     locateOptions: {
-               maxZoom: 17
+               maxZoom: 18
     },
     locateOptions: {
                enableHighAccuracy: true
-    } 
+    }
 }).addTo(map);
     
-// request location update and set location (turned off right now)
+    
+// request location update and set location
 //lc.start();
     
 },{"../":1}]},{},[3]);
