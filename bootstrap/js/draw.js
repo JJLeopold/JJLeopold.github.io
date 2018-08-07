@@ -66,7 +66,22 @@
             document.getElementById('submit').setAttribute('download','data.geojson');
         }
 
-        
-L.control.locate().addTo(map);
+var lc = L.control.locate({
+    position: 'topleft',
+    strings: {
+        title: "Find Me!",
+        feetUnit: true,
+    },
+    locateOptions: {
+               maxZoom: 17
+    },
+    locateOptions: {
+               enableHighAccuracy: true
+    }
+}).addTo(map);
+
+
+
+
 
 

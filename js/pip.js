@@ -459,7 +459,7 @@ document.getElementById('me').onclick = function() {
 
     map.locate();
     map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds);
+    map.fitBounds(e.bounds, { maxZoom: 17 });
     });
     
     navigator.geolocation.getCurrentPosition(function(pos) {
@@ -474,7 +474,21 @@ document.getElementById('me').onclick = function() {
     });
 };
     
-L.control.locate().addTo(map);
+var lc = L.control.locate({
+    position: 'topleft',
+    strings: {
+        title: "Find Me!"
+    },
+    locateOptions: {
+               maxZoom: 17
+    },
+    locateOptions: {
+               enableHighAccuracy: true
+    } 
+}).addTo(map);
+    
+// request location update and set location (turned off right now)
+//lc.start();
     
 },{"../":1}]},{},[3]);
 
