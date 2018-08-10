@@ -7,6 +7,7 @@
     zoom: 3,
     minZoom: 1,
     maxZoom: 18,
+    attributionControl: false,
     layers: [Satellite]
     });
 
@@ -95,6 +96,12 @@
             results.addLayer(L.marker(data.results[i].latlng));
         }
     });
+
+    // Add attribution   
+    var attribution = L.control.attribution();
+        attribution.setPrefix('');
+        attribution.addAttribution('<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://leafletjs.com/"> Leaflet</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap contributors</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+        attribution.addTo(map);
 
 
 

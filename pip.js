@@ -448,7 +448,7 @@ module.exports = leafletPip;
 
 },{}],3:[function(require,module,exports){
 var leafletPip = require('../'),
-    map = L.map('map').setView([37.5, -97], 3),
+    map = L.map('map', {attributionControl: false}).setView([37.5, -97], 3),
     gjLayer = L.geoJson(locationsData);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg').addTo(map);
@@ -487,26 +487,17 @@ document.getElementById('me').onclick = function() {
                    enableHighAccuracy: true
         }
     }).addTo(map);
-    
-    //Geocoder!
-    // create the geocoding control and add it to the map
-    var searchControl = L.esri.Geocoding.geosearch().addTo(map);
-
-    // create an empty layer group to store the results and add it to the map
-    var results = L.layerGroup().addTo(map);
-
-    // listen for the results event and add every result to the map
-    searchControl.on("results", function(data) {
-        results.clearLayers();
-        for (var i = data.results.length - 1; i >= 0; i--) {
-            results.addLayer(L.marker(data.results[i].latlng));
-        }
-    });
-    
 
     
-// request location update and set location
-//lc.start();
+    // request location update and set location
+    //lc.start();
+    
+    // Add attribution   
+    var attribution = L.control.attribution();
+        attribution.setPrefix('');
+        attribution.addAttribution('<a href="https://leafletjs.com/"> Leaflet</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap contributors</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+        attribution.addTo(map);
+    
     
 },{"../":1}]},{},[3]);
 
