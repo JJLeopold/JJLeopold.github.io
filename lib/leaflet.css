@@ -289,7 +289,7 @@
 	display: block;
 	}
 .leaflet-bar a:hover {
-	background-color: #FF3621;
+	background-color: #00FDFF;
 	}
 .leaflet-bar a:first-child {
 	border-top-left-radius: 4px;
@@ -342,8 +342,8 @@
 	}
 .leaflet-control-layers-toggle {
 	background-image: url(images/layers.png);
-	width: 36px;
-	height: 36px;
+	width: 30px;
+	height: 30px;
 	}
 .leaflet-retina .leaflet-control-layers-toggle {
 	background-image: url(images/layers-2x.png);
@@ -364,7 +364,7 @@
 .leaflet-control-layers-expanded {
 	padding: 6px 10px 6px 6px;
 	color: #333;
-	background: #fff;
+	background: #00FDFF;
 	}
 .leaflet-control-layers-scrollbar {
 	overflow-y: scroll;

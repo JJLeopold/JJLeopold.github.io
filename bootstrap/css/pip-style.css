@@ -34,9 +34,9 @@ banner{
     opacity: .90 !important;
     z-index: 500 !important;
     height: 75px;
-    width: 20%;
-    right:40%;
-    left: 40%;
+    width: 50%;
+    right: 25%;
+    left: 25%;
     border-radius: 0%;
     border-width: 0px;
     position: absolute;
