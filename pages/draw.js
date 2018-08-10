@@ -4,7 +4,7 @@
 
     var map = L.map('map',{
     center: [37.5, -97],
-    zoom: 3,
+    zoom: 4,
     minZoom: 1,
     maxZoom: 18,
     layers: [Satellite]
@@ -65,23 +65,33 @@
             document.getElementById('submit').setAttribute('href', 'data:' + convertedData);
             document.getElementById('submit').setAttribute('download','data.geojson');
         }
+        
+    //Geocoder!
+    // create the geocoding control and add it to the map
+    var searchControl = L.esri.Geocoding.geosearch().addTo(map);
 
-var lc = L.control.locate({
-    position: 'topleft',
-    strings: {
-        title: "Find Me!",
-        feetUnit: true,
-    },
-    locateOptions: {
-               maxZoom: 17
-    },
-    locateOptions: {
-               enableHighAccuracy: true
-    }
-}).addTo(map);
+    // create an empty layer group to store the results and add it to the map
+    var results = L.layerGroup().addTo(map);
 
+    // listen for the results event and add every result to the map
+    searchControl.on("results", function(data) {
+        results.clearLayers();
+        for (var i = data.results.length - 1; i >= 0; i--) {
+            results.addLayer(L.marker(data.results[i].latlng));
+        }
+    });
 
-
-
-
+    //Geolocation!
+    var lc = L.control.locate({
+        position: 'topleft',
+        strings: {
+            title: "Find Me!",
+        },
+        locateOptions: {
+                   maxZoom: 18,
+        },
+        locateOptions: {
+                   enableHighAccuracy: true
+        }
+    }).addTo(map);
 
