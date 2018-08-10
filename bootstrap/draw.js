@@ -4,7 +4,7 @@
 
     var map = L.map('map',{
     center: [37.5, -97],
-    zoom: 3,
+    zoom: 4,
     minZoom: 1,
     maxZoom: 18,
     attributionControl: false,
@@ -18,27 +18,37 @@
 
     L.control.layers(layers).addTo(map);
 
-
     // Initialise the FeatureGroup to store editable layers
     var featureGroup = new L.FeatureGroup();
     map.addLayer(featureGroup);
 
     // Initialise the draw control and pass it the FeatureGroup of editable layers
-    var drawControl = new L.Control.Draw({
+    var drawControl = new L.Control.Draw({position: 'topright',
         draw: {
+            polyline : false,
+            circle : false,
+            marker : false,
             polygon: {
                   shapeOptions: {
-                    color: '#0033FF'
+                    color: '#3388ff',
+                    weight: 3,
+                    opacity: 1,
+                    fill: true,
+                    fillColor: null, //same as color by default
+                    fillOpacity: 0.3,
+
                   }
                 },
             rectangle: {
                   shapeOptions: {
-                    color: '#0033FF'
+                    color: '#3388ff',
+                    weight: 3,
+                    opacity: 1,
+                    fill: true,
+                    fillColor: null, //same as color by default
+                    fillOpacity: 0.3,
                   }
                 },
-             circle:false,
-             polyline: false,
-             marker: false
          },
         edit: {
             featureGroup: featureGroup,
@@ -84,7 +94,9 @@
 
     //Geocoder!
     // create the geocoding control and add it to the map
-    var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+    var searchControl = L.esri.Geocoding.geosearch({
+        position: 'topleft'
+    }).addTo(map);
 
     // create an empty layer group to store the results and add it to the map
     var results = L.layerGroup().addTo(map);
