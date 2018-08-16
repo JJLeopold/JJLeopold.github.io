@@ -25,9 +25,7 @@ body {
     background-color: #4E79C6 !important;
 }
 
-.maps {
-    margin-top: 200px;
-}
+
 
 .profile {
     width: 20%;
@@ -67,7 +65,7 @@ body {
         padding-bottom: 75%;
         height: 0;
         overflow: hidden;
-        margin-bottom: -35%;
+        margin-bottom: -35% !important;
 }
 
  .maps iframe {
