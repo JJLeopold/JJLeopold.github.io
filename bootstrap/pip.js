@@ -469,7 +469,25 @@ gjLayer.addTo(map);
         }
     }).addTo(map);
     
+    
 document.getElementById('me').onclick = function() {
+        
+    lc.start();
+    //Other way to zoom to location, but not as accurate.
+    //map.locate();
+    
+    //instruct the map to move with the user's location.
+    map.on('locationfound', function(e) {
+    map.fitBounds(e.bounds, { maxZoom: 18 });
+    });
+    
+    var delayInMilliseconds = 5000; //5 seconds
+
+    setTimeout(function() {
+    //your code to be executed after 5 seconds
+    }, delayInMilliseconds);
+    
+    },
     
     navigator.geolocation.getCurrentPosition(function(pos) {
         var res = leafletPip.pointInLayer(
@@ -481,17 +499,7 @@ document.getElementById('me').onclick = function() {
             document.getElementById('me').innerHTML = 'Out of Bounds';
         }  
     });
-    
-    lc.start();
-    
-    //Other way to zoom to location, but not as accurate.
-    //map.locate();
-    
-    //instruct the map to move with the user's location.
-    map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds, { maxZoom: 18 });
-    });
-};
+
     
 
 
