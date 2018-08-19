@@ -486,9 +486,11 @@ document.getElementById('me').onclick = function() {
     
     //Other way to zoom to location, but not as accurate.
     //map.locate();
-    //map.on('locationfound', function(e) {
-    //map.fitBounds(e.bounds, { maxZoom: 18 });
-    //});
+    
+    //instruct the map to move with the user's location.
+    map.on('locationfound', function(e) {
+    map.fitBounds(e.bounds, { maxZoom: 18 });
+    });
 };
     
 
