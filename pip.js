@@ -469,7 +469,6 @@ gjLayer.addTo(map);
         }
     }).addTo(map);
     
-    
 document.getElementById('me').onclick = function() {
         
     lc.start();
@@ -480,14 +479,6 @@ document.getElementById('me').onclick = function() {
     map.on('locationfound', function(e) {
     map.fitBounds(e.bounds, { maxZoom: 18 });
     });
-    
-    var delayInMilliseconds = 5000; //5 seconds
-
-    setTimeout(function() {
-    //your code to be executed after 5 seconds
-    }, delayInMilliseconds);
-    
-    },
     
     navigator.geolocation.getCurrentPosition(function(pos) {
         var res = leafletPip.pointInLayer(
@@ -500,9 +491,7 @@ document.getElementById('me').onclick = function() {
         }  
     });
 
-    
-
-
+};
     
     // request location update and set location
     //lc.start();
