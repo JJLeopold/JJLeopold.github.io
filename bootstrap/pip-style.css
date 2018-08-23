@@ -30,7 +30,7 @@ banner{
 
 
 #me {
-    background-color: #FF0000;
+    background-color: springgreen;
     opacity: 150 !important;
     z-index: 500 !important;
     height: 75px;
@@ -43,16 +43,17 @@ banner{
     bottom: 30px;
     cursor: pointer;
     font-size: 27px;
-    color: white;
+    color: darkslategray;
     border: solid;
-    border-width: 3px;
+    border-width: 5px;
     border-color: white;
     border-radius: 5px;
     text-align: center;
+    font-weight: 700;
 }
 
 #me:hover {
-	background-color: #FF3621;
+	background-color: #00B1FF;
 	}
 
 #add {
@@ -66,9 +67,9 @@ banner{
     right: 15px;
     cursor: pointer;
     font-size: 14px;
-    color: white !important;
+    color: darkslategray;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 8px;
     border: solid;
     border-width: 2px;
     border-color: white;
@@ -77,12 +78,12 @@ banner{
 }
 
 #add:hover {
-	background-color: #00EAFF;
+	background-color: springgreen;
 	}
 
 
 #submit {
-    background-color: #FF0000;
+    background-color: springgreen;
     opacity: 100 !important;
     z-index: 500 !important;
     height: 75px;
@@ -93,19 +94,19 @@ banner{
     bottom: 30px;
     cursor: pointer;
     font-size: 27px;
-    color: white !important;
+    color: darkslategray;
     text-align: center;
     padding-top: 17px;
     text-decoration: none;
     border: solid;
-    border-width: 2px;
+    border-width: 5px;
     border-color: white;
     border-radius: 5px;
     font-weight: 700;
 }
 
 #submit:hover {
-	background-color: #FF3621;
+	background-color: #00B1FF;
 	}
 
 #back {
@@ -119,9 +120,9 @@ banner{
     right: 15px;
     cursor: pointer;
     font-size: 14px;
-    color: white !important;
+    color: darkslategray;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 8px;
     text-decoration: none;
     border: solid;
     border-width: 2px;
@@ -131,5 +132,5 @@ banner{
 }
 
 #back:hover {
-	background-color: #00EAFF;
+	background-color: springgreen;
 	}

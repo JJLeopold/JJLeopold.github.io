@@ -1,9 +1,10 @@
     var Satellite = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
 
-    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjev2fxuxcdxp2ro2ctte1239/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
+    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjl6rb2s010w92snfqsir2y73/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
 
     var map = L.map('map',{
     center: [37.5, -97],
+    zoomControl: false,
     zoom: 3,
     minZoom: 1,
     maxZoom: 18,
@@ -17,7 +18,6 @@
     };
 
     L.control.layers(layers).addTo(map);
-
 
     // Initialise the FeatureGroup to store editable layers
     var featureGroup = new L.FeatureGroup();
@@ -35,7 +35,7 @@
                     weight: 3,
                     opacity: 1,
                     fill: true,
-                    fillColor: '#6BD7FF', //same as color by default
+                    fillColor: '#00B1FF', //same as color by default
                     fillOpacity: 0.5,
 
                   }
@@ -46,7 +46,7 @@
                     weight: 3,
                     opacity: 1,
                     fill: true,
-                    fillColor: '#6BD7FF', //same as color by default
+                    fillColor: '#00B1FF', //same as color by default
                     fillOpacity: 0.5,
                   }
                 },
