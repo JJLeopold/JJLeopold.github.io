@@ -18,35 +18,36 @@
 
     L.control.layers(layers).addTo(map);
 
+
     // Initialise the FeatureGroup to store editable layers
     var featureGroup = new L.FeatureGroup();
     map.addLayer(featureGroup);
 
     // Initialise the draw control and pass it the FeatureGroup of editable layers
-    var drawControl = new L.Control.Draw({position: 'topright',
+    var drawControl = new L.Control.Draw({position: 'topleft',
         draw: {
             polyline : false,
             circle : false,
             marker : false,
             polygon: {
                   shapeOptions: {
-                    color: '#3388ff',
+                    color: 'springgreen',
                     weight: 3,
                     opacity: 1,
                     fill: true,
-                    fillColor: null, //same as color by default
-                    fillOpacity: 0.3,
+                    fillColor: '#6BD7FF', //same as color by default
+                    fillOpacity: 0.5,
 
                   }
                 },
             rectangle: {
                   shapeOptions: {
-                    color: '#3388ff',
+                    color: 'springgreen',
                     weight: 3,
                     opacity: 1,
                     fill: true,
-                    fillColor: null, //same as color by default
-                    fillOpacity: 0.3,
+                    fillColor: '#6BD7FF', //same as color by default
+                    fillOpacity: 0.5,
                   }
                 },
          },
