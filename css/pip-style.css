@@ -86,9 +86,9 @@ banner{
     opacity: 100 !important;
     z-index: 500 !important;
     height: 75px;
-    width: 20%;
-    right: 40%;
-    left: 40%;
+    width: 40%;
+    right: 30%;
+    left: 30%;
     position: absolute;
     bottom: 30px;
     cursor: pointer;
