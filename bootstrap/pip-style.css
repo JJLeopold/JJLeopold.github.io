@@ -36,13 +36,13 @@ banner{
     border-radius: 0%;
     border-width: 0px;
     position: absolute;
-    bottom: 200px;
+    bottom: 150px;
     cursor: pointer;
     font-size: 24px;
     color: springgreen;
     display: inline-block;
     text-align: center;
-    font-weight: 00;
+    font-weight: 700;
     outline: none;
 }
 
@@ -58,7 +58,7 @@ me:hover {
     height: 40px;
     width: 60px;
     position: absolute;
-    top: 145px;
+    top: 130px;
     right: 10px;
     cursor: pointer;
     font-size: 14px;
@@ -85,7 +85,7 @@ me:hover {
     height: 40px;
     width: 60px;
     position: absolute;
-    top: 95px;
+    top: 80px;
     right: 10px;
     cursor: pointer;
     font-size: 14px;
@@ -113,7 +113,7 @@ me:hover {
     height: 40px;
     width: 60px;
     position: absolute;
-    top: 145px;
+    top: 130px;
     right: 10px;
     cursor: pointer;
     font-size: 14px;
@@ -141,7 +141,7 @@ me:hover {
     height: 40px;
     width: 60px;
     position: absolute;
-    top: 95px;
+    top: 80px;
     right: 10px;
     cursor: pointer;
     font-size: 14px;
@@ -171,7 +171,7 @@ me:hover {
  background-color: springgreen;
  margin-top:0px;
  padding:0px;
- height:90px;
+ height:70px;
  border-bottom:2px solid #00B1FF;
 }
 #header
@@ -179,7 +179,7 @@ me:hover {
  width:900px;
  margin:0px auto;
  padding:0px;
- height:90px;
+ height:70px;
 
 }
 #header li
@@ -199,6 +199,7 @@ me:hover {
  line-height: 1;
  font-size: 56px;
  font-weight: 900;
+ margin-left: 300px;
 }
 #header form
 {
@@ -219,6 +220,7 @@ me:hover {
 {
  margin-top:3px;
  margin-bottom:3px;
+ margin-right: 0px;
  width:150px;
  border:2px solid #00B1FF;
  height:25px;
