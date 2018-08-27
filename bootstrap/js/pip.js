@@ -479,11 +479,14 @@ document.getElementById('go').onclick = function() {
     map.on('locationfound', function(e) {
     map.fitBounds(e.bounds, { maxZoom: 18 });
     });
-    
+        
     //Zoom to location!
     lc.start();
             
+    
     navigator.geolocation.getCurrentPosition(function(pos) {
+        
+        setTimeout(function() {
         
         var res = leafletPip.pointInLayer(
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
@@ -494,7 +497,10 @@ document.getElementById('go').onclick = function() {
             document.getElementById('me').innerHTML = 'Out of Bounds';
         }  
         
+        }, 3000)
+        
     });
+        
 
 };
 
