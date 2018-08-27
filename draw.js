@@ -1,26 +1,26 @@
     var Satellite = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
 
-    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjev2fxuxcdxp2ro2ctte1239/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
+    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjl7rgfvx1xyk2rmmy2kruh9s/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
 
     var Light = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjdqrzpmt012c2sr1nmzcsyua/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
 
     var Pixar = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjaxih6oc06ri2squp8zw2yji/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
  
     var map = L.map('map',{
-    center: [37.5, -97],
+    center: [38, -95],
     zoomControl: false,
     zoom: 3,
     minZoom: 1,
     maxZoom: 18,
     attributionControl: false,
-    layers: [Satellite]
+    layers: [Streets]
     });
 
     var layers = {
-        "Satellite": Satellite,
         "Streets": Streets,
+        "Satellite": Satellite,
         "Light": Light,
-        "Pixar": Pixar,
+      //"Pixar": Pixar,
     };
 
     L.control.layers(layers).addTo(map);
@@ -119,7 +119,7 @@
     // Add attribution   
     var attribution = L.control.attribution();
         attribution.setPrefix('');
-        attribution.addAttribution('<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://leafletjs.com/"> Leaflet</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap contributors</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+        attribution.addAttribution('<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap contributors</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
         attribution.addTo(map);
 
 

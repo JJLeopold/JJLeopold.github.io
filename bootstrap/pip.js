@@ -448,7 +448,7 @@ module.exports = leafletPip;
 
 },{}],3:[function(require,module,exports){
 var leafletPip = require('../'),
-    map = L.map('map', {attributionControl: false}).setView([37.5, -97], 3),
+    map = L.map('map', {attributionControl: false}).setView([40, -95], 3),
     gjLayer = L.geoJson(locationsData);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjl6r6wa610tp2sqy9h8gllsy/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg').addTo(map);
@@ -470,17 +470,18 @@ gjLayer.addTo(map);
     }).addTo(map);
     
 
-document.getElementById('me').onclick = function() {
+document.getElementById('go').onclick = function() {
     
-    //Zoom to location!
-    lc.start();
+
     //Other way to zoom to location, but not as accurate.
-    //map.locate();
-    
+    map.locate();
     //Move the map with the user's location.
     map.on('locationfound', function(e) {
     map.fitBounds(e.bounds, { maxZoom: 18 });
     });
+    
+    //Zoom to location!
+    lc.start();
             
     navigator.geolocation.getCurrentPosition(function(pos) {
         
@@ -501,7 +502,7 @@ document.getElementById('me').onclick = function() {
     // Add attribution   
     var attribution = L.control.attribution();
         attribution.setPrefix('');
-        attribution.addAttribution('<a href="https://leafletjs.com/"> Leaflet</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap contributors</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+        attribution.addAttribution('<a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap contributors</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
         attribution.addTo(map);
     
     

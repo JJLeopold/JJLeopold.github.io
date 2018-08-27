@@ -2,19 +2,19 @@ html, body, #map {
     width: 100%;
     height: 100%;
     position: relative;
+    margin-bottom: 0 !important;
     margin: 0;
 }
 
-
 banner{
     z-index: 1000 !important;
-    height: 10%;
-    width: 30%;
-    font-size: 70px;
-    color: #FFFFFFFF;
+    height: 85px;
+    width: 100%;
+    font-size: 50px;
+    color: #ffffff;
     font-family: sans-serif;
     font-weight: bold;
-    background-color: #0033FF;
+    background-color: #637181;
     opacity: .85;
     position: top;
     padding-top: 1%;
@@ -23,37 +23,59 @@ banner{
     padding-bottom: -10%;
     bottom: 1%;
     text-align: center;
-    margin-bottom: 800px;
-    margin-left: 34%;
     border-radius: 0%;
 }
 
 
 #me {
-    background-color: springgreen;
+    background-color: transparent;
     opacity: 150 !important;
     z-index: 500 !important;
-    height: 75px;
-    width: 50%;
-    right: 25%;
-    left: 25%;
+    min-height: 50px;
+    width: 100%;
     border-radius: 0%;
     border-width: 0px;
     position: absolute;
-    bottom: 30px;
+    bottom: 200px;
     cursor: pointer;
-    font-size: 27px;
-    color: darkslategray;
-    border: solid;
-    border-width: 5px;
-    border-color: white;
-    border-radius: 5px;
+    font-size: 24px;
+    color: springgreen;
+    display: inline-block;
     text-align: center;
-    font-weight: 700;
+    font-weight: 00;
+    outline: none;
 }
 
-#me:hover {
+me:hover {
 	background-color: #00B1FF;
+    color: darkslategray;
+	}
+
+#go {
+    background-color: #00B1FF;
+    opacity: .95 !important;
+    z-index: 500 !important;
+    height: 40px;
+    width: 60px;
+    position: absolute;
+    top: 145px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: darkslategray;
+    text-align: center;
+    padding-top: 5px;
+    border: solid;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 5px;
+    font-weight: 700;
+    outline: none;
+}
+
+#go:hover {
+	background-color: springgreen;
+    color: #00B1FF;
 	}
 
 #add {
@@ -63,8 +85,8 @@ banner{
     height: 40px;
     width: 60px;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 95px;
+    right: 10px;
     cursor: pointer;
     font-size: 14px;
     color: darkslategray;
@@ -75,38 +97,41 @@ banner{
     border-color: white;
     border-radius: 5px;
     font-weight: 700;
+    outline: none;
 }
 
 #add:hover {
 	background-color: springgreen;
+    color: #00B1FF;
 	}
 
 
 #submit {
-    background-color: springgreen;
+    background-color: #00B1FF;
     opacity: 100 !important;
-    z-index: 500 !important;
-    height: 75px;
-    width: 40%;
-    right: 30%;
-    left: 30%;
+    z-index: 5000 !important;
+    height: 40px;
+    width: 60px;
     position: absolute;
-    bottom: 30px;
+    top: 145px;
+    right: 10px;
     cursor: pointer;
-    font-size: 27px;
+    font-size: 14px;
     color: darkslategray;
     text-align: center;
-    padding-top: 17px;
+    padding-top: 8px;
     text-decoration: none;
     border: solid;
-    border-width: 5px;
+    border-width: 2px;
     border-color: white;
     border-radius: 5px;
     font-weight: 700;
+    outline: none;
 }
 
 #submit:hover {
-	background-color: #00B1FF;
+	background-color: springgreen;
+    color: #00B1FF;
 	}
 
 #back {
@@ -116,8 +141,8 @@ banner{
     height: 40px;
     width: 60px;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 95px;
+    right: 10px;
     cursor: pointer;
     font-size: 14px;
     color: darkslategray;
@@ -129,8 +154,74 @@ banner{
     border-color: white;
     border-radius: 5px;
     font-weight: 700;
+    outline: none;
 }
 
 #back:hover {
 	background-color: springgreen;
+    color: #00B1FF;
+    
 	}
+
+#header_wrapper
+{
+ z-index: 10000;
+ position: fixed;
+ width:100%;
+ background-color: springgreen;
+ margin-top:0px;
+ padding:0px;
+ height:90px;
+ border-bottom:2px solid #00B1FF;
+}
+#header
+{
+ width:900px;
+ margin:0px auto;
+ padding:0px;
+ height:90px;
+
+}
+#header li
+{
+ list-style-type:none;
+ float:left;
+ text-align:left;
+}
+#header #sitename
+{
+ margin-top:0px;
+}
+#header #sitename a
+{
+ color:#00B1FF;
+ text-decoration:none;
+ line-height: 1;
+ font-size: 56px;
+ font-weight: 900;
+}
+#header form
+{
+ margin-top:15px;
+ float:right;
+}
+#header form li
+{
+ font-size:11px;
+ margin-left:15px;
+ color: #00B1FF;
+}
+#header form li a
+{
+ text-decoration:none;
+}
+#header form input[type="text"]
+{
+ margin-top:3px;
+ margin-bottom:3px;
+ width:150px;
+ border:2px solid #00B1FF;
+ height:25px;
+ padding-left:3px;
+ color: darkslategray;
+}
