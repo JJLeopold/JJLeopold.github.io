@@ -497,7 +497,7 @@ document.getElementById('go').onclick = function() {
             document.getElementById('me').innerHTML = 'Out of Bounds';
         }  
         
-        }, 3000)
+        }, 5000);
         
     });
         

@@ -172,7 +172,7 @@ me:hover {
  margin-top:0px;
  padding:0px;
  height:70px;
- border-bottom:2px solid #00B1FF;
+ border-bottom:1px solid #00B1FF;
 }
 
 #header li
@@ -185,7 +185,7 @@ me:hover {
 {
  color:#00B1FF;
  text-decoration:none;
- line-height: 1.05;
- font-size: 56px;
+ line-height: 1;
+ font-size: 60px;
  font-weight: 900;
 }
