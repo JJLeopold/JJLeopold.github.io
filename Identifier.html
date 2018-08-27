@@ -10,10 +10,6 @@
         
         <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
         
-        <script src="https://unpkg.com/esri-leaflet@2.1.4"></script>
-        <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.12/dist/esri-leaflet-geocoder.css">
-        <script src="https://unpkg.com/esri-leaflet-geocoder"></script>
-        
         <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js'></script>
         <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/css/font-awesome.min.css' rel='stylesheet' />
         
@@ -22,10 +18,20 @@
         
     </head>
     <body>
+        <div id="header_wrapper">
+        <div id="header">
+        <li id="sitename"><a href="http://jjleopold.github.io/Identifier">Mapster
+            <h5>&emsp;&emsp;&emsp;&emsp;&nbsp;The Spatial Network</h5></a></li>
+        <form action="post">
+        </form>
+        </div>
+        </div>
+        
         <div id='map'></div>
-        <button id='me'>Where am I?</button>
+        <button id='go'>Go!</button>
+        <div id='me'></div>
         <div id="banner"></div>
-        <a href="https://jjleopold.github.io/draw.html" role="button"><div id='add'>Add</div></a>
+        <a href="http://jjleopold.github.io/draw" role="button"><div id='add'>Add</div></a>
         <script src="lib/jquery-3.3.1.js"></script>
         <script src="lib/bootstrap.min.js"></script>
         <script src='js/locations.js'></script>
