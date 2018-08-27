@@ -163,7 +163,7 @@ me:hover {
     
 	}
 
-#header_wrapper
+#header
 {
  z-index: 10000;
  position: fixed;
@@ -174,24 +174,13 @@ me:hover {
  height:70px;
  border-bottom:2px solid #00B1FF;
 }
-#header
-{
- width:900px;
- margin:0px auto;
- padding:0px;
- height:70px;
 
-}
 #header li
 {
  list-style-type:none;
- float:left;
- text-align:left;
+ text-align:center;
 }
-#header #sitename
-{
- margin-top:0px;
-}
+
 #header #sitename a
 {
  color:#00B1FF;
@@ -199,31 +188,4 @@ me:hover {
  line-height: 1;
  font-size: 56px;
  font-weight: 900;
- margin-left: 300px;
-}
-#header form
-{
- margin-top:15px;
- float:right;
-}
-#header form li
-{
- font-size:11px;
- margin-left:15px;
- color: #00B1FF;
-}
-#header form li a
-{
- text-decoration:none;
-}
-#header form input[type="text"]
-{
- margin-top:3px;
- margin-bottom:3px;
- margin-right: 0px;
- width:150px;
- border:2px solid #00B1FF;
- height:25px;
- padding-left:3px;
- color: darkslategray;
 }
