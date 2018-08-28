@@ -456,11 +456,10 @@ module.exports = leafletPip;
     minZoom: 3,
     maxZoom: 18,
     attributionControl: false}),
-    
-    gjLayer =L.geoJson(locationsData);
+    gjLayer = L.geoJson(locationsData);
     L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjl6r6wa610tp2sqy9h8gllsy/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg').addTo(map);
-
-    //Turn layer on or off according to zoom level
+    
+    //Turn gjLayer on or off according to zoom level
     //map.on('zoomend', function() {
         //if (map.getZoom() <12){
             //map.removeLayer(gjLayer);
@@ -472,66 +471,30 @@ module.exports = leafletPip;
     
     //Geolocation!
     var lc = L.control.locate({
-        options: {
-                position: 'topleft',
-                maxZoom: 18,
-                enableHighAccuracy: true,
-                flyTo: false,
-                setView: 'untilPan',
+        position: 'topleft',
+        strings: {
+            title: "Find Me!"
         },
-        cacheLocation: true,
-        drawCircle: true,
-        drawMarker: true,
-        circleStyle: {
-                color: 'springgreen',
-                opacity: 1,
-                fillColor: '#00B1FF',
-                fillOpacity: .25,
-                weight: 2,
-            },
-        markerStyle: {
-                color: '#00B1FF',
-                fillColor: '#00B1FF',
-                fillOpacity: 1,
-                weight: 2,
-                opacity: 1,
-                radius: 5
-            },
-        strings:{
-            title: "Find Me!",
-        },
-        followCircleStyle: {},
-            followMarkerStyle: {
-                // color: '#FFA500',
-                // fillColor: '#FFB000'
-            },
-            /** The CSS class for the icon. For example fa-location-arrow or fa-map-marker */
-            icon: 'fa fa-map-marker',
-            iconLoading: 'fa fa-spinner fa-spin',
-            /** The element to be created for icons. For example span or i */
-            iconElementTag: 'span',
-            /** Padding around the accuracy circle. */
-            circlePadding: [0, 0],
-            /** Use metric units. */
-            metric: false,
-            /**
-             * This callback can be used in case you would like to override button creation behavior.
-             * This is useful for DOM manipulation frameworks such as angular etc.
-             * This function should return an object with HtmlElement for the button (link property) and the icon (icon property).
-             */
-            createButtonCallback: function (container, options) {
-                var link = L.DomUtil.create('a', 'leaflet-bar-part leaflet-bar-part-single', container);
-                link.title = options.strings.title;
-                var icon = L.DomUtil.create(options.iconElementTag, options.icon, link);
-                return { link: link, icon: icon };
-            },
-    
+        locateOptions: {
+                   maxZoom: 18,
+                   enableHighAccuracy: true,
+        }
     }).addTo(map);
     
 
     document.getElementById('go').onclick = function() {
     
+
+    //Other way to zoom to location, but not as accurate.
+    map.locate();
+    //Move the map with the user's location.
+    map.on('locationfound', function(e) {
+    map.fitBounds(e.bounds, { maxZoom: 18});
+    });
+        
+    //Zoom to location!
     lc.start();
+            
     
     navigator.geolocation.getCurrentPosition(function(pos) {
         
