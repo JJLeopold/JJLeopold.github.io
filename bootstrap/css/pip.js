@@ -478,7 +478,22 @@ module.exports = leafletPip;
         locateOptions: {
                    maxZoom: 18,
                    enableHighAccuracy: true,
-        }
+        },
+        circleStyle: {
+                color: '#00B1FF',
+                fillColor: '#00B1FF',
+                fillOpacity: 0.25,
+                weight: 2,
+                opacity: 1
+        },
+        markerStyle: {
+                color: 'mediumspringgreen',
+                fillColor: 'springgreen',
+                fillOpacity: .7,
+                weight: 2,
+                opacity: 1,
+                radius: 5
+        },
     }).addTo(map);
     
 

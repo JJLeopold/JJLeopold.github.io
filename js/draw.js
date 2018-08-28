@@ -10,7 +10,7 @@
     center: [38, -95],
     zoomControl: false,
     zoom: 3,
-    minZoom: 1,
+    minZoom: 3,
     maxZoom: 18,
     attributionControl: false,
     layers: [Streets]
@@ -89,14 +89,27 @@
     var lc = L.control.locate({
         position: 'topleft',
         strings: {
-            title: "Find Me!",
+            title: "Find Me!"
         },
         locateOptions: {
                    maxZoom: 18,
+                   enableHighAccuracy: true,
         },
-        locateOptions: {
-                   enableHighAccuracy: true
-        }
+        circleStyle: {
+                color: 'springgreen',
+                fillColor: '#00B1FF',
+                fillOpacity: 0.25,
+                weight: 2,
+                opacity: 1
+        },
+        markerStyle: {
+                color: '#00B1FF',
+                fillColor: '#00B1FF',
+                fillOpacity: 0.7,
+                weight: 2,
+                opacity: 1,
+                radius: 5
+        },
     }).addTo(map);
 
     //Geocoder!
