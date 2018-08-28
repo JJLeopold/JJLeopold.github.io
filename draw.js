@@ -95,22 +95,33 @@
                    maxZoom: 18,
                    enableHighAccuracy: true,
         },
+        options: {
+            flyTo: true,
+        },
         circleStyle: {
                 color: 'springgreen',
                 fillColor: '#00B1FF',
                 fillOpacity: 0.25,
-                weight: 2,
+                weight: 1,
                 opacity: 1
         },
         markerStyle: {
                 color: '#00B1FF',
                 fillColor: '#00B1FF',
-                fillOpacity: 0.7,
+                fillOpacity: .75,
                 weight: 2,
                 opacity: 1,
                 radius: 5
         },
     }).addTo(map);
+
+    //Other way to zoom to location, but not as accurate.
+    //map.locate();
+
+    //Move the map with the user's location.
+    map.on('locationfound', function(e) {
+    map.fitBounds(e.bounds, { maxZoom: 18});
+    });
 
     //Geocoder!
     // create the geocoding control and add it to the map
