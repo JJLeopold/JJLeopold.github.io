@@ -9,9 +9,15 @@
     var map = L.map('map',{
     center: [38, -95],
     zoomControl: false,
-    zoom: 3,
-    minZoom: 3,
+    zoom: 2,
+    minZoom: 2,
     maxZoom: 18,
+    maxBounds: [
+        //south west
+        [-80, -180],
+        //north east
+        [90, 180]
+        ],
     attributionControl: false,
     layers: [Streets]
     });

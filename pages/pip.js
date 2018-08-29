@@ -451,10 +451,15 @@ module.exports = leafletPip;
     map = L.map('map', {
     center: [38, -95],
     zoomControl: true,
-    zoom: 3,
-    dragRotate: true,
-    minZoom: 3,
+    zoom: 2,
+    minZoom: 2,
     maxZoom: 18,
+    maxBounds: [
+        //south west
+        [-80, -180],
+        //north east
+        [90, 180]
+        ],
     attributionControl: false}),
     gjLayer = L.geoJson(locationsData);
     L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjl6r6wa610tp2sqy9h8gllsy/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg').addTo(map);
@@ -471,9 +476,12 @@ module.exports = leafletPip;
     
     //Geolocation!
     var lc = L.control.locate({
-        position: 'topleft',
         strings: {
-            title: "Find Me!"
+            title: 'Find Me!',
+            popup: 'You are within {distance} {unit} from this point',
+        },
+        options: {
+                   position: 'topleft',      
         },
         locateOptions: {
                    maxZoom: 18,

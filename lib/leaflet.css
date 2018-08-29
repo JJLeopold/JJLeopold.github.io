@@ -273,8 +273,7 @@
     background-color: springgreen;
     color: mediumblue;
 	}
-.leaflet-bar a,
-.leaflet-bar a:hover {
+.leaflet-bar a {
 	background-color: #00B1FF;
 	width: 40px;
 	height: 30px;
@@ -283,16 +282,24 @@
 	display: block;
 	text-align: center;
 	text-decoration: none;
-	color: black;
+	color: springgreen;
+	}
+.leaflet-bar a:hover {
+	background-color: springgreen;
+	width: 40px;
+	height: 30px;
+	border-bottom: 2px solid #ffffff;
+	line-height: 30px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: #00B1FF;
 	}
 .leaflet-bar a,
 .leaflet-control-layers-toggle {
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	display: block;
-	}
-.leaflet-bar a:hover {
-	background-color: springgreen;
 	}
 .leaflet-bar a:first-child {
 	border-top-left-radius: 4px;
@@ -306,7 +313,7 @@
 .leaflet-bar a.leaflet-disabled {
 	cursor: default;
 	background-color: lightskyblue;
-	color: springgreen;
+	color: #00B1FF;
 	}
 
 .leaflet-touch .leaflet-bar a {
@@ -408,7 +415,7 @@
 .leaflet-control-attribution,
 .leaflet-control-scale-line {
 	padding: 0 5px;
-	color: #333;
+	color: darkslategray;
 	}
 .leaflet-control-attribution a {
 	text-decoration: none;
@@ -518,7 +525,7 @@
 	width: 18px;
 	height: 14px;
 	font: 16px/14px Tahoma, Verdana, sans-serif;
-	color: springgreen;
+	color: #00B1FF;
 	text-decoration: none;
 	font-weight: bold;
 	background: transparent;
