@@ -25,7 +25,7 @@
     var layers = {
         "Streets": Streets,
         "Satellite": Satellite,
-        "Light": Light,
+      //"Light": Light,
       //"Pixar": Pixar,
     };
 
@@ -101,8 +101,8 @@
                    maxZoom: 18,
                    enableHighAccuracy: true,
         },
-        options: {
-            flyTo: true,
+        clickBehavior: {
+                    cacheLocation: false,
         },
         circleStyle: {
                 color: 'springgreen',

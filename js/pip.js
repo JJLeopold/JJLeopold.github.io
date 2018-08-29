@@ -487,6 +487,9 @@ module.exports = leafletPip;
                    maxZoom: 18,
                    enableHighAccuracy: true,
         },
+        clickBehavior: {
+                    cacheLocation: false,
+        },
         circleStyle: {
                 color: 'springgreen',
                 fillColor: '#00B1FF',
@@ -519,7 +522,7 @@ module.exports = leafletPip;
         
         setTimeout(function() {
         
-        //Set current position to be used with Leaflet-pip.
+        //Set current position.
         //Also another way to find and zoom to location, but not as accurate.
         map.locate();
         //Move the map with the user's location.
@@ -536,7 +539,7 @@ module.exports = leafletPip;
             document.getElementById('me').innerHTML = 'Out of Bounds';
         }  
         
-        }, 5000);
+        }, 7000);
         
     });
         
