@@ -243,7 +243,6 @@
 /* visual tweaks */
 
 .leaflet-container {
-	background: #ffffff;
 	outline: 0;
 	}
 .leaflet-container a {
@@ -408,14 +407,15 @@
 /* attribution and scale controls */
 
 .leaflet-container .leaflet-control-attribution {
-	background: #ffffff;
-	background: rgba(255, 255, 255, 0.7);
-	margin: 0;
+	background: transparent;
+	background: rgba(255, 255, 255, 0.3);
+	margin-bottom: .1px;
+    margin-right: .1px;
 	}
 .leaflet-control-attribution,
 .leaflet-control-scale-line {
 	padding: 0 5px;
-	color: darkslategray;
+	color: mediumblue;
 	}
 .leaflet-control-attribution a {
 	text-decoration: none;
@@ -425,7 +425,8 @@
 	}
 .leaflet-container .leaflet-control-attribution,
 .leaflet-container .leaflet-control-scale {
-	font-size: 9px;
+	font-size: 8.5px;
+    color:
 	}
 .leaflet-left .leaflet-control-scale {
 	margin-left: 5px;
