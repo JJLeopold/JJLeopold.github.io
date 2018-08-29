@@ -509,17 +509,18 @@ module.exports = leafletPip;
         
         //Find and zoom to location!
         lc.start();    
-        //Other way to zoom to location, but not as accurate.
-        //map.locate();
-        //Move the map with the user's location.
-        map.on('locationfound', function(e) {
-        map.fitBounds(e.bounds, { maxZoom: 18});
-        });
     
     navigator.geolocation.getCurrentPosition(function(pos) {
         
         setTimeout(function() {
         
+        //Other way to zoom to location, but not as accurate.
+        map.locate();
+        //Move the map with the user's location.
+        map.on('locationfound', function(e) {
+        map.fitBounds(e.bounds, { maxZoom: 18});
+        });
+            
         var res = leafletPip.pointInLayer(
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
         if (res.length) {
