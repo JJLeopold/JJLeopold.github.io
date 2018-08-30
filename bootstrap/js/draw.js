@@ -98,11 +98,8 @@
             title: "Find Me!"
         },
         locateOptions: {
-                   maxZoom: 18,
+                   maxZoom: 17,
                    enableHighAccuracy: true,
-        },
-        clickBehavior: {
-                    cacheLocation: false,
         },
         circleStyle: {
                 color: 'springgreen',
@@ -126,7 +123,7 @@
 
     //Move the map with the user's location.
     map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds, { maxZoom: 18});
+    map.fitBounds(e.bounds, { maxZoom: 17});
     });
 
     //Geocoder!
