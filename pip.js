@@ -521,32 +521,32 @@ module.exports = leafletPip;
     
     //Find and zoom to location.
     lc.start();         
-    
-    navigator.geolocation.getCurrentPosition(function(pos) {
         
-        //Set location after 5 seconds.
-        setTimeout(function() {
-            map.locate();
+        navigator.geolocation.getCurrentPosition(function(pos) {
+            
+            //Get location name after 7 seconds.
+            setTimeout(function() {
+                //Find and zoom to location.
+                lc.start();     
             }, 5000);
-        
-        //Get location name after 7 seconds.
-        setTimeout(function() {
 
-        var res = leafletPip.pointInLayer(
-            [pos.coords.longitude, pos.coords.latitude], gjLayer);
-        if (res.length) {
-            document.getElementById('me').innerHTML = res[0].feature.properties.name;
+            //Get location name after 7 seconds.
+            setTimeout(function() {
 
-        } else {
-            document.getElementById('me').innerHTML = 'Out of Bounds';
-        }  
-        
-        }, 7000);
-        
-    });
-        
+                var res = leafletPip.pointInLayer(
+                    [pos.coords.longitude, pos.coords.latitude], gjLayer);
+                if (res.length) {
+                    document.getElementById('me').innerHTML = res[0].feature.properties.name;
 
-};
+                } else {
+                    document.getElementById('me').innerHTML = 'Out of Bounds';
+                }  
+
+            }, 7000);
+            
+        });
+        
+    };
 
     
     // Add attribution   
