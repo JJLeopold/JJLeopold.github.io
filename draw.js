@@ -93,10 +93,13 @@
         
     //Geolocation!
     var lc = L.control.locate({
-        position: 'topleft',
         strings: {
-            title: "Find Me!",
-            popup: 'You are within {distance} {unit} from this point'
+            title: 'Find Me!',
+            popup: 'You are within {distance} {unit} from this point',
+        },
+        options: {
+                   position: 'topleft',
+                   setView: 'always'
         },
         locateOptions: {
                    maxZoom: 18,

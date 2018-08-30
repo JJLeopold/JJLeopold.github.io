@@ -481,7 +481,8 @@ module.exports = leafletPip;
             popup: 'You are within {distance} {unit} from this point',
         },
         options: {
-                   position: 'topleft',      
+                   position: 'topleft',
+                   setView: 'always'
         },
         locateOptions: {
                    maxZoom: 18,
