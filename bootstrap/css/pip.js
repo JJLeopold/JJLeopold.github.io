@@ -478,14 +478,14 @@ module.exports = leafletPip;
     var lc = L.control.locate({
         strings: {
             title: 'Find Me!',
-            popup: 'You are within {distance} {unit} from this point',
+            popup: 'You are within {distance} {unit} from this point'
         },
         options: {
                    position: 'topleft',      
         },
         locateOptions: {
                    maxZoom: 17,
-                   enableHighAccuracy: true,
+                   enableHighAccuracy: true
         },
         circleStyle: {
                 color: 'springgreen',
@@ -500,7 +500,7 @@ module.exports = leafletPip;
                 fillOpacity: .75,
                 weight: 2,
                 opacity: 1,
-                radius: 5
+                radius: 3
         },
     }).addTo(map);
     

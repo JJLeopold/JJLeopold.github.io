@@ -95,7 +95,8 @@
     var lc = L.control.locate({
         position: 'topleft',
         strings: {
-            title: "Find Me!"
+            title: "Find Me!",
+            popup: 'You are within {distance} {unit} from this point'
         },
         locateOptions: {
                    maxZoom: 17,
@@ -114,7 +115,7 @@
                 fillOpacity: .75,
                 weight: 2,
                 opacity: 1,
-                radius: 5
+                radius: 3
         },
     }).addTo(map);
 
