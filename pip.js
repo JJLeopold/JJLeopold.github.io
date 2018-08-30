@@ -519,11 +519,14 @@ module.exports = leafletPip;
 
     document.getElementById('go').onclick = function() {
         
-        document.getElementById('me').innerHTML = 'Locating...';
-
-    
+        
         //Find and zoom to location.
-        lc.start();         
+        lc.start(); 
+        
+        //Say 'Locating...' after 1.5 seconds.
+        setTimeout(function() {
+            document.getElementById('me').innerHTML = 'Locating...';
+        }, 1500);        
         
         //Set location after 5 seconds.
         setTimeout(function() {
