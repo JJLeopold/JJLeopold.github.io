@@ -505,18 +505,19 @@ module.exports = leafletPip;
         },
     }).addTo(map);
     
-
-    document.getElementById('go').onclick = function() {
-    
-    //Zoom to location!
-    lc.start();
-
     //Other way to zoom to location, but not as accurate.
-    map.locate();
+    //map.locate();
+    
     //Move the map with the user's location.
     map.on('locationfound', function(e) {
     map.fitBounds(e.bounds, { maxZoom: 18});
-    });            
+    });   
+    
+
+    document.getElementById('go').onclick = function() {
+    
+    //Find and zoom to location.
+    lc.start();         
     
     navigator.geolocation.getCurrentPosition(function(pos) {
         
