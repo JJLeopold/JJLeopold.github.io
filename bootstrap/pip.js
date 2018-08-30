@@ -525,7 +525,11 @@ module.exports = leafletPip;
     navigator.geolocation.getCurrentPosition(function(pos) {
         
         setTimeout(function() {
-        
+            
+            setTimeout(function() {
+            map.locate();
+            }, 5000);
+
         var res = leafletPip.pointInLayer(
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
         if (res.length) {
