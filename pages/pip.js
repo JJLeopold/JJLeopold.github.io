@@ -518,9 +518,9 @@ module.exports = leafletPip;
     
 
     document.getElementById('go').onclick = function() {
-        
-        
+                
         //Find and zoom to location.
+        map.locate();     
         lc.start(); 
         
         //Say 'Locating...' after 1.5 seconds.
@@ -528,15 +528,15 @@ module.exports = leafletPip;
             document.getElementById('me').innerHTML = 'Locating...';
         }, 1500);        
         
-        //Set location after 5 seconds.
+        //Set location after 4 seconds.
         setTimeout(function() {
-            //Set location.
+            //Find location again and set it.
             map.locate();     
-        }, 5000);
+        }, 4000);
         
         navigator.geolocation.getCurrentPosition(function(pos) {
 
-            //Get location name after 7 seconds.
+            //Get location name after 5 seconds.
             setTimeout(function() {
 
                 var res = leafletPip.pointInLayer(
@@ -548,7 +548,7 @@ module.exports = leafletPip;
                     document.getElementById('me').innerHTML = 'Out of Bounds';
                 }  
 
-            }, 7000);
+            }, 5000);
             
         });
         
