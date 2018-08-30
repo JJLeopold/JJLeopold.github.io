@@ -519,16 +519,16 @@ module.exports = leafletPip;
 
     document.getElementById('go').onclick = function() {
     
-    //Find and zoom to location.
-    lc.start();         
+        //Find and zoom to location.
+        lc.start();         
+        
+        //Find location again after 5 seconds.
+        setTimeout(function() {
+            //Find and zoom to location.
+            lc.start();     
+        }, 5000);
         
         navigator.geolocation.getCurrentPosition(function(pos) {
-            
-            //Get location name after 7 seconds.
-            setTimeout(function() {
-                //Find and zoom to location.
-                lc.start();     
-            }, 5000);
 
             //Get location name after 7 seconds.
             setTimeout(function() {
