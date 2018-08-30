@@ -482,15 +482,15 @@ module.exports = leafletPip;
         },
         options: {
                    position: 'topleft',
-                   setView: 'always'
+                   //setView: 'always'
         },
         locateOptions: {
                    maxZoom: 18,
                    enableHighAccuracy: true,
                    
         },
-        cacheLocation: false,
-        drawCircle: true,
+        //cacheLocation: false,
+        //drawCircle: true,
         circleStyle: {
                 color: 'springgreen',
                 fillColor: '#00B1FF',
@@ -516,43 +516,49 @@ module.exports = leafletPip;
     map.fitBounds(e.bounds, { maxZoom: 18});
     });   
     
+        //Greeting!
+        //setTimeout(function() {
+            //document.getElementById('banner').innerHTML = 'Welcome to the Spatial Network';
+        //}, 1000); 
+    
+        //setTimeout(function() {
+            //document.getElementById('banner').innerHTML = '';
+        //}, 5000); 
 
     document.getElementById('go').onclick = function() {
                 
         //Find and zoom to location.
-        map.locate();     
         lc.start(); 
         
-        //Print 'Locating...' after .5 seconds.
+        //Print 'Locating...' after 1 second.
         setTimeout(function() {
             document.getElementById('me').innerHTML = 'Locating...';
         }, 1000); 
         
-        //Stop geolocation at 3.9 seconds.
+        //Stop geolocation at 4 seconds.
         setTimeout(function() {
             lc.stop();        
-        }, 3900); 
+        }, 3000); 
         
-        //Start location again at 4 seconds.
+        //Start location again at 5 seconds.
         setTimeout(function() {
             lc.start();        
-        }, 4000);        
+        }, 3500);  
         
-        //Set location after 6.5 seconds.
+        //Stop geolocation at 4 seconds.
         setTimeout(function() {
-            //Set location.
-            map.locate();     
-        }, 6500);
+            lc.stop();        
+        }, 5000); 
         
-        //Reset after 20 seconds.
+        //Start location again at 5 seconds.
         setTimeout(function() {
-            //Reload the page.
-            location.reload();
-        }, 30000);
+            lc.start();        
+        }, 5500); 
+
         
         navigator.geolocation.getCurrentPosition(function(pos) {
 
-            //Get location name after 5 seconds.
+            //Get location name after 10 seconds.
             setTimeout(function() {
 
                 var res = leafletPip.pointInLayer(
