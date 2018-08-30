@@ -478,14 +478,14 @@ module.exports = leafletPip;
     var lc = L.control.locate({
         strings: {
             title: 'Find Me!',
-            popup: 'You are within {distance} {unit} from this point'
+            popup: 'You are within {distance} {unit} from this point',
         },
         options: {
                    position: 'topleft',      
         },
         locateOptions: {
-                   maxZoom: 17,
-                   enableHighAccuracy: true
+                   maxZoom: 18,
+                   enableHighAccuracy: true,
         },
         circleStyle: {
                 color: 'springgreen',
@@ -500,37 +500,42 @@ module.exports = leafletPip;
                 fillOpacity: .75,
                 weight: 2,
                 opacity: 1,
-                radius: 3
+                radius: 5
         },
     }).addTo(map);
     
 
     document.getElementById('go').onclick = function() {
+    
+    //Zoom to location!
+    lc.start();
 
-        navigator.geolocation.getCurrentPosition(function(pos) {
+    //Other way to zoom to location, but not as accurate.
+    map.locate();
+    //Move the map with the user's location.
+    map.on('locationfound', function(e) {
+    map.fitBounds(e.bounds, { maxZoom: 18});
+    });            
+    
+    navigator.geolocation.getCurrentPosition(function(pos) {
+        
+        setTimeout(function() {
+        
+        var res = leafletPip.pointInLayer(
+            [pos.coords.longitude, pos.coords.latitude], gjLayer);
+        if (res.length) {
+            document.getElementById('me').innerHTML = res[0].feature.properties.name;
 
-            //Find and zoom to location!
-            lc.start();    
-            //Other way to zoom to location, but not as accurate.
-            //map.locate();
-            //Move the map with the user's location.
-            map.on('locationfound', function(e) {
-            map.fitBounds(e.bounds, { maxZoom: 17});
-            });
+        } else {
+            document.getElementById('me').innerHTML = 'Out of Bounds';
+        }  
+        
+        }, 7000);
+        
+    });
+        
 
-            setTimeout(function() {
-
-                var res = leafletPip.pointInLayer(
-                    [pos.coords.longitude, pos.coords.latitude], gjLayer);
-                if (res.length) {
-                    document.getElementById('me').innerHTML = res[0].feature.properties.name;
-                } else {
-                    document.getElementById('me').innerHTML = 'Out of Bounds';
-                }  
-
-            }, 7000);
-        });
-    };
+};
 
     
     // Add attribution   
@@ -538,6 +543,7 @@ module.exports = leafletPip;
         attribution.setPrefix('');
         attribution.addAttribution('<a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap contributors</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
         attribution.addTo(map);
+    
     
 },{"../":1}]},{},[3]);
 

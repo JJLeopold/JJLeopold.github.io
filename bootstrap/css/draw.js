@@ -99,7 +99,7 @@
             popup: 'You are within {distance} {unit} from this point'
         },
         locateOptions: {
-                   maxZoom: 17,
+                   maxZoom: 18,
                    enableHighAccuracy: true,
         },
         circleStyle: {
@@ -115,7 +115,7 @@
                 fillOpacity: .75,
                 weight: 2,
                 opacity: 1,
-                radius: 3
+                radius: 5
         },
     }).addTo(map);
 
@@ -124,7 +124,7 @@
 
     //Move the map with the user's location.
     map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds, { maxZoom: 17});
+    map.fitBounds(e.bounds, { maxZoom: 18});
     });
 
     //Geocoder!
