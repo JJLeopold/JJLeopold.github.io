@@ -524,11 +524,13 @@ module.exports = leafletPip;
     
     navigator.geolocation.getCurrentPosition(function(pos) {
         
+        //Set location after 5 seconds.
         setTimeout(function() {
-            
-            setTimeout(function() {
             map.locate();
             }, 5000);
+        
+        //Get location name after 7 seconds.
+        setTimeout(function() {
 
         var res = leafletPip.pointInLayer(
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
