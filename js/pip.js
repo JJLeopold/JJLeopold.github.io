@@ -525,10 +525,10 @@ module.exports = leafletPip;
         //Find and zoom to location.
         lc.start();         
         
-        //Find location again after 5 seconds.
+        //Set location after 5 seconds.
         setTimeout(function() {
-            //Find and zoom to location.
-            lc.start();     
+            //Set location.
+            map.locate();     
         }, 5000);
         
         navigator.geolocation.getCurrentPosition(function(pos) {
