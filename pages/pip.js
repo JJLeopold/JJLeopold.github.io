@@ -487,7 +487,10 @@ module.exports = leafletPip;
         locateOptions: {
                    maxZoom: 18,
                    enableHighAccuracy: true,
+                   
         },
+        cacheLocation: false,
+        drawCircle: true,
         circleStyle: {
                 color: 'springgreen',
                 fillColor: '#00B1FF',
@@ -508,10 +511,10 @@ module.exports = leafletPip;
     //Other way to zoom to location, but not as accurate.
     //map.locate();
     
-    //Move the map with the user's location.
-    map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds, { maxZoom: 18});
-    });   
+    //Other way to move the map with the user's location (instead of setView: 'always').
+    //map.on('locationfound', function(e) {
+    //map.fitBounds(e.bounds, { maxZoom: 18});
+    //});   
     
 
     document.getElementById('go').onclick = function() {
