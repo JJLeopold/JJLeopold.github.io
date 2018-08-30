@@ -523,16 +523,26 @@ module.exports = leafletPip;
         map.locate();     
         lc.start(); 
         
-        //Say 'Locating...' after 1.5 seconds.
+        //Say 'Locating...' after .5 seconds.
         setTimeout(function() {
             document.getElementById('me').innerHTML = 'Locating...';
-        }, 1500);        
+        }, 1000); 
         
-        //Set location after 4 seconds.
+        //Stop geolocation momentarily.
+        setTimeout(function() {
+            lc.stop();        
+        }, 3000); 
+        
+        //Start location again.
+        setTimeout(function() {
+            lc.start();        
+        }, 3100);        
+        
+        //Set location after 7 seconds.
         setTimeout(function() {
             //Find location again and set it.
             map.locate();     
-        }, 4000);
+        }, 7000);
         
         navigator.geolocation.getCurrentPosition(function(pos) {
 
