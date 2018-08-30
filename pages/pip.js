@@ -523,26 +523,32 @@ module.exports = leafletPip;
         map.locate();     
         lc.start(); 
         
-        //Say 'Locating...' after .5 seconds.
+        //Print 'Locating...' after .5 seconds.
         setTimeout(function() {
             document.getElementById('me').innerHTML = 'Locating...';
         }, 1000); 
         
-        //Stop geolocation momentarily.
+        //Stop geolocation at 3.9 seconds.
         setTimeout(function() {
             lc.stop();        
-        }, 3000); 
+        }, 3900); 
         
-        //Start location again.
+        //Start location again at 4 seconds.
         setTimeout(function() {
             lc.start();        
-        }, 3100);        
+        }, 4000);        
         
-        //Set location after 7 seconds.
+        //Set location after 6.5 seconds.
         setTimeout(function() {
-            //Find location again and set it.
+            //Set location.
             map.locate();     
-        }, 7000);
+        }, 6500);
+        
+        //Reset after 20 seconds.
+        setTimeout(function() {
+            //Reload the page.
+            location.reload();
+        }, 30000);
         
         navigator.geolocation.getCurrentPosition(function(pos) {
 
@@ -553,12 +559,11 @@ module.exports = leafletPip;
                     [pos.coords.longitude, pos.coords.latitude], gjLayer);
                 if (res.length) {
                     document.getElementById('me').innerHTML = res[0].feature.properties.name;
-
                 } else {
                     document.getElementById('me').innerHTML = 'Out of Bounds';
                 }  
 
-            }, 5000);
+            }, 7000);
             
         });
         
