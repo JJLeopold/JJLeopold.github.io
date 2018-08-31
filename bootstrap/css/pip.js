@@ -535,7 +535,7 @@ module.exports = leafletPip;
         setTimeout(function() {
             //Find and zoom to location.
             lc.start(); 
-        }, 5500); 
+        }, 5000); 
         
         setTimeout(function() {
             //Find and zoom to location.
@@ -550,12 +550,12 @@ module.exports = leafletPip;
                 var res = leafletPip.pointInLayer(
                     [pos.coords.longitude, pos.coords.latitude], gjLayer);
                 if (res.length) {
-                    document.getElementById('me').innerHTML = res[0].feature.properties.name;
+                    document.getElementById('me').innerHTML = '';
                 } else {
                     document.getElementById('me').innerHTML = '';
                 }  
 
-            }, 5000);
+            }, 4500);
             
             //Get location name after 7 seconds.
             setTimeout(function() {
