@@ -103,11 +103,9 @@
         },
         locateOptions: {
                    maxZoom: 18,
-                   enableHighAccuracy: true,
-                   
+                   enableHighAccuracy: true,   
         },
         cacheLocation: false,
-        drawCircle: true,
         circleStyle: {
                 color: 'springgreen',
                 fillColor: '#00B1FF',
