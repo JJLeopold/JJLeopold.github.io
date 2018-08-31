@@ -528,86 +528,35 @@ module.exports = leafletPip;
         //Find and zoom to location.
         lc.start(); 
         
-        //Print 'Locating...' after 1 second.
         setTimeout(function() {
-            document.getElementById('me').innerHTML = '7';
+            document.getElementById('me').innerHTML = 'Finding your location...';
         }, 1000); 
-        
-                setTimeout(function() {
-            document.getElementById('me').innerHTML = '';
-        }, 1500); 
-        
-                setTimeout(function() {
-            document.getElementById('me').innerHTML = '6';
-        }, 2000); 
-        
-                setTimeout(function() {
-            document.getElementById('me').innerHTML = '';
-        }, 2500); 
-        
-                setTimeout(function() {
-            document.getElementById('me').innerHTML = '5';
-        }, 3000); 
-        
-                setTimeout(function() {
-            document.getElementById('me').innerHTML = '';
-        }, 3500); 
-        
-                setTimeout(function() {
-            document.getElementById('me').innerHTML = '4';
-        }, 4000); 
-        
-                setTimeout(function() {
-            document.getElementById('me').innerHTML = '';
-        }, 4500); 
-        
-                setTimeout(function() {
-            document.getElementById('me').innerHTML = '3';
-        }, 5000); 
-        
-                setTimeout(function() {
-            document.getElementById('me').innerHTML = '';
-        }, 5500); 
-        
-                setTimeout(function() {
-            document.getElementById('me').innerHTML = '2';
-        }, 6000); 
-        
-                setTimeout(function() {
-            document.getElementById('me').innerHTML = '';
-        }, 6500); 
-        
-                setTimeout(function() {
-            document.getElementById('me').innerHTML = '1';
-        }, 7000); 
-        
-                setTimeout(function() {
-            document.getElementById('me').innerHTML = '';
-        }, 7500); 
-        
-        //Stop geolocation at 3 seconds.
-        setTimeout(function() {
-            lc.stop();        
-        }, 3000); 
-        
-        //Start location again at 3.5 seconds.
-        setTimeout(function() {
-            lc.start();        
-        }, 3500);  
-        
-        //Stop geolocation at 4 seconds.
-        setTimeout(function() {
-            lc.stop();        
-        }, 5000); 
-        
-        //Start location again at 5.5 seconds.
-        setTimeout(function() {
-            lc.start();        
-        }, 5500); 
 
+        setTimeout(function() {
+            //Find and zoom to location.
+            lc.start(); 
+        }, 5500); 
+        
+        setTimeout(function() {
+            //Find and zoom to location.
+            lc.start(); 
+        }, 6000); 
         
         navigator.geolocation.getCurrentPosition(function(pos) {
 
+            //Get location name after 8 seconds, but don't print it.
+            setTimeout(function() {
+
+                var res = leafletPip.pointInLayer(
+                    [pos.coords.longitude, pos.coords.latitude], gjLayer);
+                if (res.length) {
+                    document.getElementById('me').innerHTML = res[0].feature.properties.name;
+                } else {
+                    document.getElementById('me').innerHTML = '';
+                }  
+
+            }, 5000);
+            
             //Get location name after 7 seconds.
             setTimeout(function() {
 
@@ -619,7 +568,7 @@ module.exports = leafletPip;
                     document.getElementById('me').innerHTML = 'Out of Bounds';
                 }  
 
-            }, 8000);
+            }, 7000);
             
         });
         
