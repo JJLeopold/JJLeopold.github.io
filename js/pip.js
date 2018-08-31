@@ -619,7 +619,7 @@ module.exports = leafletPip;
                     document.getElementById('me').innerHTML = 'Out of Bounds';
                 }  
 
-            }, 7000);
+            }, 8000);
             
         });
         
