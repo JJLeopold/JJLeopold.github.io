@@ -533,17 +533,17 @@ module.exports = leafletPip;
         setTimeout(function() {
             //Stop finding location.
             lc.stop(); 
-        }, 1900); 
+        }, 4000); 
         
         setTimeout(function() {
             //Find location again.
             lc.start(); 
-        }, 2000); 
+        }, 4500); 
         
         setTimeout(function() {
-            //Stop finding location.
+            //Stop finding location after 1 minute.
             lc.stop(); 
-        }, 30000); 
+        }, 60000); 
         
         navigator.geolocation.getCurrentPosition(function(pos) {
             
@@ -558,9 +558,22 @@ module.exports = leafletPip;
                     document.getElementById('me').innerHTML = '';
                 }  
 
-            }, 1500);
+            }, 3750);
             
-            //Get location name after 7 seconds.
+            //clear again.
+            setTimeout(function() {
+
+                var res = leafletPip.pointInLayer(
+                    [pos.coords.longitude, pos.coords.latitude], gjLayer);
+                if (res.length) {
+                    document.getElementById('banner').innerHTML = res[0].feature.properties.name;
+                } else {
+                    document.getElementById('me').innerHTML = '';
+                }  
+
+            }, 4250);
+            
+            //Get location name after 10 seconds.
             setTimeout(function() {
 
                 var res = leafletPip.pointInLayer(
@@ -571,7 +584,7 @@ module.exports = leafletPip;
                     document.getElementById('me').innerHTML = 'Out of Bounds';
                 }  
 
-            }, 7000);
+            }, 10000);
             
         });
         
