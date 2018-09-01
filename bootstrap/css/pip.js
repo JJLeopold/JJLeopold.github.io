@@ -528,34 +528,24 @@ module.exports = leafletPip;
         //Find and zoom to location.
         lc.start(); 
         
-        setTimeout(function() {
             document.getElementById('me').innerHTML = 'Finding your location...';
-        }, 1000); 
+
+        setTimeout(function() {
+            //Find and zoom to location.
+            lc.stop(); 
+        }, 1900); 
         
         setTimeout(function() {
             //Find and zoom to location.
             lc.start(); 
-        }, 4100); 
+        }, 2000); 
         
         setTimeout(function() {
             //Find and zoom to location.
-            lc.start(); 
-        }, 4600); 
+            lc.stop(); 
+        }, 15000); 
         
         navigator.geolocation.getCurrentPosition(function(pos) {
-
-            //First clear.
-            setTimeout(function() {
-
-                var res = leafletPip.pointInLayer(
-                    [pos.coords.longitude, pos.coords.latitude], gjLayer);
-                if (res.length) {
-                    document.getElementById('me').innerHTML = 'Finding your location...';
-                } else {
-                    document.getElementById('me').innerHTML = '';
-                }  
-
-            }, 4000);
             
             //Second clear.
             setTimeout(function() {
