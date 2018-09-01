@@ -528,47 +528,37 @@ module.exports = leafletPip;
         //Find and zoom to location.
         lc.start(); 
         
-        setTimeout(function() {
             document.getElementById('me').innerHTML = 'Finding your location...';
-        }, 1000); 
+
+        setTimeout(function() {
+            //Stop finding location.
+            lc.stop(); 
+        }, 1900); 
         
         setTimeout(function() {
-            //Find and zoom to location.
+            //Find location again.
             lc.start(); 
-        }, 4100); 
+        }, 2000); 
         
         setTimeout(function() {
-            //Find and zoom to location.
-            lc.start(); 
-        }, 4600); 
+            //Stop finding location.
+            lc.stop(); 
+        }, 30000); 
         
         navigator.geolocation.getCurrentPosition(function(pos) {
-
-            //First clear.
-            setTimeout(function() {
-
-                var res = leafletPip.pointInLayer(
-                    [pos.coords.longitude, pos.coords.latitude], gjLayer);
-                if (res.length) {
-                    document.getElementById('me').innerHTML = 'Finding your location...';
-                } else {
-                    document.getElementById('me').innerHTML = '';
-                }  
-
-            }, 4000);
             
-            //Second clear.
+            //clear.
             setTimeout(function() {
 
                 var res = leafletPip.pointInLayer(
                     [pos.coords.longitude, pos.coords.latitude], gjLayer);
                 if (res.length) {
-                    document.getElementById('me').innerHTML = 'Finding your location...';
+                    document.getElementById('banner').innerHTML = res[0].feature.properties.name;
                 } else {
                     document.getElementById('me').innerHTML = '';
                 }  
 
-            }, 5500);
+            }, 1500);
             
             //Get location name after 7 seconds.
             setTimeout(function() {
