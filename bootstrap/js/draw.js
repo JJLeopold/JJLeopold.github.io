@@ -43,23 +43,23 @@
             marker : false,
             polygon: {
                   shapeOptions: {
-                    color: 'springgreen',
+                    color: '#00B1FF',
                     weight: 3,
                     opacity: 1,
                     fill: true,
                     fillColor: '#00B1FF', //same as color by default
-                    fillOpacity: 0.5,
+                    fillOpacity: 0,
 
                   }
                 },
             rectangle: {
                   shapeOptions: {
-                    color: 'springgreen',
+                    color: '#00B1FF',
                     weight: 3,
                     opacity: 1,
                     fill: true,
                     fillColor: '#00B1FF', //same as color by default
-                    fillOpacity: 0.5,
+                    fillOpacity: 0,
                   }
                 },
          },
@@ -99,13 +99,14 @@
         },
         options: {
                    position: 'topleft',
-                   setView: 'always'
+                   setView: 'always',
+                   cacheLocation: false
         },
         locateOptions: {
                    maxZoom: 18,
-                   enableHighAccuracy: true,   
+                   enableHighAccuracy: true,
+                   cacheLocation: false
         },
-        cacheLocation: false,
         circleStyle: {
                 color: 'springgreen',
                 fillColor: '#00B1FF',

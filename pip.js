@@ -530,26 +530,6 @@ module.exports = leafletPip;
         lc.start(); 
         
             document.getElementById('me').innerHTML = 'Finding your location...';
-
-        setTimeout(function() {
-            //Stop finding location.
-            lc.stop(); 
-        }, 2000); 
-        
-        setTimeout(function() {
-            //Find location again.
-            lc.start(); 
-        }, 2500); 
-        
-        setTimeout(function() {
-            //Stop finding location.
-            lc.stop(); 
-        }, 4000); 
-        
-        setTimeout(function() {
-            //Find location again.
-            lc.start(); 
-        }, 4500); 
         
         setTimeout(function() {
             //Stop finding location after 1 minute.
@@ -557,45 +537,6 @@ module.exports = leafletPip;
         }, 60000); 
         
         navigator.geolocation.getCurrentPosition(function(pos) {
-            
-            //clear.
-            setTimeout(function() {
-
-                var res = leafletPip.pointInLayer(
-                    [pos.coords.longitude, pos.coords.latitude], gjLayer);
-                if (res.length) {
-                    document.getElementById('banner').innerHTML = res[0].feature.properties.name;
-                } else {
-                    document.getElementById('banner').innerHTML = '';
-                }  
-
-            }, 1250);
-            
-            //clear a second time.
-            setTimeout(function() {
-
-                var res = leafletPip.pointInLayer(
-                    [pos.coords.longitude, pos.coords.latitude], gjLayer);
-                if (res.length) {
-                    document.getElementById('banner').innerHTML = res[0].feature.properties.name;
-                } else {
-                    document.getElementById('banner').innerHTML = '';
-                }  
-
-            }, 4250);
-            
-            //clear a third time.
-            setTimeout(function() {
-
-                var res = leafletPip.pointInLayer(
-                    [pos.coords.longitude, pos.coords.latitude], gjLayer);
-                if (res.length) {
-                    document.getElementById('banner').innerHTML = res[0].feature.properties.name;
-                } else {
-                    document.getElementById('banner').innerHTML = '';
-                }  
-
-            }, 7250);
             
             //Get location name after 10 seconds.
             setTimeout(function() {
