@@ -100,19 +100,17 @@
         options: {
                    position: 'topleft',
                    setView: 'always',
-                   cacheLocation: false
         },
         locateOptions: {
                    maxZoom: 18,
                    enableHighAccuracy: true,
-                   cacheLocation: false
         },
         circleStyle: {
                 color: 'springgreen',
                 fillColor: '#00B1FF',
                 fillOpacity: 0.25,
                 weight: 1,
-                opacity: 1
+                opacity: 1,
         },
         markerStyle: {
                 color: '#00B1FF',
@@ -120,7 +118,7 @@
                 fillOpacity: .75,
                 weight: 2,
                 opacity: 1,
-                radius: 5
+                radius: 5,
         },
     }).addTo(map);
     

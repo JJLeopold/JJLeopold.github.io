@@ -483,19 +483,17 @@ module.exports = leafletPip;
         options: {
                    position: 'topleft',
                    setView: 'always',
-                   cacheLocation: false
         },
         locateOptions: {
                    maxZoom: 18,
                    enableHighAccuracy: true,
-                   cacheLocation: false
         },
         circleStyle: {
                 color: 'springgreen',
                 fillColor: '#00B1FF',
                 fillOpacity: 0.25,
                 weight: 1,
-                opacity: 1
+                opacity: 1,
         },
         markerStyle: {
                 color: '#00B1FF',
@@ -503,7 +501,7 @@ module.exports = leafletPip;
                 fillOpacity: .75,
                 weight: 2,
                 opacity: 1,
-                radius: 5
+                radius: 5,
         },
     }).addTo(map);
     
@@ -536,18 +534,18 @@ module.exports = leafletPip;
             setTimeout(function(pos) {
                 
                 navigator.geolocation.getCurrentPosition(function(pos) {
-                    
-                    var res = leafletPip.pointInLayer(
-                        [pos.coords.longitude, pos.coords.latitude], gjLayer);
-                    if (res.length) {
-                        document.getElementById('me').innerHTML = res[0].feature.properties.name;
-                    } else {
-                        document.getElementById('me').innerHTML = 'Out of Bounds';
-                    }  
+
+                var res = leafletPip.pointInLayer(
+                    [pos.coords.longitude, pos.coords.latitude], gjLayer);
+                if (res.length) {
+                    document.getElementById('me').innerHTML = res[0].feature.properties.name;
+                } else {
+                    document.getElementById('me').innerHTML = 'Out of Bounds';
+                }  
             
                 });
                 
-            }, 5000);
+            }, 7000);
 
     };
 
