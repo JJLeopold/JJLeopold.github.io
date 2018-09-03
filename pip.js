@@ -483,12 +483,10 @@ module.exports = leafletPip;
         options: {
                    position: 'topleft',
                    setView: 'always',
-                   cacheLocation: false
         },
         locateOptions: {
                    maxZoom: 18,
                    enableHighAccuracy: true,
-                   cacheLocation: false
         },
         circleStyle: {
                 color: 'springgreen',
