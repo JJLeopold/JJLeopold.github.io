@@ -483,17 +483,19 @@ module.exports = leafletPip;
         options: {
                    position: 'topleft',
                    setView: 'always',
+                   cacheLocation: false
         },
         locateOptions: {
                    maxZoom: 18,
                    enableHighAccuracy: true,
+                   cacheLocation: false
         },
         circleStyle: {
                 color: 'springgreen',
                 fillColor: '#00B1FF',
                 fillOpacity: 0.25,
                 weight: 1,
-                opacity: 1,
+                opacity: 1
         },
         markerStyle: {
                 color: '#00B1FF',
@@ -501,7 +503,7 @@ module.exports = leafletPip;
                 fillOpacity: .75,
                 weight: 2,
                 opacity: 1,
-                radius: 5,
+                radius: 5
         },
     }).addTo(map);
     
@@ -527,26 +529,33 @@ module.exports = leafletPip;
         //Find and zoom to location.
         lc.start(); 
         
-            document.getElementById('me').innerHTML = 'Finding your location...';
+        document.getElementById('me').innerHTML = 'Finding your location...';
         
-
-            //Get location name after 7 seconds.
-            setTimeout(function(pos) {
+        setTimeout(function() {
+            lc.stop(); 
+        }, 8000);         
+        
+        setTimeout(function() {
+            lc.start(); 
+        }, 8001);    
+        
+            //Get location name after 6 seconds.
+            setTimeout(function() {
                 
                 navigator.geolocation.getCurrentPosition(function(pos) {
 
-                var res = leafletPip.pointInLayer(
-                    [pos.coords.longitude, pos.coords.latitude], gjLayer);
-                if (res.length) {
-                    document.getElementById('me').innerHTML = res[0].feature.properties.name;
-                } else {
-                    document.getElementById('me').innerHTML = 'Out of Bounds';
-                }  
-            
-                });
-                
-            }, 7000);
+                    var res = leafletPip.pointInLayer(
+                        [pos.coords.longitude, pos.coords.latitude], gjLayer);
+                    if (res.length) {
+                        document.getElementById('me').innerHTML = res[0].feature.properties.name;
+                    } else {
+                        document.getElementById('me').innerHTML = 'Out of Bounds';
+                    }  
 
+                });
+            
+            }, 10000);
+            
     };
 
     
