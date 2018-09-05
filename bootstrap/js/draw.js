@@ -43,23 +43,23 @@
             marker : false,
             polygon: {
                   shapeOptions: {
-                    color: '#00B1FF',
+                    color: 'springgreen',
                     weight: 3,
                     opacity: 1,
                     fill: true,
                     fillColor: '#00B1FF', //same as color by default
-                    fillOpacity: 0,
+                    fillOpacity: .5,
 
                   }
                 },
             rectangle: {
                   shapeOptions: {
-                    color: '#00B1FF',
+                    color: 'springgreen',
                     weight: 3,
                     opacity: 1,
                     fill: true,
                     fillColor: '#00B1FF', //same as color by default
-                    fillOpacity: 0,
+                    fillOpacity: .5,
                   }
                 },
          },
