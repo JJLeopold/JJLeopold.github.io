@@ -529,15 +529,15 @@ module.exports = leafletPip;
         
         document.getElementById('me').innerHTML = 'Finding your location...';
         
+        //Doesn't work on computer without this stop/start.
         setTimeout(function() {
             lc.stop(); 
         }, 8000);         
-        
         setTimeout(function() {
             lc.start(); 
         }, 8001);    
         
-            //Get location name after 6 seconds.
+            //Get location name after 10 seconds.
             setTimeout(function() {
                 
                 navigator.geolocation.getCurrentPosition(function(pos) {
@@ -552,7 +552,7 @@ module.exports = leafletPip;
 
                 });
             
-            }, 10000);
+            }, 7000);
             
     };
 
