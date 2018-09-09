@@ -532,10 +532,10 @@ module.exports = leafletPip;
         //Doesn't work on computer without this stop/start.
         setTimeout(function() {
             lc.stop(); 
-        }, 8000);         
+        }, 6000);         
         setTimeout(function() {
             lc.start(); 
-        }, 8001);    
+        }, 6001);    
         
             //Get location name after 10 seconds.
             setTimeout(function() {
