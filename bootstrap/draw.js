@@ -1,6 +1,6 @@
-    var Satellite = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
+    var Satellite = L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtgniy3wpp2rmqdf613wqk/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA');
 
-    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjlgnrb6xa90w2smcaaihkexg/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
+    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtacg23wjp2rpgsx3xibdf/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA');
 
     var Light = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjdqrzpmt012c2sr1nmzcsyua/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
 
@@ -106,14 +106,14 @@
                    enableHighAccuracy: true,
         },
         circleStyle: {
-                color: 'springgreen',
+                color: '#00B1FF',
                 fillColor: '#00B1FF',
                 fillOpacity: 0.25,
                 weight: 1,
                 opacity: 1,
         },
         markerStyle: {
-                color: '#00B1FF',
+                color: 'springgreen',
                 fillColor: '#00B1FF',
                 fillOpacity: .75,
                 weight: 2,

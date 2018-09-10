@@ -462,7 +462,7 @@ module.exports = leafletPip;
         ],
     attributionControl: false}),
     gjLayer = L.geoJson(locationsData);
-    L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjl6r6wa610tp2sqy9h8gllsy/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg').addTo(map);
+    L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtelmg2zer2ssy5841jv1g/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA').addTo(map);
     
     //Turn gjLayer on or off according to zoom level
     //map.on('zoomend', function() {
@@ -489,14 +489,14 @@ module.exports = leafletPip;
                    enableHighAccuracy: true,
         },
         circleStyle: {
-                color: 'springgreen',
+                color: '#00B1FF',
                 fillColor: '#00B1FF',
                 fillOpacity: 0.25,
                 weight: 1,
                 opacity: 1
         },
         markerStyle: {
-                color: '#00B1FF',
+                color: 'springgreen',
                 fillColor: '#00B1FF',
                 fillOpacity: .75,
                 weight: 2,
