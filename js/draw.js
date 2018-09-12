@@ -106,11 +106,11 @@
                    enableHighAccuracy: true,
         },
         circleStyle: {
-                color: '#00B1FF',
+                color: 'springgreen',
                 fillColor: '#00B1FF',
                 fillOpacity: 0.25,
                 weight: 1,
-                opacity: 1,
+                opacity: 1
         },
         markerStyle: {
                 color: 'springgreen',
@@ -118,7 +118,7 @@
                 fillOpacity: .75,
                 weight: 2,
                 opacity: 1,
-                radius: 5,
+                radius: 7
         },
     }).addTo(map);
     
