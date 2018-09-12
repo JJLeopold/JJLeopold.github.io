@@ -109,16 +109,16 @@
                 color: 'springgreen',
                 fillColor: '#00B1FF',
                 fillOpacity: 0.25,
-                weight: 1,
+                weight: 1.25,
                 opacity: 1
         },
         markerStyle: {
                 color: 'springgreen',
                 fillColor: '#00B1FF',
-                fillOpacity: .75,
-                weight: 2,
+                fillOpacity: 1,
+                weight: 1.5,
                 opacity: 1,
-                radius: 7
+                radius: 4
         },
     }).addTo(map);
     
