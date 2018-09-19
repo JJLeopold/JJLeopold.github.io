@@ -70,7 +70,7 @@ me:hover {
     border-radius: 5px;
     font-weight: 700;
     outline: none;
-    box-shadow: 0 0 3pt .01pt #00B1FF;
+    box-shadow: 0 0 2px .01px #00B1FF;
 }
 
 #go:hover {
@@ -98,7 +98,7 @@ me:hover {
     border-radius: 5px;
     font-weight: 700;
     outline: none;
-    box-shadow: 0 0 3pt .01pt #00B1FF;
+    box-shadow: 0 0 2px .01px #00B1FF;
 }
 
 #add:hover {
@@ -127,7 +127,7 @@ me:hover {
     border-color: white;
     border-radius: 5px;
     font-weight: 700;
-    box-shadow: 0 0 3pt .01pt #00B1FF;
+    box-shadow: 0 0 2px .01px #00B1FF;
 }
 
 #submit:hover {
@@ -156,7 +156,7 @@ me:hover {
     border-radius: 5px;
     font-weight: 700;
     outline: none;
-    box-shadow: 0 0 3pt .01pt #00B1FF;
+    box-shadow: 0 0 2px .01px #00B1FF;
 }
 
 #back:hover {

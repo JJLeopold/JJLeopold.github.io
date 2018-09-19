@@ -273,7 +273,7 @@
 	border-radius: 4px;
     background-color: springgreen;
     color: mediumblue;
-    box-shadow: 0 0 3pt .01pt #00B1FF!important;
+    box-shadow: 0 0 2px .01px #00B1FF !important;
 	}
 .leaflet-bar a {
 	background-color: #00B1FF;
@@ -355,8 +355,7 @@
     border-width: 2px;
     border-color: #ffffff !important;
     border-radius: 5px;
-    box-shadow: 0 0 3pt .01pt #00B1FF!important;
-
+    box-shadow: 0 0 2px .01px #00B1FF !important;
 }
 .leaflet-control-layers-toggle {
 	background-image: url(images/layers.png);
