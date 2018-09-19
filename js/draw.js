@@ -1,17 +1,37 @@
-    var Satellite = L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtgniy3wpp2rmqdf613wqk/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA');
+//mapster access token (jleopold)
+//pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg
 
-    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtacg23wjp2rpgsx3xibdf/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA');
+//replacement access token(jjleopold)
+//pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA
+
+    //satellite style for mapster (jleopold)
+    //jleopold/cjd303coe3wkh2rl0zoezvy8o
+
+    //replacement for satellite (jjleopold)
+    //jjleopold/cjlwtgniy3wpp2rmqdf613wqk
+
+    var Satellite = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
+
+    //streets style for mapster (jleopold)
+    //jleopold/cjlgnrb6xa90w2smcaaihkexg
+
+    //replacement for streets (jjleopold)
+    //jjleopold/cjlwtacg23wjp2rpgsx3xibdf
+
+    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjlgnrb6xa90w2smcaaihkexg/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
 
     var Light = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjdqrzpmt012c2sr1nmzcsyua/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
 
     var Pixar = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjaxih6oc06ri2squp8zw2yji/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
  
     var map = L.map('map',{
+    tileLayer: {
+        maxNativeZoom: 19 
+    },
     center: [38, -95],
     zoomControl: false,
     zoom: 2,
     minZoom: 2,
-    maxZoom: 18,
     maxBounds: [
         //south west
         [-80, -180],
@@ -102,14 +122,14 @@
                    setView: 'always',
         },
         locateOptions: {
-                   maxZoom: 18,
+                   maxZoom: 19,
                    enableHighAccuracy: true,
         },
         circleStyle: {
                 color: 'springgreen',
                 fillColor: '#00B1FF',
                 fillOpacity: 0.25,
-                weight: 1.25,
+                weight: 1,
                 opacity: 1
         },
         markerStyle: {
@@ -127,7 +147,7 @@
 
         //Move the map with the user's location.
         map.on('locationfound', function(e) {
-        map.fitBounds(e.bounds, { maxZoom: 18});
+        map.fitBounds(e.bounds, { Zoom: 19});
         });   
 
     //Geocoder!
