@@ -244,6 +244,8 @@
 
 .leaflet-container {
 	outline: 0;
+    margin: 0;
+    background: #ffffff;
 	}
 .leaflet-container a {
 	color: mediumblue;
@@ -271,6 +273,7 @@
 	border-radius: 4px;
     background-color: springgreen;
     color: mediumblue;
+    box-shadow: 0 0 3pt .01pt #00B1FF!important;
 	}
 .leaflet-bar a {
 	background-color: #00B1FF;
@@ -352,6 +355,8 @@
     border-width: 2px;
     border-color: #ffffff !important;
     border-radius: 5px;
+    box-shadow: 0 0 3pt .01pt #00B1FF!important;
+
 }
 .leaflet-control-layers-toggle {
 	background-image: url(images/layers.png);
@@ -389,6 +394,7 @@
 	margin-top: 2px;
 	position: relative;
 	top: 1px;
+    
 	}
 .leaflet-control-layers label {
 	display: block;

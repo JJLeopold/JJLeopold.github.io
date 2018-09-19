@@ -6,24 +6,23 @@ html, body, #map {
     margin: 0;
 }
 
-banner{
-    z-index: 1000 !important;
-    height: 85px;
+#banner {
+    background-color: transparent;
+    opacity: 150 !important;
+    z-index: 500 !important;
+    min-height: 50px;
     width: 100%;
-    font-size: 50px;
-    color: #ffffff;
-    font-family: sans-serif;
-    font-weight: bold;
-    background-color: #637181;
-    opacity: .85;
-    position: top;
-    padding-top: 1%;
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-bottom: -10%;
-    bottom: 1%;
-    text-align: center;
     border-radius: 0%;
+    border-width: 0px;
+    position: absolute;
+    bottom: 19.5%;
+    cursor: pointer;
+    font-size: 24px;
+    color: #00B1FF;
+    display: inline-block;
+    text-align: center;
+    font-weight: 700;
+    outline: none;
 }
 
 
@@ -71,6 +70,7 @@ me:hover {
     border-radius: 5px;
     font-weight: 700;
     outline: none;
+    box-shadow: 0 0 3pt .01pt #00B1FF;
 }
 
 #go:hover {
@@ -98,6 +98,7 @@ me:hover {
     border-radius: 5px;
     font-weight: 700;
     outline: none;
+    box-shadow: 0 0 3pt .01pt #00B1FF;
 }
 
 #add:hover {
@@ -126,7 +127,7 @@ me:hover {
     border-color: white;
     border-radius: 5px;
     font-weight: 700;
-    outline: none;
+    box-shadow: 0 0 3pt .01pt #00B1FF;
 }
 
 #submit:hover {
@@ -155,13 +156,13 @@ me:hover {
     border-radius: 5px;
     font-weight: 700;
     outline: none;
+    box-shadow: 0 0 3pt .01pt #00B1FF;
 }
 
 #back:hover {
 	background-color: springgreen;
     color: #00B1FF;
-    
-	}
+}
 
 #header
 {
