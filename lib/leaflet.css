@@ -349,7 +349,7 @@
 
 .leaflet-control-layers {
 	box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-    top: 100px;
+    top: 0px;
 	background: #00B1FF;
     border: solid;
     border-width: 2px;
@@ -359,8 +359,8 @@
 }
 .leaflet-control-layers-toggle {
 	background-image: url(images/layers.png);
-	width: 55px !important;
-	height: 35px !important;
+	width: 40px !important;
+	height: 40px !important;
 	}
 .leaflet-retina .leaflet-control-layers-toggle {
 	background-image: url(images/layers-2x.png);
@@ -375,14 +375,15 @@
 	display: none;
 	}
 .leaflet-control-layers-expanded .leaflet-control-layers-list {
-	display: block;
+	display:block;
 	position: relative;
 	}
 .leaflet-control-layers-expanded {
-	padding: 6px 10px 6px 6px;
+	padding: 10px 15px 5px 10px;
 	color: #00B1FF;
 	background: springgreen;
     font-size: 14px;
+    
 	}
 .leaflet-control-layers-scrollbar {
 	overflow-y: scroll;
@@ -390,9 +391,9 @@
 	padding-right: 5px;
 	}
 .leaflet-control-layers-selector {
-	margin-top: 2px;
+	margin-top: 0px;
 	position: relative;
-	top: 1px;
+	top: 0px;
     
 	}
 .leaflet-control-layers label {

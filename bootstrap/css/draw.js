@@ -55,6 +55,37 @@
     var featureGroup = new L.FeatureGroup();
     map.addLayer(featureGroup);
 
+        //Geolocation!
+    var lc = L.control.locate({
+        strings: {
+            title: 'Find Me!',
+            popup: 'You are within {distance} {unit} from this point',
+        },
+        options: {
+                   position: 'topleft',
+                   setView: 'always',
+        },
+        locateOptions: {
+                   maxZoom: 19,
+                   enableHighAccuracy: true,
+        },
+        circleStyle: {
+                color: 'springgreen',
+                fillColor: '#00B1FF',
+                fillOpacity: 0.25,
+                weight: 1,
+                opacity: 1
+        },
+        markerStyle: {
+                color: 'springgreen',
+                fillColor: '#00B1FF',
+                fillOpacity: 1,
+                weight: 1.5,
+                opacity: 1,
+                radius: 4
+        },
+    }).addTo(map);
+
     // Initialise the draw control and pass it the FeatureGroup of editable layers
     var drawControl = new L.Control.Draw({position: 'topleft',
         draw: {
@@ -85,7 +116,7 @@
          },
         edit: {
             featureGroup: featureGroup,
-            edit: true
+            edit: true,
         }
     });
 
@@ -110,46 +141,6 @@
             document.getElementById('submit').setAttribute('download','data.geojson');
         }
         
-        
-    //Geolocation!
-    var lc = L.control.locate({
-        strings: {
-            title: 'Find Me!',
-            popup: 'You are within {distance} {unit} from this point',
-        },
-        options: {
-                   position: 'topleft',
-                   setView: 'always',
-        },
-        locateOptions: {
-                   maxZoom: 19,
-                   enableHighAccuracy: true,
-        },
-        circleStyle: {
-                color: 'springgreen',
-                fillColor: '#00B1FF',
-                fillOpacity: 0.25,
-                weight: 1,
-                opacity: 1
-        },
-        markerStyle: {
-                color: 'springgreen',
-                fillColor: '#00B1FF',
-                fillOpacity: 1,
-                weight: 1.5,
-                opacity: 1,
-                radius: 4
-        },
-    }).addTo(map);
-    
-        //Other way to zoom to location, but not as accurate.
-        //map.locate();
-
-        //Move the map with the user's location.
-        map.on('locationfound', function(e) {
-        map.fitBounds(e.bounds, { Zoom: 19});
-        });   
-
     //Geocoder!
     // create the geocoding control and add it to the map
     var searchControl = L.esri.Geocoding.geosearch({
@@ -166,6 +157,15 @@
             results.addLayer(L.marker(data.results[i].latlng));
         }
     });
+
+    
+        //Other way to zoom to location, but not as accurate.
+        //map.locate();
+
+        //Move the map with the user's location.
+        map.on('locationfound', function(e) {
+        map.fitBounds(e.bounds, { Zoom: 19});
+        });   
 
     // Add attribution   
     var attribution = L.control.attribution();

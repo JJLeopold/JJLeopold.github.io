@@ -450,7 +450,7 @@ module.exports = leafletPip;
     var leafletPip = require('../'),
     map = L.map('map', {
     center: [38, -95],
-    zoomControl: true,
+    zoomControl: false,
     zoom: 2,
     minZoom: 2,
     maxZoom: 18,
@@ -492,7 +492,7 @@ module.exports = leafletPip;
                 color: 'springgreen',
                 fillColor: '#00B1FF',
                 fillOpacity: 0.25,
-                weight: 1.25,
+                weight: 1,
                 opacity: 1
         },
         markerStyle: {
@@ -529,7 +529,7 @@ module.exports = leafletPip;
         
         document.getElementById('me').innerHTML = 'Finding your location...';
         
-        //Doesn't work on computer without this stop/start.
+        //Only works on mobile without this stop/start.
         setTimeout(function() {
             lc.stop(); 
         }, 6000);         
@@ -537,7 +537,7 @@ module.exports = leafletPip;
             lc.start(); 
         }, 6001);    
         
-            //Get location name after 10 seconds.
+            //Get location name after 7 seconds.
             setTimeout(function() {
                 
                 navigator.geolocation.getCurrentPosition(function(pos) {
