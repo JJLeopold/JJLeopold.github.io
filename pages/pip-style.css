@@ -55,7 +55,7 @@ me:hover {
     opacity: .95 !important;
     z-index: 500 !important;
     height: 40px;
-    width: 59px;
+    width: 44px;
     position: absolute;
     top: 130px;
     right: 10px;
@@ -83,7 +83,7 @@ me:hover {
     opacity: .95 !important;
     z-index: 500 !important;
     height: 40px;
-    width: 59px;
+    width: 44px;
     position: absolute;
     top: 80px;
     right: 10px;
@@ -110,12 +110,12 @@ me:hover {
 #submit {
     background-color: #00B1FF;
     opacity: 100 !important;
-    z-index: 5000 !important;
+    z-index: 500 !important;
     height: 40px;
-    width: 59px;
+    width: 44px;
     position: absolute;
-    top: 130px;
-    right: 10px;
+    top: 185px;
+    right:10px;
     cursor: pointer;
     font-size: 14px;
     color: springgreen;
@@ -138,11 +138,11 @@ me:hover {
 #back {
     background-color: #00B1FF;
     opacity: 100 !important;
-    z-index: 5000 !important;
+    z-index: 500 !important;
     height: 40px;
-    width: 59px;
+    width: 44px;
     position: absolute;
-    top: 80px;
+    top: 135px;
     right: 10px;
     cursor: pointer;
     font-size: 14px;
@@ -173,7 +173,7 @@ me:hover {
  margin-top:0px;
  padding:0px;
  height:70px;
- border-bottom:1px solid #00B1FF;
+ border-bottom: solid 1px #00B1FF;
 }
 
 #header li
