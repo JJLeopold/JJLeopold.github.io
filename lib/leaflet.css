@@ -272,7 +272,8 @@
     border-color: #ffffff !important;
 	border-radius: 4px;
     background-color: springgreen;
-    color: mediumblue;
+    font-size: 15px;
+    color: #00B1FF;
     box-shadow: 0 0 2px .01px #00B1FF !important;
 	}
 .leaflet-bar a {
