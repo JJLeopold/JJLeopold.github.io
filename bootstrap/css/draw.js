@@ -34,7 +34,7 @@
     minZoom: 2,
     maxBounds: [
         //south west
-        [-90, -180],
+        [-79, -180],
         //north east
         [90, 180]
         ],
