@@ -248,7 +248,7 @@
     background: #ffffff;
 	}
 .leaflet-container a {
-	color: mediumblue;
+	color: ;
 	}
 .leaflet-container a.leaflet-active {
 	outline: none;
@@ -274,7 +274,7 @@
     background-color: springgreen;
     font-size: 14px;
     font-weight: 500;
-    color: #00B1FF;
+    color: #00A1E7;
     box-shadow: 0 0 2px .01px #00B1FF !important;
 	}
 .leaflet-bar a {
