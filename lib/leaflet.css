@@ -444,20 +444,28 @@
 
 .leaflet-container .leaflet-control-attribution {
 	background: #ffffff;
-	background: rgba(255, 255, 255, .7);
+	opacity: .7;
 	margin-bottom: 0px;
     margin-right: 0px;
 	}
+
 .leaflet-control-attribution,
 .leaflet-control-scale-line {
 	padding: 0 5px;
 	}
 .leaflet-control-attribution a {
 	text-decoration: none;
-    color:slategray;
-    background-color: transparent;
+    color: black;
+    background-color: #ffffff;
+    box-shadow: none;
+    border: none;
+    font-weight: 100;
 	}
 .leaflet-control-attribution a:hover {
+    background: #ffffff;
+	opacity: .7;
+	margin-bottom: 0px;
+    margin-right: 0px;
 	text-decoration: underline;
 	}
 .leaflet-container .leaflet-control-attribution,

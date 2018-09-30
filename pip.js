@@ -577,7 +577,7 @@ module.exports = leafletPip;
     // Add attribution   
     var attribution = L.control.attribution();
         attribution.setPrefix('');
-        attribution.addAttribution('<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap contributors</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+        attribution.addAttribution('Powered by <a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap </a>contributors | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
         attribution.addTo(map);
     
 },{"../":1}]},{},[3]);
