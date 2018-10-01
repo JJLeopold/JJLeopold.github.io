@@ -451,8 +451,15 @@
 
 .leaflet-control-attribution,
 .leaflet-control-scale-line {
-	padding: 0 5px;
-	}
+	text-decoration: none;
+    color: black;
+    background-color: #ffffff;
+    box-shadow: none;
+    border: none;
+    font-weight: 100;
+    padding: 0 2px;
+    margin-bottom: -2px;
+}
 .leaflet-control-attribution a {
 	text-decoration: none;
     color: black;
@@ -460,12 +467,15 @@
     box-shadow: none;
     border: none;
     font-weight: 100;
+	padding: 0 2px;
+    margin-bottom: -2px;
 	}
 .leaflet-control-attribution a:hover {
-    background: #ffffff;
-	opacity: .7;
-	margin-bottom: 0px;
-    margin-right: 0px;
+    color: #00B1FF;
+    background-color: #ffffff;
+    box-shadow: none;
+    border: none;
+    font-weight: 100;
 	text-decoration: underline;
 	}
 .leaflet-container .leaflet-control-attribution,
