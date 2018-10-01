@@ -3,6 +3,7 @@ html, body, #map {
     height: 100%;
     position: absolute !important;
     margin: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 #banner {
@@ -105,15 +106,19 @@ me:hover {
     color: #00B1FF;
 	}
 
+#attribution{
+    color: slategray;
+}
+
 
 #submit {
     background-color: #00B1FF;
     opacity: 100 !important;
     z-index: 500 !important;
     height: 40px;
-    width: 44px;
+    width: 42px;
     position: absolute;
-    top: 185px;
+    top: 183px;
     right:10px;
     cursor: pointer;
     font-size: 14px;
@@ -139,9 +144,9 @@ me:hover {
     opacity: 100 !important;
     z-index: 500 !important;
     height: 40px;
-    width: 44px;
+    width: 42px;
     position: absolute;
-    top: 135px;
+    top: 133px;
     right: 10px;
     cursor: pointer;
     font-size: 14px;
