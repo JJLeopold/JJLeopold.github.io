@@ -275,13 +275,13 @@
 /* general typography */
 .leaflet-container {
 	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+    
 	}
 
 
 /* general toolbar styles */
 
 .leaflet-bar {
-	box-shadow: 0 1px 5px rgba(0,0,0,0.65);
     border-color: #ffffff !important;
 	border-radius: 4px;
     background-color: #00B1FF;
@@ -291,7 +291,6 @@
     box-shadow: 0 0 2px .01px #00B1FF !important;
 	}
 .leaflet-bar:focus {
-	box-shadow: 0 1px 5px rgba(0,0,0,0.65);
     border-color: #ffffff !important;
 	border-radius: 4px;
     background-color: springgreen;
@@ -537,7 +536,7 @@
 .leaflet-popup-content {
 	margin: 13px 19px;
 	line-height: 1.4;
-	}
+}
 .leaflet-popup-content p {
 	margin: 18px 0;
 	}
@@ -566,7 +565,7 @@
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
 	background: white;
-	color: #333;
+	color: none;
 	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
 	}
 .leaflet-container a.leaflet-popup-close-button {
@@ -618,20 +617,21 @@
 /* div icon */
 
 .leaflet-div-icon {
-	background: #ffffff;
-	border: 1px solid #666;
+	background: springgreen;
+	border: 6px solid #00B1FF;
+    border-radius: 100px;
+    box-shadow: 0 0 2px 2px #ffffff !important;
+    width: 11px !important;
+    height: 11px !important;
 	}
-
 
 /* Tooltip */
 /* Base styles for the element that has a tooltip */
 .leaflet-tooltip {
 	position: absolute;
 	padding: 6px;
-	background-color: #ffffff;
 	border: 1px solid #ffffff;
 	border-radius: 3px;
-	color: red;
 	white-space: nowrap;
 	-webkit-user-select: none;
 	-moz-user-select: none;
