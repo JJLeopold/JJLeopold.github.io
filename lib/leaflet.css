@@ -622,11 +622,11 @@
 	border: 5px solid #00B1FF;
     border-radius: 100px;
     box-shadow: 0 0 2px 2px #ffffff !important;
-    width: 10px !important;
-    height: 10px !important;
+    width: 8px !important;
+    height: 8px !important;
     position: absolute;
-    left: 4px;
-    top: 4px;
+    left: 5px;
+    top: 5px;
 	}
 
 /* Tooltip */
