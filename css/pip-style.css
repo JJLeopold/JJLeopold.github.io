@@ -177,7 +177,7 @@ me:hover {
  margin-top:0px;
  padding:0px;
  height:70px;
- border-bottom: solid 1px #00B1FF;
+ box-shadow: 0 0 2px .5px #00B1FF;
 }
 
 #header li
