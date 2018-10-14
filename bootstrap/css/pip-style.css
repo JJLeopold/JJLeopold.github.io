@@ -51,7 +51,7 @@ me:hover {
 	}
 
 #go {
-    background-color: #00B1FF;
+    background-color: #009EFF;
     opacity: .95 !important;
     z-index: 500 !important;
     height: 37px;
@@ -70,16 +70,16 @@ me:hover {
     border-radius: 5px;
     font-weight: 700;
     outline: none;
-    box-shadow: 0 0 2px .01px #00B1FF;
+    box-shadow: 0 0 2px .01px #009EFF;
 }
 
 #go:hover {
 	background-color: springgreen;
-    color: #00B1FF;
+    color: #1287FF;
 	}
 
 #add {
-    background-color: #00B1FF;
+    background-color: #009EFF;
     opacity: .95 !important;
     z-index: 500 !important;
     height: 37px;
@@ -98,12 +98,12 @@ me:hover {
     border-radius: 5px;
     font-weight: 700;
     outline: none;
-    box-shadow: 0 0 2px .01px #00B1FF;
+    box-shadow: 0 0 2px .01px #009EFF;
 }
 
 #add:hover {
 	background-color: springgreen;
-    color: #00B1FF;
+    color: #009EFF;
 	}
 
 #attribution{
@@ -112,7 +112,7 @@ me:hover {
 
 
 #submit {
-    background-color: #00B1FF;
+    background-color: #009EFF;
     opacity: 100 !important;
     z-index: 500 !important;
     height: 40px;
@@ -131,16 +131,16 @@ me:hover {
     border-color: white;
     border-radius: 5px;
     font-weight: 700;
-    box-shadow: 0 0 2px .01px #00B1FF;
+    box-shadow: 0 0 2px .01px #009EFF;
 }
 
 #submit:hover {
 	background-color: springgreen;
-    color: #00B1FF;
+    color: #009EFF;
 	}
 
 #back {
-    background-color: #00B1FF;
+    background-color: #009EFF;
     opacity: 100 !important;
     z-index: 500 !important;
     height: 40px;
@@ -160,12 +160,12 @@ me:hover {
     border-radius: 5px;
     font-weight: 700;
     outline: none;
-    box-shadow: 0 0 2px .01px #00B1FF;
+    box-shadow: 0 0 2px .01px #009EFF;
 }
 
 #back:hover {
 	background-color: springgreen;
-    color: #00B1FF;
+    color: #009EFF;
 }
 
 #header
@@ -177,7 +177,7 @@ me:hover {
  margin-top:0px;
  padding:0px;
  height:70px;
- box-shadow: 0 0 2px .5px #00B1FF;
+ box-shadow: 0 0 2px .5px #009EFF;
 }
 
 #header li
@@ -188,7 +188,7 @@ me:hover {
 
 #header #sitename a
 {
- color:#00B1FF;
+ color:#009EFF;
  text-decoration:none;
  line-height: 1;
  font-size: 60px;

@@ -485,23 +485,23 @@ module.exports = leafletPip;
                    setView: 'always',
         },
         locateOptions: {
-                   maxZoom: 18,
+                   maxZoom: 19,
                    enableHighAccuracy: true,
         },
         circleStyle: {
                 color: 'springgreen',
-                fillColor: '#00B1FF',
+                fillColor: '#009EFF',
                 fillOpacity: 0.25,
                 weight: 1,
                 opacity: 1
         },
         markerStyle: {
                 color: 'springgreen',
-                fillColor: '#00B1FF',
+                fillColor: '#009EFF',
                 fillOpacity: 1,
-                weight: 1.5,
+                weight: 1.25,
                 opacity: 1,
-                radius: 4
+                radius: 3
         },
     }).addTo(map);
     
@@ -527,7 +527,7 @@ module.exports = leafletPip;
     
     //Move the map with the user's location.
     map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds, { maxZoom: 18});
+    map.fitBounds(e.bounds, { maxZoom: 19});
     });   
     
         //Greeting!
@@ -577,7 +577,7 @@ module.exports = leafletPip;
     // Add attribution   
     var attribution = L.control.attribution();
         attribution.setPrefix('');
-        attribution.addAttribution('Powered by<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="https://www.digitalglobe.com/">© DigitalGlobe</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a>contributors | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+        attribution.addAttribution('Powered by<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="https://www.digitalglobe.com/">© DigitalGlobe</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
         attribution.addTo(map);
     
 },{"../":1}]},{},[3]);

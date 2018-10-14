@@ -71,18 +71,18 @@
         },
         circleStyle: {
                 color: 'springgreen',
-                fillColor: '#00B1FF',
+                fillColor: '#009EFF',
                 fillOpacity: 0.25,
                 weight: 1,
                 opacity: 1
         },
         markerStyle: {
                 color: 'springgreen',
-                fillColor: '#00B1FF',
+                fillColor: '#009EFF',
                 fillOpacity: 1,
-                weight: 1.5,
+                weight: 1.25,
                 opacity: 1,
-                radius: 4
+                radius: 3
         },
     }).addTo(map);
 
@@ -98,7 +98,7 @@
                     weight: 3,
                     opacity: 1,
                     fill: true,
-                    fillColor: '#00B1FF', //same as color by default
+                    fillColor: '#009EFF', //same as color by default
                     fillOpacity: .5,
 
                   }
@@ -109,7 +109,7 @@
                     weight: 3,
                     opacity: 1,
                     fill: true,
-                    fillColor: '#00B1FF', //same as color by default
+                    fillColor: '#009EFF', //same as color by default
                     fillOpacity: .5,
                   }
                 },
@@ -170,7 +170,7 @@
     // Add attribution   
     var attribution = L.control.attribution();
         attribution.setPrefix('');
-        attribution.addAttribution('Powered by<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="https://www.digitalglobe.com/">© DigitalGlobe</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a>contributors | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+        attribution.addAttribution('Powered by<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="https://www.digitalglobe.com/">© DigitalGlobe</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
         attribution.addTo(map);
 
 

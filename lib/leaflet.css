@@ -252,7 +252,7 @@
 	color: springgreen;
     outline: #fff;
     font-weight: bold;
-    background-color:#00B1FF;
+    background-color:#009EFF;
     border-color: #ffffff !important;
     border-width: 0px;
     box-shadow: 0 0 2px .7px #ffffff !important;
@@ -260,7 +260,7 @@
 	}
 
 .leaflet-container a:hover {
-    color: #00B1FF;
+    color: #009EFF;
     background-color: springgreen;
 	}
 
@@ -286,11 +286,11 @@
 .leaflet-bar {
     border-color: #ffffff !important;
 	border-radius: 4px;
-    background-color: #00B1FF;
+    background-color: #009EFF;
     font-size: 14px;
     font-weight: none;
-    color: #00A1E7;
-    box-shadow: 0 0 2px .01px #00B1FF !important;
+    color: #009EFF;
+    box-shadow: 0 0 2px .01px #009EFF !important;
 	}
 .leaflet-bar:focus {
     border-color: #ffffff !important;
@@ -298,15 +298,15 @@
     background-color: springgreen;
     font-size: 14px;
     font-weight: none;
-    color: #00A1E7;
-    box-shadow: 0 0 2px .01px #00B1FF !important;
+    color: #009EFF;
+    box-shadow: 0 0 2px .01px #009EFF !important;
 	}
 .leaflet-bar:hover {
     background-color: springgreen;
 	}
 
 .leaflet-bar a {
-	background-color: #00B1FF;
+	background-color: #009EFF;
 	width: 40px;
 	height: 30px;
 	border-bottom: 2px solid #ffffff;
@@ -325,7 +325,7 @@
 	display: block;
 	text-align: center;
 	text-decoration: none;
-	color: #00B1FF;
+	color: #009EFF;
 	}
 .leaflet-bar a,
 .leaflet-control-layers-toggle {
@@ -344,8 +344,8 @@
 	}
 .leaflet-bar a.leaflet-disabled {
 	cursor: default;
-	background-color: lightskyblue;
-	color: #00B1FF;
+	background-color: #009EFF;
+	color: #009EFF;
 	}
 
 .leaflet-touch .leaflet-bar a {
@@ -379,11 +379,11 @@
 
 .leaflet-control-layers {
     top: 0px;
-	background: #00B1FF;
+	background: #009EFF;
     border: solid #ffffff !important;
     border-radius: 4px;
     border-width: 2px !important;
-    box-shadow: 0 0 2px .01px #00B1FF !important;
+    box-shadow: 0 0 2px .01px #009EFF !important;
 }
 .leaflet-control-layers-toggle {
 	background-image: url(images/layers.png);
@@ -409,7 +409,7 @@
 	}
 .leaflet-control-layers-expanded {
 	padding: 10px 15px 5px 10px;
-	color: #00B1FF;
+	color: #009EFF;
 	background: springgreen;
     font-size: 14px;
     
@@ -470,7 +470,7 @@
     margin: 0;
 	}
 .leaflet-control-attribution a:hover {
-    color: #00B1FF;
+    color: #009EFF;
     background-color: #ffffff;
     box-shadow: none;
     border: none;
@@ -579,7 +579,7 @@
 	width: 18px;
 	height: 14px;
 	font: 16px/14px Tahoma, Verdana, sans-serif;
-	color: #00B1FF;
+	color: #009EFF;
 	text-decoration: none;
 	font-weight: none;
 	background: transparent;
@@ -619,7 +619,7 @@
 
 .leaflet-div-icon {
 	background: springgreen;
-	border: 5px solid #00B1FF;
+	border: 5px solid #009EFF;
     border-radius: 100px;
     box-shadow: 0 0 2px 2px #ffffff !important;
     width: 8px !important;
