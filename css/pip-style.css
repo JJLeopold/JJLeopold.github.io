@@ -189,7 +189,8 @@ me:hover {
 #header #sitename a
 {
  color:#009EFF;
- text-decoration:none;
+ text-shadow: 1px 1px 4px #ffffff;
+ text-decoration: none;
  line-height: 1;
  font-size: 60px;
  font-weight: 900;
