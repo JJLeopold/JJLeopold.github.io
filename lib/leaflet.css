@@ -386,7 +386,7 @@
     box-shadow: 0 0 2px .01px #009EFF !important;
 }
 .leaflet-control-layers-toggle {
-	background-image: url(images/layers.png);
+	background-image: url(images/layer_raster_vector.png);
     border-radius: 4px;
 	width: 38px !important;
 	height: 38px !important;
