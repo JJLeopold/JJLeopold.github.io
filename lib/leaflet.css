@@ -390,7 +390,7 @@
 }
 
 
-.leaflet-draw-toolbar .leaflet-draw-draw-rectangle {
+.leaflet-draw-toolbar .leaflet-draw-draw-rectangle, .leaflet-retina {
     background-image: url(images/green_rectangle.png);
     background-size: 55% 50% !important;
     background-repeat: no-repeat !important;
