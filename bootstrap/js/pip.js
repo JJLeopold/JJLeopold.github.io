@@ -508,7 +508,8 @@ module.exports = leafletPip;
         //Geocoder!
     // create the geocoding control and add it to the map
     var searchControl = L.esri.Geocoding.geosearch({
-        position: 'topleft'
+        position: 'topleft',
+        placeholder: '',
     }).addTo(map);
 
     // create an empty layer group to store the results and add it to the map

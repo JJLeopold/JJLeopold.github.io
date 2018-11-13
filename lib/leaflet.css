@@ -300,6 +300,7 @@
     font-weight: none;
     color: #009EFF;
     box-shadow: 0 0 2px .01px #009EFF !important;
+    padding: 3px !important;
 	}
 .leaflet-bar:hover {
     background-color: springgreen;
@@ -374,6 +375,106 @@
 	font-size: 22px;
 	}
 
+.leaflet-draw-toolbar .leaflet-draw-draw-polygon {
+    background-image: url(images/newpolygon.png) !important;
+    background-size: 115% 100%!important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.leaflet-draw-toolbar .leaflet-draw-draw-polygon:hover {
+    background-image: url(images/newpolygon2.png) !important;
+    background-size: 115% 100%!important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+
+.leaflet-draw-toolbar .leaflet-draw-draw-rectangle {
+    background-image: url(images/new_rectangle.png);
+    background-size: 62% 60% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.leaflet-draw-toolbar .leaflet-draw-draw-rectangle:hover {
+    background-image: url(images/new_rectangle2.png) !important;
+    background-size: 62% 60% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.leaflet-draw-toolbar .leaflet-draw-edit-edit{
+    background-image: url(images/green_edit.png) !important;
+    background-size: 80% 80% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;;
+}
+.leaflet-draw-toolbar .leaflet-draw-edit-edit:hover{
+    background-image: url(images/blue_edit.png) !important;
+    background-size: 80% 80% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.leaflet-draw-toolbar .leaflet-draw-edit-edit.leaflet-disabled{
+    background-image: url(images/blue_edit.png) !important;
+    background-size: 80% 80% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+
+.leaflet-draw-edit-remove{
+    background-image: url(images/green_trashcan.png) !important;
+    background-size: 75% 75% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.leaflet-draw-edit-remove:hover{
+    background-image: url(images/blue_trashcan.png) !important;
+    background-size: 75% 75% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.leaflet-draw-edit-remove.leaflet-disabled{
+    background-image: url(images/blue_trashcan.png) !important;
+    background-size: 75% 75% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.geocoder-control-input {
+    background-image: url(images/greenSearch.png) !important;
+    background-size: 60% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important; 
+}
+
+.geocoder-control-input:hover {
+    background-image: url(images/blueSearch.png) !important;
+    background-size: 60% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important; 
+}
+
+.geocoder-control-input:focus {
+    background-image: url(images/blueSearch.png) !important;
+    background-size: 5% !important;
+    background-repeat: no-repeat !important;
+    background-position: right center !important;
+    background-origin: content-box!important;
+    padding-right: .5em !important;
+
+}
+
+.geocoder-control-expanded {
+    width: 400px !important;
+}
+
+.geocoder-control-suggestions {
+    width: 400px !important;
+}
+
 
 /* layers control */
 
@@ -386,13 +487,13 @@
     box-shadow: 0 0 2px .01px #009EFF !important;
 }
 .leaflet-control-layers-toggle {
-	background-image: url(images/layer_raster_vector.png);
+	background-image: url(images/layers_raster_vector.png);
     border-radius: 4px;
 	width: 38px !important;
 	height: 38px !important;
 	}
 .leaflet-retina .leaflet-control-layers-toggle {
-	background-image: url(images/layers-2x.png);
+	background-image: url(images/layers_raster_vector.png);
 	background-size: 26px 26px;
 	}
 .leaflet-touch .leaflet-control-layers-toggle {
@@ -412,8 +513,20 @@
 	color: #009EFF;
 	background: springgreen;
     font-size: 14px;
-    
 	}
+
+
+.leaflet-control-geocoder {
+  border-radius: 4px;
+  background: #009EFF;
+  min-width: 26px;
+  min-height: 26px;
+}
+
+
+
+
+
 .leaflet-control-layers-scrollbar {
 	overflow-y: scroll;
 	overflow-x: hidden;

@@ -86,12 +86,14 @@
         },
     }).addTo(map);
 
+
     // Initialise the draw control and pass it the FeatureGroup of editable layers
     var drawControl = new L.Control.Draw({position: 'topleft',
         draw: {
             polyline : false,
             circle : false,
             marker : false,
+            circlemarker : false,
             polygon: {
                   shapeOptions: {
                     color: 'springgreen',
@@ -100,6 +102,7 @@
                     fill: true,
                     fillColor: '#009EFF', //same as color by default
                     fillOpacity: .5,
+
 
                   }
                 },
@@ -117,8 +120,31 @@
         edit: {
             featureGroup: featureGroup,
             edit: true,
-        }
+            toolbar: {
+                    actions: {
+                        save: {
+                            title: 'Save changes.',
+                            text: 'Save'
+                        },
+                        cancel: {
+                            title: 'Cancel editing, discards all changes.',
+                            text: 'Cancel'
+                        },
+                        clearAll:{
+                            title: 'clear all layers.',
+                            text: 'Clear All'
+                        }
+                    },
+                    buttons: {
+                        edit: 'Edit.',
+                        editDisabled: 'No layers to edit.',
+                        remove: 'Delete layers.',
+                        removeDisabled: 'No layers to delete.'
+                    }
+                },
+        },
     });
+
 
     map.addControl(drawControl);
 
@@ -144,7 +170,8 @@
     //Geocoder!
     // create the geocoding control and add it to the map
     var searchControl = L.esri.Geocoding.geosearch({
-        position: 'topleft'
+        position: 'topleft',
+        placeholder: '',
     }).addTo(map);
 
     // create an empty layer group to store the results and add it to the map
