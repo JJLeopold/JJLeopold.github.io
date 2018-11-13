@@ -389,9 +389,8 @@
     background-position: center !important;
 }
 
-
 .leaflet-draw-toolbar .leaflet-draw-draw-rectangle {
-    background-image: url(images/green_rectangle.png);
+    background-image: url(images/green_polygon.png) !important;
     background-size: 55% 50% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
