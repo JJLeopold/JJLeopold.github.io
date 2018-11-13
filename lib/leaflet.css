@@ -488,13 +488,14 @@
 }
 .leaflet-control-layers-toggle {
 	background-image: url(images/layers_raster_vector.png);
+    background-size: 100%;
     border-radius: 4px;
 	width: 38px !important;
 	height: 38px !important;
 	}
 .leaflet-retina .leaflet-control-layers-toggle {
 	background-image: url(images/layers_raster_vector.png);
-	background-size: 26px 26px;
+    background-size: 100%;
 	}
 .leaflet-touch .leaflet-control-layers-toggle {
 	width: 44px;
