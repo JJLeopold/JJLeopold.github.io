@@ -304,6 +304,7 @@
 	}
 .leaflet-bar:hover {
     background-color: springgreen;
+    font-size: 14px;
 	}
 
 .leaflet-bar a {
@@ -377,28 +378,28 @@
 
 .leaflet-draw-toolbar .leaflet-draw-draw-polygon {
     background-image: url(images/green_polygon.png) !important;
-    background-size: 59% 60%!important;
+    background-size: 55% 60%!important;
     background-repeat: no-repeat !important;
     background-position: center !important;
 }
 
 .leaflet-draw-toolbar .leaflet-draw-draw-polygon:hover {
     background-image: url(images/blue_polygon.png) !important;
-    background-size: 59% 60%!important;
+    background-size: 55% 60%!important;
     background-repeat: no-repeat !important;
     background-position: center !important;
 }
 
 .leaflet-draw-toolbar .leaflet-draw-draw-rectangle {
     background-image: url(images/green_rectangle.png) !important;
-    background-size: 50% 45% !important;
+    background-size: 47% 47% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
 }
 
 .leaflet-draw-toolbar .leaflet-draw-draw-rectangle:hover {
     background-image: url(images/blue_rectangle.png) !important;
-    background-size: 50% 45% !important;
+    background-size: 47% 47% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
 }
@@ -425,40 +426,40 @@
 
 .leaflet-draw-edit-remove{
     background-image: url(images/green_trashcan.png) !important;
-    background-size: 75% 75% !important;
+    background-size: 70% 70% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
 }
 .leaflet-draw-edit-remove:hover{
     background-image: url(images/blue_trashcan.png) !important;
-    background-size: 75% 75% !important;
+    background-size: 70% 70% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
 }
 .leaflet-draw-edit-remove.leaflet-disabled{
     background-image: url(images/blue_trashcan.png) !important;
-    background-size: 75% 75% !important;
+    background-size: 70% 70% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
 }
 
 .geocoder-control-input {
     background-image: url(images/greenSearch.png) !important;
-    background-size: 60% !important;
+    background-size: 70% !important;
     background-repeat: no-repeat !important;
     background-position: center !important; 
 }
 
 .geocoder-control-input:hover {
     background-image: url(images/blueSearch.png) !important;
-    background-size: 60% !important;
+    background-size: 70% !important;
     background-repeat: no-repeat !important;
     background-position: center !important; 
 }
 
 .geocoder-control-input:focus {
     background-image: url(images/blueSearch.png) !important;
-    background-size: 5% !important;
+    background-size: 6% !important;
     background-repeat: no-repeat !important;
     background-position: right center !important;
     background-origin: content-box!important;
@@ -467,11 +468,17 @@
 }
 
 .geocoder-control-expanded {
-    width: 400px !important;
+    width: 370px !important;
 }
 
 .geocoder-control-suggestions {
-    width: 400px !important;
+    width: 370px !important;
+}
+
+.fa-map-marker, .fa-map-marker:hover {
+    padding-top: 5px !important;
+    font-size: 20px !important;
+    text-align: center !important;
 }
 
 
@@ -547,10 +554,7 @@
 	margin: 5px -10px 5px -6px;
 	}
 
-/* Default icon URLs */
-.leaflet-default-icon-path {
-	background-image: url(images/marker-icon.png);
-	}
+
 
 
 /* attribution and scale controls */
