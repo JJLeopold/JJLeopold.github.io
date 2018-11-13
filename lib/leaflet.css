@@ -376,30 +376,30 @@
 	}
 
 .leaflet-draw-toolbar .leaflet-draw-draw-polygon {
-    background-image: url(images/newpolygon.png) !important;
-    background-size: 115% 100%!important;
+    background-image: url(images/green_polygon.png) !important;
+    background-size: 64% 65%!important;
     background-repeat: no-repeat !important;
     background-position: center !important;
 }
 
 .leaflet-draw-toolbar .leaflet-draw-draw-polygon:hover {
-    background-image: url(images/newpolygon2.png) !important;
-    background-size: 115% 100%!important;
+    background-image: url(images/blue_polygon.png) !important;
+    background-size: 64% 65%!important;
     background-repeat: no-repeat !important;
     background-position: center !important;
 }
 
 
 .leaflet-draw-toolbar .leaflet-draw-draw-rectangle {
-    background-image: url(images/new_rectangle.png);
-    background-size: 62% 60% !important;
+    background-image: url(images/green_rectangle.png);
+    background-size: 55% 50% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
 }
 
 .leaflet-draw-toolbar .leaflet-draw-draw-rectangle:hover {
-    background-image: url(images/new_rectangle2.png) !important;
-    background-size: 62% 60% !important;
+    background-image: url(images/blue_rectangle.png) !important;
+    background-size: 55% 50% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
 }
