@@ -44,8 +44,8 @@
     });
 
     var layers = {
-        '<id="vector"><img src=" lib/images/mapster_vector.png">': Streets,
-        '<id="raster"><img src=" lib/images/mapster_raster.png">': Satellite,
+        '<img src=" lib/images/mapster_vector.png">': Streets,
+        '<img src=" lib/images/mapster_raster.png">': Satellite,
       //"Light": Light,
       //"Pixar": Pixar,
     };

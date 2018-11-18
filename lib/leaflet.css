@@ -487,6 +487,7 @@
 /* layers control */
 
 .leaflet-control-layers {
+    cursor: pointer !important;
     top: 0px;
 	background: #009EFF;
     border: solid #ffffff !important;
@@ -536,14 +537,13 @@
 }
 
 
-    input[type=radio] {
+input[type=radio] {
     position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    border: none !important;
-    width: 100%;
-    height: 3em;
+    opacity: 0 !important;
+}
+
+label {
+    cursor: pointer !important;
 }
 
 
@@ -554,8 +554,7 @@
 	padding-right: 5px;
 	}
 .leaflet-control-layers-selector {
-	background-color: aqua !important;
-    
+    cursor: pointer !important;
 	}
 .leaflet-control-layers label {
 	display: block;
