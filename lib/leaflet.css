@@ -426,21 +426,23 @@
 
 .leaflet-draw-edit-remove{
     background-image: url(images/green_trashcan.png) !important;
-    background-size: 70% 70% !important;
+    background-size: 80% 70% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
+    padding-right: 15px !important;
 }
 .leaflet-draw-edit-remove:hover{
     background-image: url(images/blue_trashcan.png) !important;
-    background-size: 70% 70% !important;
+    background-size: 80% 70% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
 }
 .leaflet-draw-edit-remove.leaflet-disabled{
     background-image: url(images/blue_trashcan.png) !important;
-    background-size: 70% 70% !important;
+    background-size: 80% 70% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
+    
 }
 
 .geocoder-control-input {
@@ -476,8 +478,8 @@
 }
 
 .fa-map-marker, .fa-map-marker:hover {
-    padding-top: 5px !important;
-    font-size: 20px !important;
+    padding-top: 7px !important;
+    font-size: 19px !important;
     text-align: center !important;
 }
 
@@ -554,7 +556,10 @@
 	margin: 5px -10px 5px -6px;
 	}
 
-
+/* Default icon URLs */
+.leaflet-default-icon-path {
+	background-image: url(images/mapster_marker.png);
+	}
 
 
 /* attribution and scale controls */

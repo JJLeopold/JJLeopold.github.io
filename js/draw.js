@@ -23,7 +23,8 @@
     var Light = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjdqrzpmt012c2sr1nmzcsyua/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
 
     var Pixar = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjaxih6oc06ri2squp8zw2yji/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
- 
+
+
     var map = L.map('map',{
     tileLayer: {
         maxNativeZoom: 19 
@@ -43,8 +44,8 @@
     });
 
     var layers = {
-        "Streets": Streets,
-        "Satellite": Satellite,
+        '<id="vector"><img src=" lib/images/list_vector_2.png">': Streets,
+        '<id="raster"><img src=" lib/images/list_raster_2.png">': Satellite,
       //"Light": Light,
       //"Pixar": Pixar,
     };
