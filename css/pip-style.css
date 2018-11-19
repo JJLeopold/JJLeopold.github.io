@@ -74,6 +74,23 @@ me:hover {
     box-shadow: 0 0 10px 6px #009EFF;
     border: none;
 }
+#go:focus {
+animation:myfirst 1s;
+-webkit-animation:myfirst 1s;
+}
+@keyframes myfirst
+{
+from {box-shadow: 0 0 10px 6px #009EFF;}
+to {box-shadow: 0 0 5px 2px springgreen;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {box-shadow: 0 0 10px 6px #009EFF;}
+to {box-shadow: 0 0 5px 2px springgreen;}
+}
+
+
 
 
 #add {
