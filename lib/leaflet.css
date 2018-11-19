@@ -429,7 +429,6 @@
     background-size: 80% 70% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    padding-right: 15px !important;
 }
 .leaflet-draw-edit-remove:hover{
     background-image: url(images/blue_trashcan.png) !important;
@@ -477,9 +476,9 @@
     width: 370px !important;
 }
 
-.fa-map-marker {
-    padding-top: 6px !important;
-    font-size: 19px !important;
+.fa-map-marker, .fa-map-marker:hover {
+    padding-top: 7px !important;
+    font-size: 18px !important;
     text-align: center !important;
 }
 
@@ -487,7 +486,6 @@
 /* layers control */
 
 .leaflet-control-layers {
-    cursor: pointer !important;
     top: 0px;
 	background: #009EFF;
     border: solid #ffffff !important;
@@ -513,15 +511,13 @@
 .leaflet-control-layers .leaflet-control-layers-list,
 .leaflet-control-layers-expanded .leaflet-control-layers-toggle {
 	display: none;
-    width: 170px !important;
-    height: 245px !important;
 	}
 .leaflet-control-layers-expanded .leaflet-control-layers-list {
 	display:block;
 	position: relative;
 	}
 .leaflet-control-layers-expanded {
-	padding: 5px 5px 5px 5px;
+	padding: 10px 15px 5px 10px;
 	color: #009EFF;
 	background: springgreen;
     font-size: 14px;
@@ -529,7 +525,6 @@
 
 
 .leaflet-control-geocoder {
-  cursor: pointer !important;
   border-radius: 4px;
   background: #009EFF;
   min-width: 26px;
@@ -537,14 +532,6 @@
 }
 
 
-input[type=radio] {
-    position: absolute;
-    opacity: 0 !important;
-}
-
-label {
-    cursor: pointer !important;
-}
 
 
 
@@ -554,7 +541,10 @@ label {
 	padding-right: 5px;
 	}
 .leaflet-control-layers-selector {
-    cursor: pointer !important;
+	margin-top: 0px;
+	position: relative;
+	top: 0px;
+    
 	}
 .leaflet-control-layers label {
 	display: block;

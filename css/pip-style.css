@@ -54,8 +54,8 @@ me:hover {
     display: block;
     background: transparent !important;
     z-index: 500 !important;
-    height: 67px;
-    width: 67px;
+    height: 50px;
+    width: 50px;
     position: absolute;
     top: 82px;
     right: 11px;
@@ -67,18 +67,12 @@ me:hover {
 
 #go:hover {
     box-shadow: 0 0 10px 5px #009EFF;
-    border: solid;
-    border-width: 2px;
-    border-color: springgreen;
-    border-radius: 5px;
+    border: none;
 }
 
 #go:focus {
     box-shadow: 0 0 10px 8px #009EFF;
-    border: solid;
-    border-width: 2px;
-    border-color: springgreen;
-    border-radius: 5px;
+    border: none;
 }
 
 
