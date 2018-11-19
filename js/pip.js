@@ -570,7 +570,7 @@ module.exports = leafletPip;
 
                 });
             
-            }, 7000);
+            }, 8000);
             
     };
 
