@@ -77,14 +77,14 @@ animation:myfirst 4s;
 }
 @keyframes myfirst
 {
-from {box-shadow: 0 0 10px 6px #009EFF;}
-to {box-shadow: 0 0 5px 2px springgreen;}
+from {box-shadow: 0 0 5px 2px springgreen;}
+to {box-shadow: 0 0 10px 6px #009EFF;}
 }
 
 @-webkit-keyframes myfirst /* Safari and Chrome */
 {
-from {box-shadow: 0 0 10px 6px #009EFF;}
-to {box-shadow: 0 0 5px 2px springgreen;}
+from {box-shadow: 0 0 5px 2px springgreen;}
+to {box-shadow: 0 0 10px 6px #009EFF;}
 }
 
 
