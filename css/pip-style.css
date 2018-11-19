@@ -70,13 +70,10 @@ me:hover {
     border: none;
 }
 
+
 #go:focus {
-    box-shadow: 0 0 10px 6px #009EFF;
-    border: none;
-}
-#go:focus {
-animation:myfirst 7.1s;
--webkit-animation:myfirst 7.1s;
+animation:myfirst 3s;
+-webkit-animation:myfirst 3s;
 }
 @keyframes myfirst
 {
