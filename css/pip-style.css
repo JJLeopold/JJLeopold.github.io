@@ -66,12 +66,12 @@ me:hover {
 }
 
 #go:hover {
-    box-shadow: 0 0 10px 5px #009EFF;
+    box-shadow: 0 0 10px 4px #009EFF;
     border: none;
 }
 
 #go:focus {
-    box-shadow: 0 0 10px 8px #009EFF;
+    box-shadow: 0 0 10px 6px #009EFF;
     border: none;
 }
 
