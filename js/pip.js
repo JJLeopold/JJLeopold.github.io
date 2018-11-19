@@ -571,6 +571,10 @@ module.exports = leafletPip;
                 });
             
             }, 8000);
+        
+        setTimeout(function() {
+            location.reload(); 
+        }, 60000);  
             
     };
 

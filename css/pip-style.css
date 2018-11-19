@@ -72,8 +72,8 @@ me:hover {
 
 
 #go:focus {
-animation:myfirst 7s;
--webkit-animation:myfirst 7s;
+animation:myfirst 8s;
+-webkit-animation:myfirst 8s;
 }
 @keyframes myfirst
 {
