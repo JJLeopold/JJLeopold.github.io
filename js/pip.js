@@ -574,7 +574,7 @@ module.exports = leafletPip;
         
         setTimeout(function() {
             location.reload(); 
-        }, 60000);  
+        }, 45000);  
             
     };
 
