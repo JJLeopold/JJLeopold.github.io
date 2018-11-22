@@ -83,7 +83,7 @@
                 fillOpacity: 1,
                 weight: 1.25,
                 opacity: 1,
-                radius: 3
+                radius: 3.5
         },
     }).addTo(map);
 

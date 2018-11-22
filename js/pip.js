@@ -501,7 +501,7 @@ module.exports = leafletPip;
                 fillOpacity: 1,
                 weight: 1.25,
                 opacity: 1,
-                radius: 3
+                radius: 3.5
         },
     }).addTo(map);
     
@@ -550,10 +550,10 @@ module.exports = leafletPip;
         //Only works on mobile without this stop/start.
         setTimeout(function() {
             lc.stop(); 
-        }, 6000);         
+        }, 7000);         
         setTimeout(function() {
             lc.start(); 
-        }, 6001);    
+        }, 7001);    
         
             //Get location name after 7 seconds.
             setTimeout(function() {
@@ -570,11 +570,7 @@ module.exports = leafletPip;
 
                 });
             
-            }, 8000);
-        
-        setTimeout(function() {
-            location.reload(); 
-        }, 45000);  
+            }, 8500);
             
     };
 
