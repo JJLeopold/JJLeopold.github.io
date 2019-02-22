@@ -10,7 +10,10 @@
     //replacement for satellite (jjleopold)
     //jjleopold/cjlwtgniy3wpp2rmqdf613wqk
 
-    var Satellite = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
+    var Satellite = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
+    maxZoom: 22,
+    maxNativeZoom: 20
+    });
 
     //streets style for mapster (jleopold)
     //jleopold/cjlgnrb6xa90w2smcaaihkexg
@@ -18,16 +21,17 @@
     //replacement for streets (jjleopold)
     //jjleopold/cjlwtacg23wjp2rpgsx3xibdf
 
-    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjlgnrb6xa90w2smcaaihkexg/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
+    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjlgnrb6xa90w2smcaaihkexg/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
+    maxZoom: 22,
+    maxNativeZoom: 20
+    });
 
     var Light = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjdqrzpmt012c2sr1nmzcsyua/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
 
     var Pixar = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjaxih6oc06ri2squp8zw2yji/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg');
- 
+
+
     var map = L.map('map',{
-    tileLayer: {
-        maxNativeZoom: 19 
-    },
     center: [38, -95],
     zoomControl: false,
     zoom: 2,
@@ -43,8 +47,8 @@
     });
 
     var layers = {
-        "Streets": Streets,
-        "Satellite": Satellite,
+        '<img src=" lib/images/mapster_vector.png">': Streets,
+        '<img src=" lib/images/mapster_raster.png">': Satellite,
       //"Light": Light,
       //"Pixar": Pixar,
     };
@@ -82,7 +86,7 @@
                 fillOpacity: 1,
                 weight: 1.25,
                 opacity: 1,
-                radius: 3
+                radius: 3.5
         },
     }).addTo(map);
 

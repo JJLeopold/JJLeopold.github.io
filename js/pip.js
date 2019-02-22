@@ -453,7 +453,6 @@ module.exports = leafletPip;
     zoomControl: false,
     zoom: 2,
     minZoom: 2,
-    maxZoom: 18,
     maxBounds: [
         //south west
         [-79, -180],
@@ -462,7 +461,10 @@ module.exports = leafletPip;
         ],
     attributionControl: false}),
     gjLayer = L.geoJson(locationsData);
-    L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtelmg2zer2ssy5841jv1g/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA').addTo(map);
+    L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtelmg2zer2ssy5841jv1g/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA', {
+    maxZoom: 22,
+    maxNativeZoom: 20
+    }).addTo(map);
     
     //Turn gjLayer on or off according to zoom level
     //map.on('zoomend', function() {
@@ -485,7 +487,7 @@ module.exports = leafletPip;
                    setView: 'always',
         },
         locateOptions: {
-                   maxZoom: 19,
+                   maxZoom: 22,
                    enableHighAccuracy: true,
         },
         circleStyle: {
@@ -505,7 +507,7 @@ module.exports = leafletPip;
         },
     }).addTo(map);
     
-        //Geocoder!
+    //Geocoder!
     // create the geocoding control and add it to the map
     var searchControl = L.esri.Geocoding.geosearch({
         position: 'topleft',
@@ -528,7 +530,7 @@ module.exports = leafletPip;
     
     //Move the map with the user's location.
     map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds, { maxZoom: 19});
+    map.fitBounds(e.bounds, { maxZoom: 22});
     });   
     
         //Greeting!
@@ -547,7 +549,7 @@ module.exports = leafletPip;
         
         document.getElementById('me').innerHTML = 'Finding your location...';
         
-        //Only works on mobile without this stop/start.
+        //Works only on mobile without this stop/start.
         setTimeout(function() {
             lc.stop(); 
         }, 7000);         
@@ -555,7 +557,7 @@ module.exports = leafletPip;
             lc.start(); 
         }, 7001);    
         
-            //Get location name after 7 seconds.
+            //Get location name after 8.5 seconds.
             setTimeout(function() {
                 
                 navigator.geolocation.getCurrentPosition(function(pos) {
