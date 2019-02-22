@@ -462,8 +462,7 @@ module.exports = leafletPip;
     attributionControl: false}),
     gjLayer = L.geoJson(locationsData);
     L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtelmg2zer2ssy5841jv1g/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA', {
-    maxZoom: 22,
-    maxNativeZoom: 20
+    maxZoom: 20,
     }).addTo(map);
     
     //Turn gjLayer on or off according to zoom level
