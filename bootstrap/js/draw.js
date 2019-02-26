@@ -10,6 +10,12 @@
     //replacement for satellite (jjleopold)
     //jjleopold/cjlwtgniy3wpp2rmqdf613wqk
 
+    //Google Satellite
+    //var Satellite = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+    //maxZoom: 20,
+    //subdomains:['mt0','mt1','mt2','mt3']
+    //});
+
     var Satellite = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
     maxZoom: 20,
     });
@@ -68,7 +74,7 @@
                    setView: 'always',
         },
         locateOptions: {
-                   maxZoom: 19,
+                   maxZoom: 18,
                    enableHighAccuracy: true,
         },
         circleStyle: {
@@ -193,7 +199,7 @@
 
         //Move the map with the user's location.
         map.on('locationfound', function(e) {
-        map.fitBounds(e.bounds, { Zoom: 19});
+        map.fitBounds(e.bounds, { maxZoom: 18});
         });   
 
     // Add attribution   

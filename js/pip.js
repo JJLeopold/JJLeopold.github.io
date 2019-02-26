@@ -463,6 +463,7 @@ module.exports = leafletPip;
     gjLayer = L.geoJson(locationsData);
     L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtelmg2zer2ssy5841jv1g/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA', {
     maxZoom: 20,
+    maxNativeZoom: 20
     }).addTo(map);
     
     //Turn gjLayer on or off according to zoom level
@@ -486,7 +487,7 @@ module.exports = leafletPip;
                    setView: 'always',
         },
         locateOptions: {
-                   maxZoom: 22,
+                   maxZoom: 18,
                    enableHighAccuracy: true,
         },
         circleStyle: {
@@ -529,7 +530,7 @@ module.exports = leafletPip;
     
     //Move the map with the user's location.
     map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds, { maxZoom: 22});
+    map.fitBounds(e.bounds, { maxZoom: 18});
     });   
     
         //Greeting!
