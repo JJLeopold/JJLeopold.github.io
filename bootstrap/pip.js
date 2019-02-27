@@ -460,7 +460,14 @@ module.exports = leafletPip;
         [90, 180]
         ],
     attributionControl: false}),
-    gjLayer = L.geoJson(locationsData);
+    gjLayer = L.geoJson(locationsData, {
+        color: '#009EFF',
+        weight: 2,
+        opacity: 1,
+        fill: true,
+        fillColor: '#009EFF',
+        fillOpacity: .5,
+    })
     L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtelmg2zer2ssy5841jv1g/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA', {
     maxZoom: 20,
     maxNativeZoom: 20
@@ -494,16 +501,16 @@ module.exports = leafletPip;
                 color: 'springgreen',
                 fillColor: '#009EFF',
                 fillOpacity: 0.25,
-                weight: 1,
+                weight: 1.15,
                 opacity: 1
         },
         markerStyle: {
                 color: 'springgreen',
                 fillColor: '#009EFF',
                 fillOpacity: 1,
-                weight: 1.25,
+                weight: 1.75,
                 opacity: 1,
-                radius: 3.5
+                radius: 4
         },
     }).addTo(map);
     
