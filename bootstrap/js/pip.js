@@ -462,7 +462,7 @@ module.exports = leafletPip;
     attributionControl: false}),
     gjLayer = L.geoJson(locationsData, {
         color: 'springgreen',
-        weight: 3,
+        weight: 2,
         opacity: 1,
         fill: true,
         fillColor: '#009EFF',
@@ -474,14 +474,14 @@ module.exports = leafletPip;
     }).addTo(map);
     
     //Turn gjLayer on or off according to zoom level
-    //map.on('zoomend', function() {
-        //if (map.getZoom() <12){
-            //map.removeLayer(gjLayer);
-        //}
-        //else {
-            gjLayer.addTo(map);    
-        //}
-    //});
+    map.on('zoomend', function() {
+        if (map.getZoom() <12){
+            map.removeLayer(gjLayer);
+        }
+        else {
+            map.addLayer(gjLayer);    
+        }
+    });
     
     //Geolocation!
     var lc = L.control.locate({
@@ -508,7 +508,7 @@ module.exports = leafletPip;
                 color: 'springgreen',
                 fillColor: 'springgreen',
                 fillOpacity: 1,
-                weight: 2,
+                weight: 1,
                 opacity: 1,
                 radius: 3
         },
@@ -516,21 +516,21 @@ module.exports = leafletPip;
     
     //Geocoder!
     // create the geocoding control and add it to the map
-    var searchControl = L.esri.Geocoding.geosearch({
-        position: 'topleft',
-        placeholder: '',
-    }).addTo(map);
+    //var searchControl = L.esri.Geocoding.geosearch({
+        //position: 'topleft',
+        //placeholder: '',
+    //}).addTo(map);
 
     // create an empty layer group to store the results and add it to the map
-    var results = L.layerGroup().addTo(map);
+    //var results = L.layerGroup().addTo(map);
 
     // listen for the results event and add every result to the map
-    searchControl.on("results", function(data) {
-        results.clearLayers();
-        for (var i = data.results.length - 1; i >= 0; i--) {
-            results.addLayer(L.marker(data.results[i].latlng));
-        }
-    });
+    //searchControl.on("results", function(data) {
+        //results.clearLayers();
+        //for (var i = data.results.length - 1; i >= 0; i--) {
+            //results.addLayer(L.marker(data.results[i].latlng));
+        //}
+    //});
     
     //Other way to zoom to location, but not as accurate.
     //map.locate();

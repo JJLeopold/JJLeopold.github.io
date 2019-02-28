@@ -82,6 +82,7 @@
     }).addTo(map);
 
 
+
     // Initialise the draw control and pass it the FeatureGroup of editable layers
     var drawControl = new L.Control.Draw({position: 'topleft',
         draw: {
@@ -138,8 +139,17 @@
         },
     });
 
+    //Use this if not hiding by zoom level.
+    //map.addControl(drawControl);
 
-    map.addControl(drawControl);
+    map.on('zoomend', function() {
+        if (map.getZoom() <17){
+            map.removeControl(drawControl);
+        }
+        else {
+            map.addControl(drawControl);   
+        }
+    });
 
 
     map.on('draw:created', function(e) {
@@ -175,6 +185,15 @@
         results.clearLayers();
         for (var i = data.results.length - 1; i >= 0; i--) {
             results.addLayer(L.marker(data.results[i].latlng));
+        }
+    });
+
+    map.on('zoomend', function() {
+        if (map.getZoom() >16){
+            map.removeControl(searchControl);
+        }
+        else {
+            map.addControl(searchControl);   
         }
     });
 
