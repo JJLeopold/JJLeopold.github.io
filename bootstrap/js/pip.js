@@ -466,7 +466,7 @@ module.exports = leafletPip;
         opacity: 1,
         fill: true,
         fillColor: '#009EFF',
-        fillOpacity: .7,
+        fillOpacity: .6,
     })
     L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtelmg2zer2ssy5841jv1g/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA', {
     maxZoom: 20,
@@ -500,15 +500,15 @@ module.exports = leafletPip;
         circleStyle: {
                 color: 'springgreen',
                 fillColor: '#009EFF',
-                fillOpacity: 0.25,
-                weight: 1.15,
+                fillOpacity: 0.5,
+                weight: 1.25,
                 opacity: 1
         },
         markerStyle: {
                 color: 'springgreen',
-                fillColor: '#009EFF',
+                fillColor: 'springgreen',
                 fillOpacity: 1,
-                weight: 1.75,
+                weight: 2,
                 opacity: 1,
                 radius: 3
         },

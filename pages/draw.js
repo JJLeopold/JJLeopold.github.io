@@ -67,15 +67,15 @@
         circleStyle: {
                 color: 'springgreen',
                 fillColor: '#009EFF',
-                fillOpacity: 0.25,
-                weight: 1.15,
+                fillOpacity: 0.5,
+                weight: 1.25,
                 opacity: 1
         },
         markerStyle: {
                 color: 'springgreen',
-                fillColor: '#009EFF',
+                fillColor: 'springgreen',
                 fillOpacity: 1,
-                weight: 1.75,
+                weight: 2,
                 opacity: 1,
                 radius: 3
         },
