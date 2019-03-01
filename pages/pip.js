@@ -475,7 +475,7 @@ module.exports = leafletPip;
     
     //Turn gjLayer on or off according to zoom level
     map.on('zoomend', function() {
-        if (map.getZoom() <12){
+        if (map.getZoom() <14){
             map.removeLayer(gjLayer);
         }
         else {
@@ -500,15 +500,15 @@ module.exports = leafletPip;
         circleStyle: {
                 color: 'springgreen',
                 fillColor: '#009EFF',
-                fillOpacity: 0.5,
+                fillOpacity: 0.4,
                 weight: 1.25,
                 opacity: 1
         },
         markerStyle: {
                 color: 'springgreen',
-                fillColor: 'springgreen',
+                fillColor: '#009EFF',
                 fillOpacity: 1,
-                weight: 1,
+                weight: 2,
                 opacity: 1,
                 radius: 3
         },
