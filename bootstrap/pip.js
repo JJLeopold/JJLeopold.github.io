@@ -475,7 +475,7 @@ module.exports = leafletPip;
     
     //Turn gjLayer on or off according to zoom level
     map.on('zoomend', function() {
-        if (map.getZoom() <14){
+        if (map.getZoom() <10){
             map.removeLayer(gjLayer);
         }
         else {

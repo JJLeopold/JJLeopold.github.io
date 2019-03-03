@@ -35,7 +35,7 @@ html, body, #map {
     border-radius: 0%;
     border-width: 0px;
     position: absolute;
-    bottom: 10%;
+    top: 17%;
     cursor: pointer;
     font-size: 24px;
     color: springgreen;
@@ -51,14 +51,15 @@ me:hover {
 	}
 
 #go {
-    display: block;
+    display: block; 
     background: transparent !important;
     z-index: 500 !important;
     height: 50px;
     width: 50px;
-    position: absolute;
-    top: 82px;
-    right: 11px;
+    position: relative;
+    top: 90%;
+    right: 51.5%;
+    left: 48.5%;
     cursor: pointer;
     outline: none;
     border: none;
@@ -92,8 +93,6 @@ me:hover {
 }
 
 
-
-
 #add {
     background-color: #009EFF;
     opacity: .95 !important;
@@ -101,7 +100,7 @@ me:hover {
     height: 37px;
     width: 38px;
     position: absolute;
-    bottom: 30px;
+    top: 80px;
     right: 10px;
     cursor: pointer;
     font-size: 14px;

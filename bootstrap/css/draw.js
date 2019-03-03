@@ -143,7 +143,7 @@
     //map.addControl(drawControl);
 
     map.on('zoomend', function() {
-        if (map.getZoom() <17){
+        if (map.getZoom() <16){
             map.removeControl(drawControl);
         }
         else {
@@ -189,7 +189,7 @@
     });
 
     map.on('zoomend', function() {
-        if (map.getZoom() >16){
+        if (map.getZoom() >15){
             map.removeControl(searchControl);
         }
         else {
