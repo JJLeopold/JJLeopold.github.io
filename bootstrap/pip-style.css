@@ -35,7 +35,7 @@ html, body, #map {
     border-radius: 0%;
     border-width: 0px;
     position: absolute;
-    bottom: 77%;
+    bottom: 10%;
     cursor: pointer;
     font-size: 24px;
     color: springgreen;
@@ -57,8 +57,8 @@ me:hover {
     height: 50px;
     width: 50px;
     position: absolute;
-    top: 80%;
-    right: 50%;
+    top: 82px;
+    right: 11px;
     cursor: pointer;
     outline: none;
     border: none;
