@@ -468,7 +468,7 @@ module.exports = leafletPip;
         fillColor: '#009EFF',
         fillOpacity: .6,
     })
-    L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtelmg2zer2ssy5841jv1g/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA', {
+    L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjl6r6wa610tp2sqy9h8gllsy/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
     maxZoom: 20,
     maxNativeZoom: 20
     }).addTo(map);
@@ -516,21 +516,21 @@ module.exports = leafletPip;
     
     //Geocoder!
     // create the geocoding control and add it to the map
-    //var searchControl = L.esri.Geocoding.geosearch({
-        //position: 'topleft',
-        //placeholder: '',
-    //}).addTo(map);
+    var searchControl = L.esri.Geocoding.geosearch({
+        position: 'topleft',
+        placeholder: '',
+    }).addTo(map);
 
     // create an empty layer group to store the results and add it to the map
-    //var results = L.layerGroup().addTo(map);
+    var results = L.layerGroup().addTo(map);
 
     // listen for the results event and add every result to the map
-    //searchControl.on("results", function(data) {
-        //results.clearLayers();
-        //for (var i = data.results.length - 1; i >= 0; i--) {
-            //results.addLayer(L.marker(data.results[i].latlng));
-        //}
-    //});
+    searchControl.on("results", function(data) {
+        results.clearLayers();
+        for (var i = data.results.length - 1; i >= 0; i--) {
+            results.addLayer(L.marker(data.results[i].latlng));
+        }
+    });
     
     //Other way to zoom to location, but not as accurate.
     //map.locate();
