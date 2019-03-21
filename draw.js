@@ -16,11 +16,11 @@
     //subdomains:['mt0','mt1','mt2','mt3']
     //});
 
-    var Satellite = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?' +                 'access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNqc3k3eHBveDBwcnUzeW9zdnM2ZHAydmIifQ.CNwrUqAtJO54JNK0liPLCQ', {
+    var Satellite = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?' +                 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
     maxZoom: 20,
     });
 
-    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtacg23wjp2rpgsx3xibdf/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNqc3k3eHBveDBwcnUzeW9zdnM2ZHAydmIifQ.CNwrUqAtJO54JNK0liPLCQ', {
+    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjlgnrb6xa90w2smcaaihkexg/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
     maxZoom: 20,
     });
 

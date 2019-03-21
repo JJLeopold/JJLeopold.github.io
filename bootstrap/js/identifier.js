@@ -468,7 +468,7 @@ module.exports = leafletPip;
         fillColor: '#009EFF',
         fillOpacity: .6,
     })
-       L.tileLayer('https://api.mapbox.com/styles/v1/jjleopold/cjlwtelmg2zer2ssy5841jv1g/tiles/256/{z}/{x}/{y}?' +                 'access_token=pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNqc3k3eHBveDBwcnUzeW9zdnM2ZHAydmIifQ.CNwrUqAtJO54JNK0liPLCQ', {
+       L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjl6r6wa610tp2sqy9h8gllsy/tiles/256/{z}/{x}/{y}?' +                 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
     maxZoom: 20,
     maxNativeZoom: 20
     }).addTo(map);
