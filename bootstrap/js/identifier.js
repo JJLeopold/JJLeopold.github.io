@@ -448,7 +448,7 @@ module.exports = leafletPip;
 
 },{}],3:[function(require,module,exports){
     var leafletPip = require('../'),
-    map = L.map('map', {
+    map = L.map('map',{
     center: [38, -95],
     zoomControl: false,
     zoom: 2,
@@ -518,7 +518,9 @@ module.exports = leafletPip;
     // create the geocoding control and add it to the map
     var searchControl = L.esri.Geocoding.geosearch({
         position: 'topleft',
+        title: 'Find a place!',
         placeholder: '',
+        useMapBounds: 5,
     }).addTo(map);
 
     // create an empty layer group to store the results and add it to the map
@@ -585,10 +587,10 @@ module.exports = leafletPip;
 
     
     // Add attribution   
-    var attribution = L.control.attribution();
-        attribution.setPrefix('');
-        attribution.addAttribution('Powered by<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="https://www.digitalglobe.com/">© DigitalGlobe</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
-        attribution.addTo(map);
+    //var attribution = L.control.attribution();
+        //attribution.setPrefix('');
+        //attribution.addAttribution('Powered by<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="https://www.digitalglobe.com/">© DigitalGlobe</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+        //attribution.addTo(map);
     
 },{"../":1}]},{},[3]);
 
