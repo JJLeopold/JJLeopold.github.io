@@ -53,7 +53,7 @@
         //Geolocation!
     var lc = L.control.locate({
         strings: {
-            title: 'Find Me!',
+            title: 'Find Me',
             popup: 'You are within {distance} {unit} from this point',
         },
         options: {
@@ -83,7 +83,10 @@
 
 
 
-    // Initialise the draw control and pass it the FeatureGroup of editable layers
+    L.EditToolbar.Delete.include({
+        removeAllLayers: false,
+    });
+        // Initialise the draw control and pass it the FeatureGroup of editable layers
     var drawControl = new L.Control.Draw({position: 'topleft',
         draw: {
             polyline : false,
@@ -96,7 +99,7 @@
                     weight: 3,
                     opacity: 1,
                     fill: true,
-                    fillColor: '#009EFF', //same as color by default
+                    fillColor: '#009EFF',
                     fillOpacity: .5,
                   }
                 },
@@ -106,42 +109,140 @@
                     weight: 3,
                     opacity: 1,
                     fill: true,
-                    fillColor: '#009EFF', //same as color by default
+                    fillColor: '#009EFF',
                     fillOpacity: .5,
                   }
                 },
          },
         edit: {
             featureGroup: featureGroup,
-            edit: true,
-            toolbar: {
-                    actions: {
-                        save: {
-                            title: 'Save changes.',
-                            text: 'Save'
-                        },
-                        cancel: {
-                            title: 'Cancel editing, discards all changes.',
-                            text: 'Cancel'
-                        },
-                        clearAll:{
-                            title: 'clear all layers.',
-                            text: 'Clear All'
-                        }
-                    },
-                    buttons: {
-                        edit: 'Edit.',
-                        editDisabled: 'No layers to edit.',
-                        remove: 'Delete layers.',
-                        removeDisabled: 'No layers to delete.'
-                    }
-                },
+            edit: true
         },
     });
 
-    //Use this if not hiding by zoom level.
+
+    L.drawLocal = {
+        // format: {
+        // 	numeric: {
+        // 		delimiters: {
+        // 			thousands: ',',
+        // 			decimal: '.'
+        // 		}
+        // 	}
+        // },
+        draw: {
+            toolbar: {
+                // #TODO: this should be reorganized where actions are nested in actions
+                // ex: actions.undo  or actions.cancel
+                actions: {
+                    title: 'Cancel',
+                    text: 'Cancel'
+                },
+                finish: {
+                    title: 'Finish',
+                    text: 'Finish'
+                },
+                undo: {
+                    title: 'Delete last point',
+                    text: 'Delete last point'
+                },
+                buttons: {
+                    polyline: 'Draw a polyline',
+                    polygon: 'Create a Polygon',
+                    rectangle: 'Create a Rectangle or Square',
+                    circle: 'Draw a circle',
+                    marker: 'Draw a marker',
+                    circlemarker: 'Draw a circlemarker'
+                }
+            },
+            handlers: {
+                circle: {
+                    tooltip: {
+                        start: 'Click and drag to draw circle'
+                    },
+                    radius: 'Radius'
+                },
+                circlemarker: {
+                    tooltip: {
+                        start: 'Click map to place circle marker'
+                    }
+                },
+                marker: {
+                    tooltip: {
+                        start: 'Click map to place marker'
+                    }
+                },
+                polygon: {
+                    tooltip: {
+                        start: 'Click to start creating shape',
+                        cont: 'Click to continue creating shape',
+                        end: 'Click first point to close shape'
+                    }
+                },
+                polyline: {
+                    error: '<strong>Error:</strong> shape edges cannot cross!',
+                    tooltip: {
+                        start: 'Click to start drawing line.',
+                        cont: 'Click to continue drawing line.',
+                        end: 'Click last point to finish line.'
+                    }
+                },
+                rectangle: {
+                    tooltip: {
+                        start: 'Click and drag to create a rectangle or square'
+                    }
+                },
+                simpleshape: {
+                    tooltip: {
+                        end: 'Release to finish'
+                    }
+                }
+            }
+        },
+        edit: {
+            toolbar: {
+                actions: {
+                    save: {
+                        title: 'Save',
+                        text: 'Save'
+                    },
+                    cancel: {
+                        title: 'Cancel',
+                        text: 'Cancel'
+                    },
+                    clearAll: {
+                        title: 'Clear All Shapes',
+                        text: 'Clear All'
+                    }
+                },
+                buttons: {
+                    edit: 'Edit',
+                    editDisabled: 'Nothing to Edit',
+                    remove: 'Delete',
+                    removeDisabled: 'Nothing to Delete'
+                }
+            },
+            handlers: {
+                edit: {
+                    tooltip: {
+                        text: 'Drag handles to edit shape.',
+                        subtext: 'Click cancel to undo changes'
+                    }
+                },
+                remove: {
+                    tooltip: {
+                        text: 'Click on a shape to remove it'
+                    }
+                }
+            }
+        }
+    };
+
+
+    //Use this line if not hiding by zoom level.
     //map.addControl(drawControl);
 
+    //Hide draw tools by zoom level.
     map.on('zoomend', function() {
         if (map.getZoom() <17){
             map.removeControl(drawControl);
@@ -174,7 +275,7 @@
     // create the geocoding control and add it to the map
     var searchControl = L.esri.Geocoding.geosearch({
         position: 'topleft',
-        title: 'Find a place!',
+        title: 'Find a place',
         placeholder: '',
         useMapBounds: 5,
     }).addTo(map);

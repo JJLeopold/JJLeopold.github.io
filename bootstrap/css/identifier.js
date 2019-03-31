@@ -483,65 +483,6 @@ module.exports = leafletPip;
         }
     });
     
-    //Geolocation!
-    var lc = L.control.locate({
-        strings: {
-            title: 'Find Me!',
-            popup: 'You are within {distance} {unit} from this point',
-        },
-        options: {
-                   position: 'topleft',
-                   setView: 'always',
-        },
-        locateOptions: {
-                   maxZoom: 18,
-                   enableHighAccuracy: true,
-        },
-        circleStyle: {
-                color: 'springgreen',
-                fillColor: '#009EFF',
-                fillOpacity: 0.4,
-                weight: 1.25,
-                opacity: 1
-        },
-        markerStyle: {
-                color: 'springgreen',
-                fillColor: '#009EFF',
-                fillOpacity: 1,
-                weight: 2,
-                opacity: 1,
-                radius: 3
-        },
-    }).addTo(map);
-    
-    //Geocoder!
-    // create the geocoding control and add it to the map
-    var searchControl = L.esri.Geocoding.geosearch({
-        position: 'topleft',
-        title: 'Find a place!',
-        placeholder: '',
-        useMapBounds: 5,
-    }).addTo(map);
-
-    // create an empty layer group to store the results and add it to the map
-    var results = L.layerGroup().addTo(map);
-
-    // listen for the results event and add every result to the map
-    searchControl.on("results", function(data) {
-        results.clearLayers();
-        for (var i = data.results.length - 1; i >= 0; i--) {
-            results.addLayer(L.marker(data.results[i].latlng));
-        }
-    });
-    
-    //Other way to zoom to location, but not as accurate.
-    //map.locate();
-    
-    //Move the map with the user's location.
-    map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds, { maxZoom: 18});
-    });   
-    
         //Greeting!
         //setTimeout(function() {
             //document.getElementById('banner').innerHTML = 'Welcome to the Spatial Network';
@@ -585,6 +526,64 @@ module.exports = leafletPip;
             
     };
 
+    
+    //Geolocation!
+    var lc = L.control.locate({
+        strings: {
+            title: 'Find Me',
+            popup: 'You are within {distance} {unit} from this point',
+        },
+        options: {
+                   position: 'topleft',
+                   setView: 'always',
+        },
+        locateOptions: {
+                   maxZoom: 18,
+                   enableHighAccuracy: true,
+        },
+        circleStyle: {
+                color: 'springgreen',
+                fillColor: '#009EFF',
+                fillOpacity: 0.4,
+                weight: 1.25,
+                opacity: 1
+        },
+        markerStyle: {
+                color: 'springgreen',
+                fillColor: '#009EFF',
+                fillOpacity: 1,
+                weight: 2,
+                opacity: 1,
+                radius: 3
+        },
+    }).addTo(map);
+    
+    //Geocoder!
+    var searchControl = L.esri.Geocoding.geosearch({
+        position: 'topleft',
+        title: 'Find a place',
+        placeholder: '',
+        useMapBounds: 5,
+    }).addTo(map);
+
+    // create an empty layer group to store the results and add it to the map
+    var results = L.layerGroup().addTo(map);
+
+    // listen for the results event and add every result to the map
+    searchControl.on("results", function(data) {
+        results.clearLayers();
+        for (var i = data.results.length - 1; i >= 0; i--) {
+            results.addLayer(L.marker(data.results[i].latlng));
+        }
+    });
+    
+    //Other way to zoom to location, but not as accurate.
+    //map.locate();
+    
+    //Move the map with the user's location.
+    map.on('locationfound', function(e) {
+    map.fitBounds(e.bounds, { maxZoom: 18});
+    });   
     
     // Add attribution   
     //var attribution = L.control.attribution();
