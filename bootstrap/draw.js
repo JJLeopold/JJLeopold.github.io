@@ -1,8 +1,8 @@
-//mapster access token (jleopold)
-//pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg
+    //mapster access token (jleopold)
+    //pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg
 
-//replacement access token(jjleopold)
-//pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA
+    //replacement access token(jjleopold)
+    //pk.eyJ1IjoiampsZW9wb2xkIiwiYSI6ImNpcXJzczhzcjAydTVnc2pmdHhlZ3Boa3UifQ.09N3L86ZJoQ7s0dgJAY4IA
 
     //satellite style for mapster (jleopold)
     //jleopold/cjd303coe3wkh2rl0zoezvy8o
@@ -46,11 +46,11 @@
 
     L.control.layers(layers).addTo(map);
 
-    // Initialise the FeatureGroup to store editable layers
+    //Initialise the FeatureGroup to store editable layers
     var featureGroup = new L.FeatureGroup();
     map.addLayer(featureGroup);
 
-        //Geolocation!
+    //Geolocation!
     var lc = L.control.locate({
         strings: {
             title: 'Find Me',
@@ -81,12 +81,20 @@
         },
     }).addTo(map);
 
+    //Another way to zoom to user location, but not as accurate
+    //map.locate();
+
+    //Move the map with the user's location
+    map.on('locationfound', function(e) {
+    map.fitBounds(e.bounds, { maxZoom: 18});
+    });   
+
 
 
     L.EditToolbar.Delete.include({
         removeAllLayers: false,
     });
-        // Initialise the draw control and pass it the FeatureGroup of editable layers
+    //Initialise the draw control and pass it the FeatureGroup of editable layers
     var drawControl = new L.Control.Draw({position: 'topleft',
         draw: {
             polyline : false,
@@ -120,20 +128,9 @@
         },
     });
 
-
     L.drawLocal = {
-        // format: {
-        // 	numeric: {
-        // 		delimiters: {
-        // 			thousands: ',',
-        // 			decimal: '.'
-        // 		}
-        // 	}
-        // },
         draw: {
             toolbar: {
-                // #TODO: this should be reorganized where actions are nested in actions
-                // ex: actions.undo  or actions.cancel
                 actions: {
                     title: 'Cancel',
                     text: 'Cancel'
@@ -247,6 +244,7 @@
         map.removeControl(drawControl);
         map.addControl(drawControl);
     });
+
     //Add the draw tools back if the shape is deleted
     map.on("draw:deleted", function (e) {
         drawControl.setDrawingOptions({
@@ -271,12 +269,12 @@
                   }
             },
         });
-        map.removeControl(drawControl);
-        map.addControl(drawControl);
+            //Only add draw tools back if zero shapes are currently drawn
+            if (featureGroup.getLayers().length === 0){
+                map.removeControl(drawControl);
+                map.addControl(drawControl);
+            };
     });
-
-    //Use this line if not hiding by zoom level.
-    //map.addControl(drawControl);
 
     //Hide draw tools by zoom level.
     map.on('zoomend', function() {
@@ -288,27 +286,27 @@
         }
     });
 
+    //Use this line if not hiding draw tools by zoom level
+    //map.addControl(drawControl);
 
     map.on('draw:created', function(e) {
-
-        // Each time a feature is created, it's added to the over arching feature group
+        //Each time a feature is created, it's added to the feature group
         featureGroup.addLayer(e.layer);
     });
 
         document.getElementById('submit').onclick = function(e) {
-            // Extract GeoJson from featureGroup
+            //Extract GeoJson from featureGroup
             var data = featureGroup.toGeoJSON();
 
-            // Stringify the GeoJson
+            //Stringify the GeoJson
             var convertedData = 'text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(data));
 
-            
             document.getElementById('submit').setAttribute('href', 'data:' + convertedData);
             document.getElementById('submit').setAttribute('download','data.geojson');
         }
         
     //Geocoder!
-    // create the geocoding control and add it to the map
+    //Create the geocoding control and add it to the map
     var searchControl = L.esri.Geocoding.geosearch({
         position: 'topleft',
         title: 'Find Places',
@@ -316,10 +314,10 @@
         useMapBounds: 5,
     }).addTo(map);
 
-    // create an empty layer group to store the results and add it to the map
+    //Create an empty layer group to store the results and add it to the map
     var results = L.layerGroup().addTo(map);
 
-    // listen for the results event and add every result to the map
+    //Listen for the results event and add every result to the map
     searchControl.on("results", function(data) {
         results.clearLayers();
         for (var i = data.results.length - 1; i >= 0; i--) {
@@ -336,13 +334,6 @@
         }
     });    
 
-        //Other way to zoom to location, but not as accurate.
-        //map.locate();
-
-        //Move the map with the user's location.
-        map.on('locationfound', function(e) {
-        map.fitBounds(e.bounds, { maxZoom: 18});
-        });   
 
     // Add attribution   
     //var attribution = L.control.attribution();
