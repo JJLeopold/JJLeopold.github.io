@@ -231,7 +231,7 @@
                 },
                 remove: {
                     tooltip: {
-                        text: 'Click on a shape to remove it'
+                        text: 'Click the shape to remove it'
                     }
                 }
             }
@@ -247,11 +247,29 @@
         map.removeControl(drawControl);
         map.addControl(drawControl);
     });
-    //Add the draw tools if the shape is deleted
+    //Add the draw tools back if the shape is deleted
     map.on("draw:deleted", function (e) {
         drawControl.setDrawingOptions({
-            polygon:true,
-            rectangle:true
+            polygon: {
+                  shapeOptions: {
+                    color: 'springgreen',
+                    weight: 3,
+                    opacity: 1,
+                    fill: true,
+                    fillColor: '#009EFF',
+                    fillOpacity: .5,
+                  }
+                },
+            rectangle: {
+                  shapeOptions: {
+                    color: 'springgreen',
+                    weight: 3,
+                    opacity: 1,
+                    fill: true,
+                    fillColor: '#009EFF',
+                    fillOpacity: .5,
+                  }
+            },
         });
         map.removeControl(drawControl);
         map.addControl(drawControl);
