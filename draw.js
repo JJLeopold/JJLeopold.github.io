@@ -139,17 +139,17 @@
                     text: 'Cancel'
                 },
                 finish: {
-                    title: 'Finish',
+                    title: 'Finish the shape',
                     text: 'Finish'
                 },
                 undo: {
-                    title: 'Delete last point',
-                    text: 'Delete last point'
+                    title: 'Undo last point',
+                    text: 'Undo'
                 },
                 buttons: {
                     polyline: 'Draw a polyline',
                     polygon: 'Create a Polygon',
-                    rectangle: 'Create a Rectangle or Square',
+                    rectangle: 'Create a Rectangle',
                     circle: 'Draw a circle',
                     marker: 'Draw a marker',
                     circlemarker: 'Draw a circlemarker'
@@ -182,14 +182,14 @@
                 polyline: {
                     error: '<strong>Error:</strong> shape edges cannot cross!',
                     tooltip: {
-                        start: 'Click to start drawing line.',
-                        cont: 'Click to continue drawing line.',
-                        end: 'Click last point to finish line.'
+                        start: 'Click to start drawing line',
+                        cont: 'Click to continue drawing line',
+                        end: 'Click last point to finish line'
                     }
                 },
                 rectangle: {
                     tooltip: {
-                        start: 'Click and drag to create a rectangle or square'
+                        start: 'Click and drag to create a rectangle'
                     }
                 },
                 simpleshape: {
@@ -203,7 +203,7 @@
             toolbar: {
                 actions: {
                     save: {
-                        title: 'Save',
+                        title: 'Save Changes',
                         text: 'Save'
                     },
                     cancel: {
@@ -225,7 +225,7 @@
             handlers: {
                 edit: {
                     tooltip: {
-                        text: 'Drag handles to edit shape.',
+                        text: 'Drag handles to edit shape',
                         subtext: 'Click cancel to undo changes'
                     }
                 },
@@ -238,6 +238,24 @@
         }
     };
 
+    //Remove the draw tools after a shape is created
+    map.on("draw:created", function (e) {
+        drawControl.setDrawingOptions({
+            polygon:false,
+            rectangle: false
+        });
+        map.removeControl(drawControl);
+        map.addControl(drawControl);
+    });
+    //Add the draw tools if the shape is deleted
+    map.on("draw:deleted", function (e) {
+        drawControl.setDrawingOptions({
+            polygon:true,
+            rectangle:true
+        });
+        map.removeControl(drawControl);
+        map.addControl(drawControl);
+    });
 
     //Use this line if not hiding by zoom level.
     //map.addControl(drawControl);
@@ -275,7 +293,7 @@
     // create the geocoding control and add it to the map
     var searchControl = L.esri.Geocoding.geosearch({
         position: 'topleft',
-        title: 'Find a place',
+        title: 'Find Places',
         placeholder: '',
         useMapBounds: 5,
     }).addTo(map);
