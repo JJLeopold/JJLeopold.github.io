@@ -90,9 +90,7 @@
     var drawnItems = new L.FeatureGroup();
     map.addLayer(drawnItems);
 
-    L.EditToolbar.Delete.include({
-        removeAllLayers: false,
-    });
+
 
     //Initialise the draw control and pass it the FeatureGroup of editable layers
     var drawControl = new L.Control.Draw({position: 'topleft',
@@ -121,6 +119,21 @@
                     fillOpacity: .5,
                   }
                 },
+         },
+        edit: {
+            featureGroup: drawnItems,
+            edit: true
+        },
+    });
+
+    var drawControlEditOnly = new L.Control.Draw({position: 'topleft',
+        draw: {
+            polyline : false,
+            circle : false,
+            marker : false,
+            circlemarker : false,
+            polygon: false,
+            rectangle: false,
          },
         edit: {
             featureGroup: drawnItems,
@@ -200,7 +213,7 @@
             toolbar: {
                 actions: {
                     save: {
-                        title: 'Save Changes',
+                        title: 'Save changes',
                         text: 'Save'
                     },
                     cancel: {
@@ -208,8 +221,8 @@
                         text: 'Cancel'
                     },
                     clearAll: {
-                        title: 'Clear All Shapes',
-                        text: 'Clear All'
+                        title: 'Clear the map now',
+                        text: 'Reset'
                     }
                 },
                 buttons: {
@@ -239,7 +252,7 @@
     map.on('zoomend', function() {
         if (map.getZoom() <17){
             map.removeControl(drawControl);
-            //map.removeLayer(drawnItems);
+            map.removeLayer(drawnItems);
         }
         else {
             map.addControl(drawControl);
@@ -283,11 +296,32 @@
                   }
             },
         });
-        //Only add the draw tools back if zero shapes are currently drawn
-        if (drawnItems.getLayers().length == 0){
-            map.addControl(drawControl);
-        }; 
+            //Only add draw controls back if zero shapes are currently drawn
+            if (drawnItems.getLayers().length == 0){
+                map.addControl(drawControl);
+                map.removeControl(drawControlEditOnly);
+            };
+    
+            //If a shape is drawn, remove the draw control and add the EditOnly control
+            map.on('zoomend', function() {
+                if (drawnItems.getLayers().length == 1){
+                    map.removeControl(drawControl);
+                }
+            });
+        
+            map.on('zoomend', function() {
+                if (map.getZoom() <17){
+                    map.removeControl(drawControlEditOnly);
+                }
+                else {
+                    map.addControl(drawControlEditOnly);
+                }
+            });
     });
+        
+        
+            
+            
 
     map.on('draw:created', function(e) {
         //Each time a shape is created, it's added to the feature group
@@ -331,9 +365,10 @@
             map.removeControl(searchControl);
         }
         else {
-            map.addControl(searchControl);   
+            map.addControl(searchControl);
         }
     });    
+
 
 
     // Add attribution   
