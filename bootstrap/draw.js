@@ -93,6 +93,7 @@
     L.EditToolbar.Delete.include({
         removeAllLayers: false,
     });
+
     //Initialise the draw control and pass it the FeatureGroup of editable layers
     var drawControl = new L.Control.Draw({position: 'topleft',
         draw: {
@@ -125,13 +126,6 @@
             featureGroup: drawnItems,
             edit: true
         },
-    });
-
-    var drawControlEditOnly = new L.Control.Draw({
-        edit: {
-            featureGroup: drawnItems
-        },
-        draw: false
     });
 
     L.drawLocal = {
@@ -241,18 +235,33 @@
         }
     };
 
-    //Remove the draw tools after a shape is created
+    //Hide draw and edit controls and remove drawn shapes by zoom level
+    map.on('zoomend', function() {
+        if (map.getZoom() <17){
+            map.removeControl(drawControl);
+            //map.removeLayer(drawnItems);
+        }
+        else {
+            map.addControl(drawControl);
+            map.addLayer(drawnItems);
+        }
+    });
+
+    //Use this line if not hiding draw tools by zoom level
+    //map.addControl(drawControl);
+
     map.on("draw:created", function (e) {
         drawControl.setDrawingOptions({
+            //Remove the draw tools after a shape is created
             polygon:false,
             rectangle: false
         });
         map.addControl(drawControl);
     });
 
-    //Add the draw tools back if the shape is deleted
     map.on("draw:deleted", function (e) {
         drawControl.setDrawingOptions({
+            //Add the draw tools back if the shape is deleted
             polygon: {
                   shapeOptions: {
                     color: 'springgreen',
@@ -274,42 +283,17 @@
                   }
             },
         });
-            //Only add draw controls back if zero shapes are currently drawn
-            if (drawnItems.getLayers().length == 0){
-                map.addControl(drawControl);
-                map.removeControl(drawControlEditOnly);
-            };
-    
-            //If a shape is drawn, remove the draw control and add the EditOnly control
-            map.on('zoomend', function() {
-                if (drawnItems.getLayers().length == 1){
-                    map.removeControl(drawControl);
-                    map.addControl(drawControlEditOnly);
-                }
-            });
-    });
-
-    //Hide draw and edit controls and remove drawn shapes by zoom level
-    map.on('zoomend', function() {
-        if (map.getZoom() <15){
-            map.removeControl(drawControlEditOnly);
-            map.removeControl(drawControl);
-            map.removeLayer(drawnItems);
-        }
-        else {
+        //Only add the draw tools back if zero shapes are currently drawn
+        if (drawnItems.getLayers().length == 0){
             map.addControl(drawControl);
-            map.addLayer(drawnItems);
-        }
+        }; 
     });
-
-    //Use this line if not hiding draw tools by zoom level
-    //map.addControl(drawControl);
 
     map.on('draw:created', function(e) {
         //Each time a shape is created, it's added to the feature group
         drawnItems.addLayer(e.layer);
     });
-
+ 
         document.getElementById('submit').onclick = function(e) {
             //Extract GeoJson from featureGroup
             var data = drawnItems.toGeoJSON();
@@ -328,6 +312,7 @@
         title: 'Find a Place or Address',
         placeholder: '',
         useMapBounds: 5,
+        allowMultipleResults: true,
     }).addTo(map);
 
     //Create an empty layer group to store the results and add it to the map
@@ -342,7 +327,7 @@
     });
 
     map.on('zoomend', function() {
-        if (map.getZoom() >14){
+        if (map.getZoom() >16){
             map.removeControl(searchControl);
         }
         else {
