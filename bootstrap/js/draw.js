@@ -306,21 +306,19 @@
             map.on('zoomend', function() {
                 if (drawnItems.getLayers().length == 1){
                     map.removeControl(drawControl);
+                    map.addControl(drawControlEditOnly);
+
                 }
             });
         
             map.on('zoomend', function() {
                 if (map.getZoom() <17){
                     map.removeControl(drawControlEditOnly);
-                }
-                else {
-                    map.addControl(drawControlEditOnly);
-                }
+                }  
             });
+        
     });
         
-        
-            
             
 
     map.on('draw:created', function(e) {
