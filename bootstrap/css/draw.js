@@ -46,10 +46,6 @@
 
     L.control.layers(layers).addTo(map);
 
-    //Initialise the FeatureGroup to store editable layers
-    var featureGroup = new L.FeatureGroup();
-    map.addLayer(featureGroup);
-
     //Geolocation!
     var lc = L.control.locate({
         strings: {
@@ -90,6 +86,9 @@
     });   
 
 
+    //Initialise the FeatureGroup to store editable layers
+    var drawnItems = new L.FeatureGroup();
+    map.addLayer(drawnItems);
 
     L.EditToolbar.Delete.include({
         removeAllLayers: false,
@@ -123,9 +122,16 @@
                 },
          },
         edit: {
-            featureGroup: featureGroup,
+            featureGroup: drawnItems,
             edit: true
         },
+    });
+
+    var drawControlEditOnly = new L.Control.Draw({
+        edit: {
+            featureGroup: drawnItems
+        },
+        draw: false
     });
 
     L.drawLocal = {
@@ -241,7 +247,6 @@
             polygon:false,
             rectangle: false
         });
-        map.removeControl(drawControl);
         map.addControl(drawControl);
     });
 
@@ -269,20 +274,31 @@
                   }
             },
         });
-            //Only add draw tools back if zero shapes are currently drawn
-            if (featureGroup.getLayers().length === 0){
-                map.removeControl(drawControl);
+            //Only add draw controls back if zero shapes are currently drawn
+            if (drawnItems.getLayers().length == 0){
                 map.addControl(drawControl);
+                map.removeControl(drawControlEditOnly);
             };
+    
+            //If a shape is drawn, remove the draw control and add the EditOnly control
+            map.on('zoomend', function() {
+                if (drawnItems.getLayers().length == 1){
+                    map.removeControl(drawControl);
+                    map.addControl(drawControlEditOnly);
+                }
+            });
     });
 
-    //Hide draw tools by zoom level.
+    //Hide draw and edit controls and remove drawn shapes by zoom level
     map.on('zoomend', function() {
-        if (map.getZoom() <17){
+        if (map.getZoom() <15){
+            map.removeControl(drawControlEditOnly);
             map.removeControl(drawControl);
+            map.removeLayer(drawnItems);
         }
         else {
-            map.addControl(drawControl);   
+            map.addControl(drawControl);
+            map.addLayer(drawnItems);
         }
     });
 
@@ -290,13 +306,13 @@
     //map.addControl(drawControl);
 
     map.on('draw:created', function(e) {
-        //Each time a feature is created, it's added to the feature group
-        featureGroup.addLayer(e.layer);
+        //Each time a shape is created, it's added to the feature group
+        drawnItems.addLayer(e.layer);
     });
 
         document.getElementById('submit').onclick = function(e) {
             //Extract GeoJson from featureGroup
-            var data = featureGroup.toGeoJSON();
+            var data = drawnItems.toGeoJSON();
 
             //Stringify the GeoJson
             var convertedData = 'text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(data));
@@ -309,7 +325,7 @@
     //Create the geocoding control and add it to the map
     var searchControl = L.esri.Geocoding.geosearch({
         position: 'topleft',
-        title: 'Find Places',
+        title: 'Find a Place or Address',
         placeholder: '',
         useMapBounds: 5,
     }).addTo(map);
@@ -326,7 +342,7 @@
     });
 
     map.on('zoomend', function() {
-        if (map.getZoom() >16){
+        if (map.getZoom() >14){
             map.removeControl(searchControl);
         }
         else {
