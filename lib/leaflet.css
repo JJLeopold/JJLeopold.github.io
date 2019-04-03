@@ -669,6 +669,7 @@ label {
 .leaflet-popup {
 	position: absolute;
     display: inline-block;
+    text-align: center;
     color: #009EFF;
     font-size: 14px;
     margin-bottom: 55px;
