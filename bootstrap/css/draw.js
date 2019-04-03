@@ -50,7 +50,7 @@
     var lc = L.control.locate({
         strings: {
             title: 'Find Me',
-            popup: 'You are within {distance} {unit} from this point',
+            popup: 'false',
         },
         options: {
                    position: 'topleft',
@@ -319,8 +319,6 @@
         
     });
         
-            
-
     map.on('draw:created', function(e) {
         //Each time a shape is created, it's added to the feature group
         drawnItems.addLayer(e.layer);
@@ -340,23 +338,41 @@
     //Geocoder!
     //Create the geocoding control and add it to the map
     var searchControl = L.esri.Geocoding.geosearch({
+        providers: [
+        L.esri.Geocoding.arcgisOnlineProvider({
+        maxResults: 5
+        })
+        ],
         position: 'topleft',
         title: 'Find a Place or Address',
         placeholder: '',
         useMapBounds: 5,
         allowMultipleResults: true,
+        zoomToResult: true
     }).addTo(map);
 
     //Create an empty layer group to store the results and add it to the map
     var results = L.layerGroup().addTo(map);
+    
+
 
     //Listen for the results event and add every result to the map
-    searchControl.on("results", function(data) {
-        results.clearLayers();
-        for (var i = data.results.length - 1; i >= 0; i--) {
-            results.addLayer(L.marker(data.results[i].latlng));
-        }
-    });
+    searchControl.on('results', function(data) {
+        
+           results.clearLayers();
+
+            if (data.results.length > 0) {
+
+                // set map view
+                map.setView(data.results[0].latlng, 16);
+
+                // open pop-up for location
+                var popup = L.popup({closeOnClick: false, maxWidth: 5000, closeButton: false}).setLatLng(data.results[0].latlng).setContent(data.results[0].text).openOn(map); 
+            }  
+                for (var i = data.results.length - 1; i >= 0; i--) {
+                    results.addLayer(L.marker(data.results[i].latlng));
+                }
+        });
 
     map.on('zoomend', function() {
         if (map.getZoom() >16){
