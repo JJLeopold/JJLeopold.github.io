@@ -470,11 +470,11 @@
 }
 
 .geocoder-control-expanded {
-    width: 350px !important;
+    width: 340px !important;
 }
 
 .geocoder-control-suggestions {
-    width: 370px !important;
+    width: 340px !important;
 }
 
 .fa-map-marker {
@@ -538,13 +538,14 @@
 
 
 
-.leaflet-control-geocoder {
+leaflet-control-geocoder {
   cursor: pointer !important;
   border-radius: 4px;
   background: #009EFF;
   min-width: 26px;
   min-height: 26px;
 }
+
 
 
 input[type=radio] {
