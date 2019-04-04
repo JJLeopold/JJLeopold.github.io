@@ -50,7 +50,7 @@
     var lc = L.control.locate({
         strings: {
             title: 'Find Me',
-            popup: 'false',
+            popup: false
         },
         options: {
                    position: 'topleft',
