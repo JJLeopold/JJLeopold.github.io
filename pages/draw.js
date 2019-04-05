@@ -90,7 +90,13 @@
     var drawnItems = new L.FeatureGroup();
     map.addLayer(drawnItems);
 
+    L.Draw.Polygon.include({
+        completeShape: false
+    });
 
+    //L.EditToolbar.Delete.include({
+        //removeAllLayers: false
+    //});
 
     //Initialise the draw control and pass it the FeatureGroup of editable layers
     var drawControl = new L.Control.Draw({position: 'topleft',
@@ -125,6 +131,7 @@
             edit: true
         },
     });
+
 
     var drawControlEditOnly = new L.Control.Draw({position: 'topleft',
         draw: {
@@ -364,7 +371,7 @@
             if (data.results.length > 0) {
 
                 // set map view
-                map.setView(data.results[0].latlng, 16);
+                map.setView(data.results[0].latlng, 17);
 
                 // open pop-up for location
                 var popup = L.popup({closeOnClick: true, reOpenOnClick: true, maxWidth: 5000, closeButton: false}).setLatLng(data.results[0].latlng).setContent(data.results[0].text).openOn(map);
