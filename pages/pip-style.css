@@ -259,8 +259,8 @@ textarea {
     background-color: springgreen;
     opacity: 100 !important;
     z-index: 500 !important;
-    min-height: 5%;
-    max-height: 5%;
+    min-height: 6%;
+    max-height: 6%;
     width: 30%;
     position: absolute;
     margin-right:35%;
@@ -268,7 +268,7 @@ textarea {
     bottom: 40px;
     top:640px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     color: #009EFF;
     text-align: center;
     text-decoration: none;
@@ -295,8 +295,8 @@ textarea {
     background-color: red;
     opacity: 100 !important;
     z-index: 500 !important;
-    min-height: 5%;
-    max-height: 5%;
+    min-height: 6%;
+    max-height: 6%;
     width: 30%;
     position: absolute !important;
     margin-right:35%;
@@ -304,7 +304,7 @@ textarea {
     bottom: 120px;
     top:580px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     color: #ffffff;
     text-align: center;
     text-decoration: none;
