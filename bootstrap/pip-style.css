@@ -265,8 +265,8 @@ textarea {
     position: absolute;
     margin-right:35%;
     margin-left:35%;
-    bottom: 40px;
-    top:640px;
+    bottom: 80px;
+    top:560px;
     cursor: pointer;
     font-size: 16px;
     color: #009EFF;
@@ -301,8 +301,8 @@ textarea {
     position: absolute !important;
     margin-right:35%;
     margin-left:35%;
-    bottom: 120px;
-    top:580px;
+    bottom: 140px;
+    top:480px;
     cursor: pointer;
     font-size: 16px;
     color: #ffffff;
