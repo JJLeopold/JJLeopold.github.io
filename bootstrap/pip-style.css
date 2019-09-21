@@ -215,9 +215,30 @@ me:hover {
 
 
 
-input[type="text"], textarea {
+input[type="text"] {
   padding: 5px;
   width: 80% !important;
+  min-height: 4% !important;
+  margin-top: 45px;
+  margin-left: 10%;
+  margin-right: 10%;
+  z-index: 50000 !important;
+  opacity: 100 !important;
+  border-color: ;
+  border-style: solid;
+  border-width: 0px;
+  color: #009EFF;
+  position: absolute !important;
+  text-align: left;
+  background-color : #ffffff; 
+  box-shadow: 0 0 0px px #ffffff;
+}
+
+textarea {
+  padding: 5px;
+  width: 80% !important;
+  min-height: 20% !important;
+  max-height: 45% !important;
   margin-top: 45px;
   margin-left: 10%;
   margin-right: 10%;
@@ -238,12 +259,14 @@ input[type="text"], textarea {
     background-color: springgreen;
     opacity: 100 !important;
     z-index: 500 !important;
-    height: 40px;
+    min-height: 5%;
+    max-height: 5%;
     width: 30%;
     position: absolute;
     margin-right:35%;
     margin-left:35%;
-    bottom: 5%;
+    bottom: 40px;
+    top:640px;
     cursor: pointer;
     font-size: 14px;
     color: #009EFF;
@@ -272,12 +295,14 @@ input[type="text"], textarea {
     background-color: red;
     opacity: 100 !important;
     z-index: 500 !important;
-    height: 40px;
+    min-height: 5%;
+    max-height: 5%;
     width: 30%;
     position: absolute !important;
     margin-right:35%;
     margin-left:35%;
-    bottom: 15%;
+    bottom: 120px;
+    top:580px;
     cursor: pointer;
     font-size: 14px;
     color: #ffffff;
@@ -292,7 +317,7 @@ input[type="text"], textarea {
 }
 
 #cancel:hover {
-	background-color: orangered;
+	background-color: #FF2929;
     color: #ffffff;
     border: solid;
     border-width: 2px;
@@ -326,18 +351,20 @@ input[type="text"], textarea {
 #form-popup {
   width: 75%;
   height: 96%;
+  min-height: 700px;
   display: none;
   position: absolute;
   margin-bottom: 0%;
   margin-right: 12.5%;
   margin-left: 12.5%;
-  margin-top: 10px;
+  margin-top: 5px;
   border: #ffffff;
   border-style: solid;
   border-width: 3px;
   z-index: 9999 !important;
   background-color: #009EFF;
   box-shadow: 0 0 2px .01px #009EFF;
+  align-content:space-around;
 }
 
 #form_header
