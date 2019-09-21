@@ -237,8 +237,8 @@ input[type="text"] {
 textarea {
   padding: 5px;
   width: 80% !important;
-  min-height: 15% !important;
-  max-height: 30% !important;
+  min-height: 5% !important;
+  max-height: 15% !important;
   margin-top: 45px;
   margin-left: 10%;
   margin-right: 10%;
