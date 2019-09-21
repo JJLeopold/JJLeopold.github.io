@@ -1,4 +1,4 @@
-    //mapster access token (jleopold)
+//mapster access token (jleopold)
     //pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg
 
     //replacement access token(jjleopold)
@@ -16,12 +16,14 @@
     //subdomains:['mt0','mt1','mt2','mt3']
     //});
 
+    //L.esri.basemapLayer("Imagery");
+
     var Satellite = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?' +                 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
     maxZoom: 20,
     });
-
+                
     var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjlgnrb6xa90w2smcaaihkexg/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
-    maxZoom: 20,
+    maxZoom: 19,
     });
 
     var map = L.map('map',{
@@ -29,6 +31,7 @@
     zoomControl: false,
     zoom: 2,
     minZoom: 2,
+    maxZoom: 19,
     maxBounds: [
         //south west
         [-79, -180],
@@ -325,22 +328,176 @@
             });
         
     });
+
+
+function openForm() {
+  document.getElementById("form-popup").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("form-popup").style.display = "none";
+}
+
+
+
+
+
+
+    //Handling the data!
+    //create cartodb.SQL object to grab geojson of table
+    //see here https://carto.com/blog/the-versatility-of-retreiving-and-rendering-geospatial
+    var sql = new cartodb.SQL({ user: 'jjleopold', format:'GeoJSON'});
+    sql.execute("SELECT * FROM project_1")
+      .done(function(data) {
+
+        //add geojson features to the drawnItems FeatureGroup
+        //console.log(data);//optional/debugging
+        geojsonLayer = L.geoJson(data, {
+          onEachFeature: function (feature, layer) {
+            layer.cartodb_id=feature.properties.cartodb_id;
+            //Turn this on to see all polygons
+            //drawnItems.addLayer(layer);
+          }
+          });
+        //add the drawnItems FeatureGroup, populated with geojson from carto table, to the map
+        map.addLayer(drawnItems);
+      })
+      .error(function(errors) {
+        // errors contains a list of errors
+        console.log("errors:" + errors);
+      });
+
+    function persistOnCartoDB(action, layers) {
+      /*
+        this function interacts with the Security Definer
+        function previously defined in our CARTO account.
+        Gets an action (update, insert, or delete) and a list
+        of GeoJSON objects (the geometry objects only, to work
+        with ST_GeomFromGeojson()) with which to change the table.
+        see http://gis.stackexchange.com/questions/169219/invalid-geojson-when-inserting-data-to-a-cartodb-postgis-table-from-leaflet
+      */
+      var cartodb_ids = [];
+      var geojsons = [];
+      //console.log(action + " persistOnCartoDB");
+
+      switch (action) {
+              
+        //case "UPDATE":
+          //console.log(layers.getLayers().length);
+          //if (layers.getLayers().length < 1) return;
+
+          //layers.eachLayer(function(layer) {
+            //cartodb_ids.push(layer.cartodb_id);
+            //geojsons.push("'" + JSON.stringify(layer.toGeoJSON().geometry) + "'");
+          //});
+          //break;
+
+        case "INSERT":
+          cartodb_ids.push(-1);
+          //console.log("here is the geojsons");
+          //console.log(geojsons);
+          //console.log("'" + JSON.stringify(layers.toGeoJSON().geometry) + "'");
+          geojsons.push("'" + JSON.stringify(layers.toGeoJSON().geometry) + "'");
+
+          break;
+
+        //case "DELETE":
+          //layers.eachLayer(function(layer) {
+            //cartodb_ids.push(layer.cartodb_id);
+            //geojsons.pushname
+          //});
+          //break;
+              
+      }
+
+      //constructs the SQL statement
+      var sql = "SELECT project_example_upsert_project_1(ARRAY[";
+      sql += cartodb_ids.join(",");
+      sql += "],ARRAY[";
+      sql += geojsons.join(",");
+      sql += "]);";
+
         
-    map.on('draw:created', function(e) {
-        //Each time a shape is created, it's added to the feature group
-        drawnItems.addLayer(e.layer);
-    });
- 
-        document.getElementById('submit').onclick = function(e) {
-            //Extract GeoJson from featureGroup
-            var data = drawnItems.toGeoJSON();
 
-            //Stringify the GeoJson
-            var convertedData = 'text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(data));
+      console.log("persisting... " + sql);//optional/debugging
+      //POST the SQL up to CARTO
+      $.ajax({
+        type: 'POST',
+        url: 'https://jjleopold.carto.com/api/v2/sql',
+        crossDomain: true,
+        data: {
+          "q": sql
+        },
+        dataType: 'json',
+        success: function(responseData, textStatus, jqXHR) {
+          console.log("Data saved");
 
-            document.getElementById('submit').setAttribute('href', 'data:' + convertedData);
-            document.getElementById('submit').setAttribute('download','data.geojson');
+          if (action == "INSERT")
+            layers.cartodb_id = responseData.rows[0].cartodb_id;
+        },
+        error: function(responseData, textStatus, errorThrown) {
+          console.log("Problem saving the data " + responseData);
         }
+      });
+    }
+
+
+    map.on('draw:created', function(e) {
+        {
+        var layers = e.layer;//was e.layers not layer
+        //Each time a shape is created, it's added to the feature group
+        drawnItems.addLayer(layers);
+        }
+
+        document.getElementById('submit').onclick = function(e) {
+        
+            //console.log(e);
+            persistOnCartoDB("INSERT", layers);
+            //console.log("draw:created:insert persistOnCartoDB fired");
+        
+            closeForm();
+            
+            //location.reload();               
+        }
+        
+    });
+    
+    
+    
+    //To allow edit
+    //map.on('draw:edited', function (e) {
+      //console.log("draw:edited fired");
+      //var layers = e.layers;
+      //persistOnCartoDB("UPDATE", layers);
+      //console.log("draw:edited:update persistOnCartoDB fired");
+    //});
+
+    //To allow delete
+    //map.on('draw:deleted', function (e) {
+      //console.log("draw:deleted fired");
+      //var layers = e.layers;
+      //persistOnCartoDB("DELETE", layers);
+      //console.log("draw:deleted:delete persistOnCartoDB fired");
+    //});
+
+
+
+                // Use this to download GeoJSON instead
+                //map.on('draw:created', function(e) {
+                    //Each time a shape is created, it's added to the feature group
+                    //drawnItems.addLayer(e.layer);
+                //});
+
+                //document.getElementById('submit').onclick = function(e) {
+                    //Extract GeoJson from featureGroup
+                    //var data = drawnItems.toGeoJSON();
+
+                    //Stringify the GeoJson
+                    //var convertedData = 'text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(data));
+
+                    //document.getElementById('submit').setAttribute('href', 'data:' + convertedData);
+                    //document.getElementById('submit').setAttribute('download','data.geojson');
+                //}
         
     //Geocoder!
     //Create the geocoding control and add it to the map
@@ -360,9 +517,8 @@
 
     //Create an empty layer group to store the results and add it to the map
     var results = L.layerGroup().addTo(map);
+
     
-
-
     //Listen for the results event and add every result to the map
     searchControl.on('results', function(data) {
         
@@ -378,7 +534,7 @@
             }  
         
             for (var i = data.results.length - 1; i >= 0; i--) {
-                    results.addLayer(L.marker(data.results[i].latlng));
+                    results.addLayer(L.marker(data.results[0].latlng));
             }
     });
 
@@ -396,7 +552,7 @@
     // Add attribution   
     //var attribution = L.control.attribution();
         //attribution.setPrefix('');
-        //attribution.addAttribution('Powered by<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="https://www.digitalglobe.com/">© DigitalGlobe</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+        //attribution.addAttribution('Powered by<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="https://www.digitalglobe.com/">© DigitalGlobe</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
         //attribution.addTo(map);
 
 

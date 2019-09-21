@@ -125,7 +125,7 @@ me:hover {
 }
 
 
-#submit {
+#next {
     background-color: #009EFF;
     opacity: 100 !important;
     z-index: 500 !important;
@@ -148,7 +148,7 @@ me:hover {
     box-shadow: 0 0 2px .01px #009EFF;
 }
 
-#submit:hover {
+#next:hover {
 	background-color: springgreen;
     color: #009EFF;
 	}
@@ -209,4 +209,138 @@ me:hover {
  font-size: 60px;
  font-weight: 900;
 }
+
+
+
+
+
+
+input[type="text"], textarea {
+  padding: 5px;
+  width: 70% !important;
+  margin-top: 45px;
+  margin-left: 15%;
+  margin-right: 15%;
+  z-index: 50000 !important;
+  opacity: 100 !important;
+  border-color: mediumspringgreen;
+  border-style: solid;
+  border-width: 1.5px;
+  color: #009EFF;
+  position: absolute !important;
+  text-align: left;
+  background-color : #ffffff; 
+  box-shadow: 0 0 0px .1px #ffffff;
+}
+
+
+#submit {
+    background-color: springgreen;
+    opacity: 100 !important;
+    z-index: 500 !important;
+    height: 40px;
+    width: 30%;
+    position: absolute;
+    margin-right:35%;
+    margin-left:35%;
+    bottom: 5%;
+    cursor: pointer;
+    font-size: 14px;
+    color: #009EFF;
+    text-align: center;
+    text-decoration: none;
+    border: solid;
+    border-width: 2px;
+    border-color: #ffffff;
+    border-radius: 5px;
+    font-weight: 700;
+    box-shadow: 0 0 2px .01px #009EFF;
+}
+
+#submit:hover {
+	background-color: mediumspringgreen;
+    color: #009EFF;
+    border: solid;
+    border-width: 2px;
+    border-color: #ffffff;
+    border-radius: 5px;
+    font-weight: 700;
+    box-shadow: 0 0 2px .01px #009EFF;
+	}
+
+#cancel {
+    background-color: red;
+    opacity: 100 !important;
+    z-index: 500 !important;
+    height: 40px;
+    width: 30%;
+    position: absolute;
+    margin-right:35%;
+    margin-left:35%;
+    bottom: 18%;
+    cursor: pointer;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    border: solid;
+    border-width: 2px;
+    border-color: #ffffff;
+    border-radius: 5px;
+    font-weight: 700;
+    box-shadow: 0 0 2px .01px #009EFF;
+}
+
+#cancel:hover {
+	background-color: orangered;
+    color: #ffffff;
+    border: solid;
+    border-width: 2px;
+    border-color: #ffffff;
+    border-radius: 5px;
+    font-weight: 700;
+    box-shadow: 0 0 .01px .01px #009EFF;
+	}
+
+::placeholder { 
+  color: #009EFF !important;
+  opacity: 1;
+}
+
+/* Button used to open the form */
+.open-button {
+  z-index: 9999 !important;
+  background-color: ;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  position: absolute;
+  bottom: 200px;
+  right: 28px;
+  width: 200px;
+}
+
+/* The popup form - hidden by default */
+#form-popup {
+  width: 40%;
+  height: 55%;
+  display: none;
+  position: absolute;
+  margin-bottom: 10%;
+  margin-right: 30%;
+  margin-left: 30%;
+  margin-top: 10%;
+  border: #ffffff;
+  border-style: solid;
+  border-width: 3px;
+  z-index: 9999 !important;
+  background-color: #009EFF;
+  box-shadow: 0 0 1px 1px springgreen;
+}
+
+
+
+
 

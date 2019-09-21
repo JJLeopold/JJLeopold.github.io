@@ -453,6 +453,7 @@ module.exports = leafletPip;
     zoomControl: false,
     zoom: 2,
     minZoom: 2,
+    maxZoom: 20,
     maxBounds: [
         //south west
         [-79, -180],
@@ -460,26 +461,50 @@ module.exports = leafletPip;
         [90, 180]
         ],
     attributionControl: false}),
-    gjLayer = L.geoJson(locationsData, {
-        color: 'springgreen',
-        weight: 2,
-        opacity: 1,
-        fill: true,
-        fillColor: '#009EFF',
-        fillOpacity: .6,
-    })
+        
+    geojsonLayer = L.geoJson;
+    
+    var sql = new cartodb.SQL({ user: 'jjleopold', format:'GeoJSON'});
+        sql.execute("SELECT * FROM project_1")
+          .done(function(data) {
+
+            //add geojson features to the drawnItems FeatureGroup
+            //console.log(data);//optional/debugging
+            geojsonLayer = L.geoJson(data, {
+                color: 'springgreen',
+                weight: 2,
+                opacity: 1,
+                fill: true,
+                fillColor: '#009EFF',
+                fillOpacity: .6,
+                
+              onEachFeature: function (feature, layer) {
+                layer.cartodb_id=feature.properties.cartodb_id;
+              }
+                
+              });
+            //add the drawnItems FeatureGroup, populated with geojson from carto table, to the map
+            //map.addLayer(drawnItems);
+          })
+          .error(function(errors) {
+            // errors contains a list of errors
+            console.log("errors:" + errors);
+          });
+
        L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjl6r6wa610tp2sqy9h8gllsy/tiles/256/{z}/{x}/{y}?' +                 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
     maxZoom: 20,
     maxNativeZoom: 20
     }).addTo(map);
     
-    //Turn gjLayer on or off according to zoom level
+    //L.esri.basemapLayer("DarkGray").addTo(map);
+
+    //Turn geojsonLayer on or off according to zoom level
     map.on('zoomend', function() {
         if (map.getZoom() <10){
-            map.removeLayer(gjLayer);
+            map.removeLayer(geojsonLayer);
         }
         else {
-            map.addLayer(gjLayer);    
+            map.addLayer(geojsonLayer);    
         }
     });
     
@@ -494,12 +519,12 @@ module.exports = leafletPip;
 
     document.getElementById('go').onclick = function() {
                 
-        //Find and zoom to location.
+        //Find and zoom to location
         lc.start(); 
         
         document.getElementById('me').innerHTML = 'Finding your location...';
         
-        //Works only on mobile without this stop/start.
+        //Works only on mobile devices without this stop/start
         setTimeout(function() {
             lc.stop(); 
         }, 7000);         
@@ -507,18 +532,20 @@ module.exports = leafletPip;
             lc.start(); 
         }, 7001);    
         
-            //Get location name after 8.5 seconds.
+            //Get location name after 8.5 seconds
             setTimeout(function() {
                 
                 navigator.geolocation.getCurrentPosition(function(pos) {
 
                     var res = leafletPip.pointInLayer(
-                        [pos.coords.longitude, pos.coords.latitude], gjLayer);
+                        [pos.coords.longitude, pos.coords.latitude], geojsonLayer);
                     if (res.length) {
-                        document.getElementById('me').innerHTML = res[0].feature.properties.name;
+                        document.getElementById('me').innerHTML = res[0].feature.properties.name + "<br>" + "<br>" + "<a href=" + res[0].feature.properties.link1 + '" target="_blank">Visit Website</a>'
+                        
+                        
                     } else {
                         document.getElementById('me').innerHTML = 'Out of Bounds';
-                    }  
+                    } 
 
                 });
             
@@ -526,7 +553,6 @@ module.exports = leafletPip;
             
     };
 
-    
     //Geolocation!
     var lc = L.control.locate({
         strings: {
@@ -558,37 +584,65 @@ module.exports = leafletPip;
         },
     }).addTo(map);
     
-    //Geocoder!
-    var searchControl = L.esri.Geocoding.geosearch({
-        position: 'topleft',
-        title: 'Find a place',
-        placeholder: '',
-        useMapBounds: 5,
-    }).addTo(map);
-
-    // create an empty layer group to store the results and add it to the map
-    var results = L.layerGroup().addTo(map);
-
-    // listen for the results event and add every result to the map
-    searchControl.on("results", function(data) {
-        results.clearLayers();
-        for (var i = data.results.length - 1; i >= 0; i--) {
-            results.addLayer(L.marker(data.results[i].latlng));
-        }
-    });
-    
-    //Other way to zoom to location, but not as accurate.
+    //Other way to zoom to location, but not as accurate
     //map.locate();
     
-    //Move the map with the user's location.
+    //Move the map with the user's location
     map.on('locationfound', function(e) {
     map.fitBounds(e.bounds, { maxZoom: 18});
-    });   
+    }); 
     
-    // Add attribution   
+    //Geocoder!
+    //Create the geocoding control and add it to the map
+    var searchControl = L.esri.Geocoding.geosearch({
+        providers: [
+        L.esri.Geocoding.arcgisOnlineProvider({
+        maxResults: 5
+        })
+        ],
+        position: 'topleft',
+        title: 'Find a Place or Address',
+        placeholder: '',
+        useMapBounds: 5,
+        allowMultipleResults: true,
+        zoomToResult: true
+    }).addTo(map);
+
+    //Create an empty layer group to store the results and add it to the map
+    var results = L.layerGroup().addTo(map);
+    
+
+
+    //Listen for the results event and add every result to the map
+    searchControl.on('results', function(data) {
+        
+           results.clearLayers();
+
+            if (data.results.length > 0) {
+
+                // set map view
+                map.setView(data.results[0].latlng, 17);
+
+                // open pop-up for location
+                var popup = L.popup({closeOnClick: true, reOpenOnClick: true, maxWidth: 5000, closeButton: false}).setLatLng(data.results[0].latlng).setContent(data.results[0].text).openOn(map);
+            }  
+        
+            for (var i = data.results.length - 1; i >= 0; i--) {
+                    results.addLayer(L.marker(data.results[0].latlng));
+            }
+    });
+    
+    
+
+    
+    
+    
+    
+    
+    //Add attribution   
     //var attribution = L.control.attribution();
         //attribution.setPrefix('');
-        //attribution.addAttribution('Powered by<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="https://www.digitalglobe.com/">© DigitalGlobe</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+        //attribution.addAttribution('Powered by<a href="https://www.esri.com/en-//us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
         //attribution.addTo(map);
     
 },{"../":1}]},{},[3]);

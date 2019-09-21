@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
         <title>The Spatial Network</title>
@@ -9,6 +9,8 @@
         <meta http-equiv='content-type' content='text/html; charset=utf-8' />
         
         <script src='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js'></script>
+        
+        <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.12/leaflet.draw.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.12/leaflet.draw.js"></script>
@@ -30,10 +32,32 @@
         <li id="sitename"><a href="http://jjleopold.github.io/mapster-draw">Mapster</a></li>
         </div>
         </div>
-        
         <div id='map'></div>
-        <a href='#' id='submit'>Next</a>
+        <a id='next' onclick="openForm()">Next</a>
         <a href="http://jjleopold.github.io/mapster" role="button"><div id='back'>Back</div></a>
+        
+        
+        <div id="form-popup">
+
+        <input type="text" placeholder="Name" name="name" />        
+                <br><br><br>
+        <input type="text" placeholder="Add link here"name="link1" />        
+                <br><br><br>
+        <input type="text" placeholder="Add link here"name="link2" />        
+                <br><br><br>      
+        <input type="text" placeholder="Add link here"name="link3" />
+                <br><br><br>
+        <textarea placeholder="Add anything else here (messages, tips, passwords, coupon codes, etc.)" name="messages" ></textarea>
+                <br><br> 
+                <br><br>
+        <button type="button" id="submit" onclick="closeForm()">Submit</button>
+                                                   
+        <button type="button" id="cancel" onclick="closeForm()">Cancel</button>
+        </div>
+
+        
+
+        
         <script src="lib/jquery-3.3.1.js"></script>
         <script src="lib/bootstrap.min.js"></script>
         <script src='js/draw.js'></script>
