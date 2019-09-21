@@ -350,7 +350,7 @@ textarea {
 /* The popup form - hidden by default */
 #form-popup {
   width: 75%;
-  height: 96%;
+  height: 92%;
   min-height: 700px;
   display: none;
   position: absolute;
