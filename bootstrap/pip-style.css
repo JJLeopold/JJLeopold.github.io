@@ -232,6 +232,7 @@ input[type="text"] {
   text-align: left;
   background-color : #ffffff; 
   box-shadow: 0 0 0px px #ffffff;
+  outline: none !important;
 }
 
 input[type="text"]:focus {
@@ -251,6 +252,7 @@ input[type="text"]:focus {
   text-align: left;
   background-color : #ffffff; 
   box-shadow: 0 0 0px px #ffffff;
+  outline: none !important;
 }
 
 textarea {
@@ -271,6 +273,7 @@ textarea {
   text-align: left;
   background-color : #ffffff; 
   box-shadow: 0 0 0px px #ffffff;
+  outline: none !important;
 }
 
 textarea:focus {
@@ -291,6 +294,7 @@ textarea:focus {
   text-align: left;
   background-color : #ffffff; 
   box-shadow: 0 0 0px px #ffffff;
+  outline: none !important;
 }
 
 
