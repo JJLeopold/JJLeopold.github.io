@@ -557,4 +557,8 @@ function closeForm() {
 
 
 
+        document.getElementById('form-sitename').onclick = function(e) {
+        
+                  $("#form-popup")[0].reset();
 
+        }

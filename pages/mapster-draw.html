@@ -10,7 +10,7 @@
         
         <script src='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js'></script>
         
-        <script src="https://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+        <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.12/leaflet.draw.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.12/leaflet.draw.js"></script>
@@ -37,9 +37,9 @@
         <a href="http://jjleopold.github.io/mapster" role="button"><div id='back'>Back</div></a>
         
         
-        <div id="form-popup">
+        <form id="form-popup">
         <div id="form_header">
-        <li id="sitename"><a>Mapster</a></li>        
+        <li type="button" id="form-sitename" >Mapster</li>        
         </div>
                             <br><br><br><br>
 
@@ -58,7 +58,7 @@
         <button type="button" id="submit" onclick="closeForm()">Submit</button>
                                                    
         <button type="button" id="cancel" onclick="closeForm()">Cancel</button>
-        </div>
+        </form>
 
         
 
