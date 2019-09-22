@@ -457,7 +457,7 @@ function closeForm() {
         
             closeForm();
             
-            //location.reload();               
+            location.reload();               
         }
         
     });
