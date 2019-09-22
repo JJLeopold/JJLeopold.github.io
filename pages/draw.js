@@ -18,11 +18,13 @@
 
     //L.esri.basemapLayer("Imagery");
 
+    //styles/jleopold/ck0veopx23idf1dlim3q91t1f
+
     var Satellite = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjd303coe3wkh2rl0zoezvy8o/tiles/256/{z}/{x}/{y}?' +                 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
     maxZoom: 20,
     });
                 
-    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjlgnrb6xa90w2smcaaihkexg/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
+    var Streets = L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/ck0veopx23idf1dlim3q91t1f/tiles/256/{z}/{x}/{y}?' + 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
     maxZoom: 19,
     });
 
@@ -457,7 +459,10 @@ function closeForm() {
         
             closeForm();
             
-            location.reload();               
+            setTimeout(function() {
+                location.reload();         
+            }, 1000); 
+                          
         }
         
     });
