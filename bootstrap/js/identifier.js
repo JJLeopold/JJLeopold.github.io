@@ -540,8 +540,7 @@ module.exports = leafletPip;
                     var res = leafletPip.pointInLayer(
                         [pos.coords.longitude, pos.coords.latitude], geojsonLayer);
                     if (res.length) {
-                        document.getElementById('me').innerHTML = res[0].feature.properties.name + "<br>" + "<br>" + "<a href=" + res[0].feature.properties.link1 + '" target="_blank">Visit Website</a>'
-                        
+                        document.getElementById('me').innerHTML = res[0].feature.properties.name + "<br>" + "<br>" + '<a href="'+ res[0].feature.properties.description + '" target="_blank">Visit Website</a>'
                         
                     } else {
                         document.getElementById('me').innerHTML = 'Out of Bounds';
@@ -550,7 +549,6 @@ module.exports = leafletPip;
                 });
             
             }, 8500);
-            
     };
 
     //Geolocation!
