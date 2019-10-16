@@ -448,8 +448,8 @@ textarea:focus {
 
 #data_view {
   width: 90% !important;
-  min-height: 600px; !important;
-  margin-top: 25px;
+  min-height: 580px; !important;
+  margin-top: 30px;
   margin-left: 5%;
   margin-right: 5%;
   z-index: 50000 !important;
