@@ -35,7 +35,7 @@ html, body, #map {
     border-radius: 0%;
     border-width: 0px;
     position: absolute;
-    bottom: 10%;
+    bottom: 25%;
     cursor: pointer;
     font-size: 24px;
     color: springgreen;
@@ -43,6 +43,7 @@ html, body, #map {
     text-align: center;
     font-weight: 700;
     outline: none;
+    word-wrap: break-word;
 }
 
 me:hover {

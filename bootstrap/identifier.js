@@ -460,37 +460,31 @@ module.exports = leafletPip;
         //north east
         [90, 180]
         ],
-    attributionControl: false}),
+    attributionControl: false});
         
-    geojsonLayer = L.geoJson;
+        
     
-    var sql = new cartodb.SQL({ user: 'jjleopold', format:'GeoJSON'});
-        sql.execute("SELECT * FROM project_1")
-          .done(function(data) {
+		// Write SQL Selection Query to be Used on Carto Table
+		var sqlQuery = "SELECT the_geom, name, link1, link2, link3, messages FROM mapster";
 
-            //add geojson features to the drawnItems FeatureGroup
-            //console.log(data);//optional/debugging
-            geojsonLayer = L.geoJson(data, {
+		//Fetches
+		var getData = "https://jjleopold.carto.com/api/v2/sql?format=GeoJSON&q=" + sqlQuery;
+		function getGeoJSON() {
+			$.getJSON(getData, function (data) {
+				geojsonLayer = L.geoJson(data, {
                 color: 'springgreen',
                 weight: 2,
                 opacity: 1,
                 fill: true,
                 fillColor: '#009EFF',
                 fillOpacity: .6,
-                
-              onEachFeature: function (feature, layer) {
+					onEachFeature: function (feature, layer) {
                 layer.cartodb_id=feature.properties.cartodb_id;
-              }
-                
-              });
-            //add the drawnItems FeatureGroup, populated with geojson from carto table, to the map
-            //map.addLayer(drawnItems);
-          })
-          .error(function(errors) {
-            // errors contains a list of errors
-            console.log("errors:" + errors);
-          });
-
+                    }
+				}).addTo(map);
+			});
+		}
+		getGeoJSON();
        L.tileLayer('https://api.mapbox.com/styles/v1/jleopold/cjl6r6wa610tp2sqy9h8gllsy/tiles/256/{z}/{x}/{y}?' +                 'access_token=pk.eyJ1Ijoiamxlb3BvbGQiLCJhIjoiY2l5MXV2ZDIzMDAwMTMycGdxYnMwbTVvZiJ9.u54u0PD7k942ESruEVc8rg', {
     maxZoom: 20,
     maxNativeZoom: 20
@@ -540,8 +534,11 @@ module.exports = leafletPip;
                     var res = leafletPip.pointInLayer(
                         [pos.coords.longitude, pos.coords.latitude], geojsonLayer);
                     if (res.length) {
-                        document.getElementById('me').innerHTML = res[0].feature.properties.name + "<br>" + "<br>" + '<a href="'+ res[0].feature.properties.description + '" target="_blank">Visit Website</a>'
-                        
+                        document.getElementById('me').innerHTML = res[0].feature.properties.name + "<br>" + "<br>" + 
+                                                    '<a href="' + res[0].feature.properties.link1 + '" target="_blank">Visit Website</a>' + "<br>" + "<br>" + 
+                                                    '<a href="' + res[0].feature.properties.link2 + '" target="_blank">Visit Website</a>' + "<br>" + "<br>" + 
+                                                    '<a href="' + res[0].feature.properties.link3 + '" target="_blank">Visit Website</a>' + "<br>" + "<br>" + 
+                                                                  res[0].feature.properties.messages;
                     } else {
                         document.getElementById('me').innerHTML = 'Out of Bounds';
                     } 
