@@ -502,6 +502,16 @@ module.exports = leafletPip;
         }
     });
     
+
+    function closeForm() {
+      document.getElementById("form-popup").style.display = "none";
+    }
+    
+    function openForm() {
+      document.getElementById("form-popup").style.display = "block";
+    }
+
+
         //Greeting!
         //setTimeout(function() {
             //document.getElementById('banner').innerHTML = 'Welcome to the Spatial Network';
@@ -512,11 +522,13 @@ module.exports = leafletPip;
         //}, 5000); 
 
     document.getElementById('go').onclick = function() {
+        
                 
         //Find and zoom to location
         lc.start(); 
         
-        document.getElementById('me').innerHTML = 'Finding your location...';
+        document.getElementById('me').innerHTML = 'finding your location...';
+         
         
         //Works only on mobile devices without this stop/start
         setTimeout(function() {
@@ -534,19 +546,29 @@ module.exports = leafletPip;
                     var res = leafletPip.pointInLayer(
                         [pos.coords.longitude, pos.coords.latitude], geojsonLayer);
                     if (res.length) {
-                        document.getElementById('me').innerHTML = res[0].feature.properties.name + "<br>" + "<br>" + 
-                                                    '<a href="' + res[0].feature.properties.link1 + '" target="_blank">Visit Website</a>' + "<br>" + "<br>" + 
-                                                    '<a href="' + res[0].feature.properties.link2 + '" target="_blank">Visit Website</a>' + "<br>" + "<br>" + 
-                                                    '<a href="' + res[0].feature.properties.link3 + '" target="_blank">Visit Website</a>' + "<br>" + "<br>" + 
+                        
+
+                        document.getElementById("form-popup").style.display = "block";
+                        
+                                document.getElementById('me').innerHTML = null;
+
+
+                        
+                        document.getElementById('data').innerHTML = res[0].feature.properties.name + "<br>" + "<br>" + "<br>" +
+                                                    '<a href="' + res[0].feature.properties.link1 + '" target="_blank">' + res[0].feature.properties.link1 + '</a>' + "<br>" + "<br>" + 
+                                                    '<a href="' + res[0].feature.properties.link2 + '" target="_blank">' + res[0].feature.properties.link2 + '</a>' + "<br>" + "<br>" + 
+                                                    '<a href="' + res[0].feature.properties.link3 + '" target="_blank">' + res[0].feature.properties.link3 + '</a>' + "<br>" + "<br>" + "<br>" +
                                                                   res[0].feature.properties.messages;
                     } else {
-                        document.getElementById('me').innerHTML = 'Out of Bounds';
+                        document.getElementById('me').innerHTML = 'out of bounds';
                     } 
 
                 });
             
             }, 8500);
     };
+    
+
 
     //Geolocation!
     var lc = L.control.locate({
@@ -627,7 +649,18 @@ module.exports = leafletPip;
             }
     });
     
-    
+
+        document.getElementById('form-sitename').onclick = function(e) {
+        
+                closeForm();
+                document.getElementById('me').innerHTML = 'click here to open';
+        }
+        
+        document.getElementById('me').onclick = function(e) {
+        
+                openForm();
+                document.getElementById('me').innerHTML = null;
+        }
 
     
     
