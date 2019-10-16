@@ -447,16 +447,15 @@ textarea:focus {
 }
 
 #data_view {
-  padding: px;
   width: 90% !important;
-  min-height: 1000% !important;
-  margin-top: 75px;
+  min-height: 700px; !important;
+  margin-top: 25px;
   margin-left: 5%;
   margin-right: 5%;
   z-index: 50000 !important;
   border-color: springgreen;
   border-style: solid;
-  border-width: 3px;
+  border-width: 2px;
   color: #009EFF;
   position: absolute !important;
   background-color : #ffffff; 
@@ -464,7 +463,6 @@ textarea:focus {
 
 #data {
     padding: 20px;
-
     background-color: transparent;
     opacity: 150 !important;
     z-index: 120000 !important;
