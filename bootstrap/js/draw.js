@@ -347,7 +347,6 @@ function closeForm() {
 			cartoTablename : "mapster"
 		};
 
-		var drawnItems = new L.FeatureGroup();
 
 		function submitData() {
 
@@ -416,6 +415,15 @@ function closeForm() {
                           
         }
         
+    });
+
+    map.on("draw:created", function (e) {
+        drawControl.setDrawingOptions({
+            //Remove the draw tools after a shape is created
+            polygon:false,
+            rectangle: false
+        });
+        map.addControl(drawControl);
     });
 
 
