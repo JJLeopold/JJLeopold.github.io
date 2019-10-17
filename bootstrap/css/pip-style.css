@@ -489,11 +489,11 @@ data:hover {
 
 #data1 {
     padding: 20px;
-    background-color: transparent;
+    background-color: red;
     opacity: 150 !important;
     z-index: 120000 !important;
-    min-height: 145px;
-    max-height: 145px;
+    min-height: 110px;
+    max-height: 110px;
     width: 100%;
     position: absolute;
     top: 3%;
@@ -512,14 +512,14 @@ data:hover {
 
 #data2 {
     padding: 20px;
-    background-color: transparent;
+    background-color: red;
     opacity: 150 !important;
     z-index: 120000 !important;
-    min-height: 150px;
-    max-height: 150px;
+    min-height: 180px;
+    max-height: 180px;
     width: 99%;
     position: absolute;
-    top: 30%;
+    top: 24%;
     cursor: pointer;
     font-size: 18px;
     color: #009EFF;
@@ -539,11 +539,11 @@ data2:hover {
 
 #data3 {
     padding: 20px;
-    background-color: transparent;
+    background-color: red;
     opacity: 150 !important;
     z-index: 120000 !important;
-    min-height: 220px;
-    max-height: 220px;
+    min-height: 180px;
+    max-height: 180px;
     width: 99%;
     position: absolute;
     top: 60%;
