@@ -550,15 +550,18 @@ module.exports = leafletPip;
 
                         document.getElementById("form-popup").style.display = "block";
                         
-                                document.getElementById('me').innerHTML = null;
+                        document.getElementById('me').innerHTML = null;
 
-
+                        document.getElementById('data1').innerHTML = res[0].feature.properties.name;
                         
-                        document.getElementById('data').innerHTML = res[0].feature.properties.name + "<br>" + "<br>" + "<br>" +
-                                                    '<a href="' + res[0].feature.properties.link1 + '" target="_blank">' + res[0].feature.properties.link1 + '</a>' + "<br>" + "<br>" + 
-                                                    '<a href="' + res[0].feature.properties.link2 + '" target="_blank">' + res[0].feature.properties.link2 + '</a>' + "<br>" + "<br>" + 
-                                                    '<a href="' + res[0].feature.properties.link3 + '" target="_blank">' + res[0].feature.properties.link3 + '</a>' + "<br>" + "<br>" + "<br>" +
-                                                                  res[0].feature.properties.messages;
+                        document.getElementById('data2').innerHTML = 
+
+                                                    '<a href="' + res[0].feature.properties.link1 + '" target="_blank">' + res[0].feature.properties.link1 + '</a>' + "<br>" + "<br>" +  
+                                                    '<a href="' + res[0].feature.properties.link2 + '" target="_blank">' + res[0].feature.properties.link2 + '</a>' + "<br>" + "<br>" +  
+                                                    '<a href="' + res[0].feature.properties.link3 + '" target="_blank">' + res[0].feature.properties.link3;
+                                                                  
+                        document.getElementById('data3').innerHTML =res[0].feature.properties.messages;
+                        
                     } else {
                         document.getElementById('me').innerHTML = 'out of bounds';
                     } 
