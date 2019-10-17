@@ -499,8 +499,8 @@ data:hover {
     display: inline-block;
     text-align: center;
     text-shadow: 1px 2px 1px #00B1FF;
-    font-size: 24px;
-    font-weight: 900;
+    font-size: 30px;
+    font-weight: 700;
     outline: none;
     word-wrap: break-word;
     overflow-y:auto;
