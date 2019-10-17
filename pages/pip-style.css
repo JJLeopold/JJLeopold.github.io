@@ -492,8 +492,8 @@ data:hover {
     background-color: transparent;
     opacity: 150 !important;
     z-index: 120000 !important;
-    min-height: 100px;
-    max-height: 100px;
+    min-height: 110px;
+    max-height: 110px;
     width: 100%;
     position: absolute;
     top: 3%;
@@ -507,7 +507,6 @@ data:hover {
     font-weight: 700;
     outline: none;
     word-wrap: break-word;
-    overflow-y:auto;
 }
 
 #data2 {
