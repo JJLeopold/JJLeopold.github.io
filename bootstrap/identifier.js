@@ -490,7 +490,7 @@ module.exports = leafletPip;
     maxNativeZoom: 20
     }).addTo(map);
     
-    //L.esri.basemapLayer("DarkGray").addTo(map);
+        //L.esri.basemapLayer("DarkGray").addTo(map);
 
     //Turn geojsonLayer on or off according to zoom level
     map.on('zoomend', function() {
@@ -556,7 +556,7 @@ module.exports = leafletPip;
                         
                         document.getElementById('data2').innerHTML = 
 
-                                                    '<a href="' + res[0].feature.properties.link1 + '" target="_blank">' + res[0].feature.properties.link1 + '</a>' + "<br>" + "<br>" +  
+                                                    '<a href="//' + res[0].feature.properties.link1 + '" target="_blank">' + res[0].feature.properties.link1 + '</a>' + "<br>" + "<br>" +  
                                                     '<a href="' + res[0].feature.properties.link2 + '" target="_blank">' + res[0].feature.properties.link2 + '</a>' + "<br>" + "<br>" +  
                                                     '<a href="' + res[0].feature.properties.link3 + '" target="_blank">' + res[0].feature.properties.link3;
                                                                   
@@ -604,8 +604,14 @@ module.exports = leafletPip;
         },
     }).addTo(map);
     
-    //Other way to zoom to location, but not as accurate
-    //map.locate();
+
+    //set map view to user location
+      map.locate({
+            setView: true,
+            maxZoom: 6,
+            enableHighAccuracy: true,
+            timeout: 5000
+        });
     
     //Move the map with the user's location
     map.on('locationfound', function(e) {
