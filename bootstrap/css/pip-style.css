@@ -498,11 +498,11 @@ data:hover {
     color: springgreen;
     display: inline-block;
     text-align: center;
-    text-shadow: 2px 2px 2px #00B1FF;
-    font-weight: 700;
-    font-size: 30px;
+    text-shadow: 1px 2px 1px #00B1FF;
+    font-size: 24px;
     outline: none;
     word-wrap: break-word;
+    overflow-y:auto;
 }
 
 #data2 {
@@ -519,7 +519,7 @@ data:hover {
     font-size: 18px;
     color: #009EFF;
     display: inline-block;
-    text-align: left;
+    text-align: center;
     text-decoration: underline;
     font-size: 14px;
     outline: none;
@@ -546,7 +546,7 @@ data2:hover {
     font-size: 18px;
     color: #009EFF;
     display: inline-block;
-    text-align: left;
+    text-align: center;
     font-size: 15px;
     font-weight: 700;
     outline: none;
