@@ -274,7 +274,9 @@ textarea {
   text-align: left;
   background-color : #ffffff; 
   box-shadow: 0 0 0px px #ffffff;
-  outline: none !important;
+  outline: none !important;    
+  word-wrap: break-word;
+  overflow-y:auto;
 }
 
 textarea:focus {
@@ -296,6 +298,8 @@ textarea:focus {
   background-color : #ffffff; 
   box-shadow: 0 0 0px px #ffffff;
   outline: none !important;
+  word-wrap: break-word;
+  overflow-y:auto;
 }
 
 
@@ -499,7 +503,7 @@ data:hover {
     display: inline-block;
     text-align: center;
     text-shadow: 1px 2px 1px #00B1FF;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
     outline: none;
     word-wrap: break-word;
