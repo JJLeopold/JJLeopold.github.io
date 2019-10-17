@@ -489,7 +489,7 @@ data:hover {
 
 #data1 {
     padding: 20px;
-    background-color: red;
+    background-color: transparent;
     opacity: 150 !important;
     z-index: 120000 !important;
     min-height: 145px;
@@ -512,7 +512,7 @@ data:hover {
 
 #data2 {
     padding: 20px;
-    background-color: red;
+    background-color: transparent;
     opacity: 150 !important;
     z-index: 120000 !important;
     min-height: 150px;
@@ -539,11 +539,11 @@ data2:hover {
 
 #data3 {
     padding: 20px;
-    background-color: red;
+    background-color: transparent;
     opacity: 150 !important;
     z-index: 120000 !important;
-    min-height: 200px;
-    max-height: 200px;
+    min-height: 220px;
+    max-height: 220px;
     width: 99%;
     position: absolute;
     top: 60%;
@@ -561,7 +561,7 @@ data2:hover {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 10px;
 }
 
 /* Track */
