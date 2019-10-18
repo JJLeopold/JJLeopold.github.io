@@ -520,6 +520,7 @@ module.exports = leafletPip;
         //setTimeout(function() {
             //document.getElementById('banner').innerHTML = '';
         //}, 5000); 
+    
 
     document.getElementById('go').onclick = function() {
         
@@ -556,9 +557,9 @@ module.exports = leafletPip;
                         
                         document.getElementById('data2').innerHTML = 
 
-                                                    '<a href="//' + res[0].feature.properties.link1 + '" target="_blank">' + res[0].feature.properties.link1 + '</a>' + "<br>" + "<br>" +  
-                                                    '<a href="' + res[0].feature.properties.link2 + '" target="_blank">' + res[0].feature.properties.link2 + '</a>' + "<br>" + "<br>" +  
-                                                    '<a href="' + res[0].feature.properties.link3 + '" target="_blank">' + res[0].feature.properties.link3;
+                                    '<a href="//' + res[0].feature.properties.link1 + '" target="_blank">' + res[0].feature.properties.link1 + '</a>' + "<br>" + "<br>" +  
+                                    '<a href="//' + res[0].feature.properties.link2 + '" target="_blank">' + res[0].feature.properties.link2 + '</a>' + "<br>" + "<br>" +  
+                                    '<a href="//' + res[0].feature.properties.link3 + '" target="_blank">' + res[0].feature.properties.link3;
                                                                   
                         document.getElementById('data3').innerHTML =res[0].feature.properties.messages;
                         
