@@ -31,7 +31,8 @@ html, body, #map {
     opacity: 150 !important;
     z-index: 120000 !important;
     min-height: 50px;
-    width: 100%;
+    width: 30%;
+    margin-left: 35%;
     border-radius: 0%;
     border-width: 0px;
     position: absolute;
@@ -229,7 +230,7 @@ input[type="text"] {
   border-style: solid;
   border-width: 0px;
   color: #009EFF;
-  position: absolute !important;
+  position: absolute;
   text-align: left;
   background-color : #ffffff; 
   box-shadow: 0 0 0px px #ffffff;
@@ -277,6 +278,7 @@ textarea {
   outline: none !important;    
   word-wrap: break-word;
   overflow-y:auto;
+  resize: none;
 }
 
 textarea:focus {
@@ -556,7 +558,8 @@ data2:hover {
     font-weight: 700;
     outline: none;
     word-wrap: break-word;
-    overflow-y:auto
+    overflow-y:auto;
+    white-space: pre-wrap;
 }
 
 /* width */
@@ -580,4 +583,6 @@ data2:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #009EFF; 
 }
+
+
 

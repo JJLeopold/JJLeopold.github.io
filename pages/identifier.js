@@ -462,7 +462,7 @@ module.exports = leafletPip;
         ],
     attributionControl: false});
         
-        
+        var geojsonLayer = L.geoJson
     
 		// Write SQL Selection Query to be Used on Carto Table
 		var sqlQuery = "SELECT the_geom, name, link1, link2, link3, messages FROM mapster";
@@ -606,12 +606,12 @@ module.exports = leafletPip;
     
 
     //set map view to user location
-      map.locate({
-            setView: true,
-            maxZoom: 6,
-            enableHighAccuracy: true,
-            timeout: 5000
-        });
+      //map.locate({
+            //setView: true,
+            //maxZoom: 6,
+            //enableHighAccuracy: true,
+            //timeout: 5000
+        //});
     
     //Move the map with the user's location
     map.on('locationfound', function(e) {
