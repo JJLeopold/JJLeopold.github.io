@@ -31,8 +31,8 @@ html, body, #map {
     opacity: 150 !important;
     z-index: 120000 !important;
     min-height: 50px;
-    width: 30%;
-    margin-left: 35%;
+    width: 70%;
+    margin-left: 15%;
     border-radius: 0%;
     border-width: 0px;
     position: absolute;
@@ -471,6 +471,10 @@ a {
   color: #009EFF;
 }
 a:hover {
+  color: springgreen;
+}
+
+a:focus {
   color: springgreen;
 }
 
