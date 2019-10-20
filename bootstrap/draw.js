@@ -350,7 +350,7 @@ function closeForm() {
 
 		function submitData() {
 
-			var username = "'" + ($('#username').val()) + "'";
+			var name = "'" + ($('#name').val()) + "'";
             
 			var link1 = "'" + ($('#link1').val()) + "'";
             
@@ -369,7 +369,7 @@ function closeForm() {
 				  //Construct the SQL query to insert data from the three parameters: the drawing, the input username, and the input description of the drawn shape
 					sql = "SELECT " + config.cartoInsertFunction + "(";
 				sql += drawing;
-                sql += "," + username;				
+                sql += "," + name;				
 				sql += "," + link1;
                 sql += "," + link2;
                 sql += "," + link3;
@@ -404,7 +404,7 @@ function closeForm() {
         }
 
         document.getElementById('submit').onclick = function(e) {
-        
+                    
             submitData(layers);
         
             closeForm();
@@ -425,6 +425,7 @@ function closeForm() {
         });
         map.addControl(drawControl);
     });
+
 
 
     
