@@ -505,10 +505,10 @@ data:hover {
     top: 3%;
     cursor: pointer;
     font-size: 18px;
-    color: springgreen;
+    color: #00B1FF;
     display: inline-block;
     text-align: center;
-    text-shadow: 1px 2px 1px #00B1FF;
+    text-shadow: 1px 1px 1px springgreen;
     font-size: 25px;
     font-weight: 700;
     outline: none;
