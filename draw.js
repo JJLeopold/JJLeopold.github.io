@@ -349,8 +349,8 @@ function closeForm() {
 
 
 		function submitData() {
-
-			var name = "'" + ($('#name').val()) + "'";
+            
+			var name = "'" + ($('#name').val().replace("'","''")) + "'";
             
 			var link1 = "'" + ($('#link1').val()) + "'";
             
@@ -358,7 +358,7 @@ function closeForm() {
             
 			var link3 = "'" + ($('#link3').val()) + "'";
             
-			var messages = "'" + ($('#messages').val()) + "'";
+			var messages = "'" + ($('#messages').val().replace("'","''")) + "'";
             
             var timestamp = "'" + (new Date().getTime()) + "'";
             
