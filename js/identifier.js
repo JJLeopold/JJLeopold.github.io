@@ -481,7 +481,7 @@ module.exports = leafletPip;
 					onEachFeature: function (feature, layer) {
                 layer.cartodb_id=feature.properties.cartodb_id;
                     }
-				}).addTo(map);
+				});
 			});
 		}
 		getGeoJSON();
@@ -606,13 +606,13 @@ module.exports = leafletPip;
     }).addTo(map);
     
 
-    //set map view to user location
-      //map.locate({
-            //setView: true,
-            //maxZoom: 6,
-            //enableHighAccuracy: true,
-            //timeout: 5000
-        //});
+    /*//set map view to user location on page load
+      map.locate({
+            setView: true,
+            maxZoom: 6,
+            enableHighAccuracy: true,
+            timeout: 5000
+        });*/
     
     //Move the map with the user's location
     map.on('locationfound', function(e) {
