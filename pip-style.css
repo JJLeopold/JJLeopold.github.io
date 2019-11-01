@@ -526,7 +526,7 @@ data:hover {
     max-height: 180px;
     width: 99%;
     position: absolute;
-    top: 24%;
+    top: 20%;
     cursor: pointer;
     font-size: 18px;
     color: #009EFF;
@@ -553,7 +553,7 @@ data2:hover {
     max-height: 220px;
     width: 99%;
     position: absolute;
-    top: 60%;
+    top: 57%;
     cursor: pointer;
     font-size: 18px;
     color: #009EFF;
@@ -589,5 +589,14 @@ data2:hover {
   background: #009EFF; 
 }
 
-
+.resline {
+    background-color: #009EFF;
+    width: 50%;  
+}
+hr{ 
+  height: 1px;
+  color: #009EFF;
+  background-color: #009EFF;
+  border: none;
+}
 

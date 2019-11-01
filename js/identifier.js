@@ -521,6 +521,7 @@ module.exports = leafletPip;
             //document.getElementById('banner').innerHTML = '';
         //}, 5000); 
     
+    var z = '0'
 
     document.getElementById('go').onclick = function() {
         
@@ -551,17 +552,17 @@ module.exports = leafletPip;
 
                         document.getElementById("form-popup").style.display = "block";
                         
-                        document.getElementById('me').innerHTML = null;
+                        document.getElementById('me').innerHTML = '';
 
-                        document.getElementById('data1').innerHTML = res[0].feature.properties.name;
+                        document.getElementById('data1').innerHTML = res[z].feature.properties.name;
                         
                         document.getElementById('data2').innerHTML = 
 
-                                    '<a href="//' + res[0].feature.properties.link1 + '" target="_blank">' + res[0].feature.properties.link1 + '</a>' + "<br>" + "<br>" +  
-                                    '<a href="//' + res[0].feature.properties.link2 + '" target="_blank">' + res[0].feature.properties.link2 + '</a>' + "<br>" + "<br>" +  
-                                    '<a href="//' + res[0].feature.properties.link3 + '" target="_blank">' + res[0].feature.properties.link3;
+                                    '<a href="//' + res[z].feature.properties.link1 + '" target="_blank">' + res[z].feature.properties.link1 + '</a>' + "<br>" + "<br>" +  
+                                    '<a href="//' + res[z].feature.properties.link2 + '" target="_blank">' + res[z].feature.properties.link2 + '</a>' + "<br>" + "<br>" +  
+                                    '<a href="//' + res[z].feature.properties.link3 + '" target="_blank">' + res[z].feature.properties.link3;
                                                                   
-                        document.getElementById('data3').innerHTML =res[0].feature.properties.messages;
+                        document.getElementById('data3').innerHTML =res[z].feature.properties.messages;
                         
                     } else {
                         document.getElementById('me').innerHTML = 'out of bounds';
@@ -663,13 +664,13 @@ module.exports = leafletPip;
         document.getElementById('form-sitename').onclick = function(e) {
         
                 closeForm();
-                document.getElementById('me').innerHTML = 'click here to open';
+                document.getElementById('me').innerHTML = 'Open Portal';
         }
         
         document.getElementById('me').onclick = function(e) {
         
                 openForm();
-                document.getElementById('me').innerHTML = null;
+                document.getElementById('me').innerHTML = '';
         }
 
     

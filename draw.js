@@ -460,7 +460,7 @@ function closeForm() {
                 map.setView(data.results[0].latlng, 17);
 
                 // open pop-up for location
-                var popup = L.popup({closeOnClick: true, reOpenOnClick: true, maxWidth: 5000, closeButton: false}).setLatLng(data.results[0].latlng).setContent(data.results[0].text).openOn(map);
+                var popup = L.popup({closeOnClick: true, openOnClick: true, maxWidth: 5000, closeButton: false}).setLatLng(data.results[0].latlng).setContent(data.results[0].text).openOn(map);
             }  
         
             for (var i = data.results.length - 1; i >= 0; i--) {
@@ -468,14 +468,15 @@ function closeForm() {
             }
     });
 
-    map.on('zoomend', function() {
+    //Always bring map to zoom level 16
+    /*map.on('zoomend', function() {
         if (map.getZoom() >16){
             map.removeControl(searchControl);
         }
         else {
             map.addControl(searchControl);
         }
-    });    
+    });*/
 
 
 
