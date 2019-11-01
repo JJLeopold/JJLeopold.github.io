@@ -469,14 +469,14 @@ function closeForm() {
     });
 
     //Always bring map to zoom level 16
-    /*map.on('zoomend', function() {
+    map.on('zoomend', function() {
         if (map.getZoom() >16){
             map.removeControl(searchControl);
         }
         else {
             map.addControl(searchControl);
         }
-    });*/
+    });
 
 
 
