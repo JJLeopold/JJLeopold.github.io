@@ -622,7 +622,7 @@ module.exports = leafletPip;
     
     //Geocoder!
     //Create the geocoding control and add it to the map
-    var searchControl = L.esri.Geocoding.geosearch({
+    /*var searchControl = L.esri.Geocoding.geosearch({
         providers: [
         L.esri.Geocoding.arcgisOnlineProvider({
         maxResults: 5
@@ -658,7 +658,7 @@ module.exports = leafletPip;
             for (var i = data.results.length - 1; i >= 0; i--) {
                     results.addLayer(L.marker(data.results[0].latlng));
             }
-    });
+    });*/
     
 
         document.getElementById('form-sitename').onclick = function(e) {
