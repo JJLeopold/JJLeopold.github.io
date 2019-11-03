@@ -53,18 +53,19 @@ me:hover {
 	}
 
 #go {
-    display: block;
+    display:inline-block;
     background: transparent !important;
     z-index: 500 !important;
     height: 50px;
     width: 50px;
-    position: absolute;
+    position:inherit;
     top: 82px;
     right: 11px;
     cursor: pointer;
     outline: none;
     border: none;
     box-shadow: 0 0 5px 2px springgreen;
+    padding: 6px;
 }
 
 #go:hover {
@@ -92,6 +93,7 @@ me:hover {
     from {box-shadow: 0 0 5px 2px springgreen;}
     to {box-shadow: 0 0 10px 6px #009EFF;}
 }
+
 
 
 #add {
