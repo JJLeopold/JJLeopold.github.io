@@ -128,7 +128,9 @@
                     fill: true,
                     fillColor: '#009EFF',
                     fillOpacity: .5,
-                  }
+                  },
+                  showArea: false, //Whether to show the area in the tooltip
+		          metric: false // Whether to use the metric measurement system or imperial
                 },
          },
         edit: {
@@ -211,7 +213,7 @@
                 },
                 rectangle: {
                     tooltip: {
-                        start: 'Click and drag to create a rectangle'
+                        start: 'Click and drag to create a rectangle',
                     }
                 },
                 simpleshape: {
@@ -259,6 +261,7 @@
             }
         }
     };
+
 
     //Hide draw and edit controls and remove drawn shapes by zoom level
     map.on('zoomend', function() {
