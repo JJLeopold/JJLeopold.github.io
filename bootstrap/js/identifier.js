@@ -606,6 +606,7 @@ module.exports = leafletPip;
         },
     }).addTo(map);
     
+    
 
     /*//set map view to user location on page load
       map.locate({
