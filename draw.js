@@ -29,7 +29,7 @@
     });
 
     var map = L.map('map',{
-    center: [38, -95],
+    center: [38, -96],
     zoomControl: false,
     zoom: 2,
     minZoom: 2,
@@ -484,10 +484,10 @@ function closeForm() {
 
 
     // Add attribution   
-    //var attribution = L.control.attribution();
-        //attribution.setPrefix('');
-        //attribution.addAttribution('Powered by<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="https://www.digitalglobe.com/">© DigitalGlobe</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
-        //attribution.addTo(map);
+    /*var attribution = L.control.attribution();
+        attribution.setPrefix('');
+        attribution.addAttribution('Powered by<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="https://www.digitalglobe.com/">© DigitalGlobe</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+        attribution.addTo(map);*/
 
 
 
