@@ -284,6 +284,8 @@
 /* general toolbar styles */
 
 .leaflet-bar {
+    width: 34px;
+    height: 34px;
     border-color: #ffffff !important;
 	border-radius: 4px;
     background-color: #009EFF;
@@ -293,6 +295,8 @@
     box-shadow: 0 0 2px .01px #009EFF !important;
 	}
 .leaflet-bar:focus {
+    width: 34px;
+    height: 34px;
     border-color: #ffffff !important;
 	border-radius: 4px;
     background-color: springgreen;
@@ -303,6 +307,8 @@
     padding: 3px !important;
 	}
 .leaflet-bar:hover {
+    width: 34px;
+    height: 34px;
     background-color: springgreen;
     font-size: 14px;
 	}
