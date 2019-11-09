@@ -432,6 +432,19 @@ function closeForm() {
 
 
     
+    /*//set map view to user location on page load
+      map.locate({
+            setView: true,
+            maxZoom: 6,
+            enableHighAccuracy: true,
+            timeout: 5000
+        });*/
+    
+    //Move the map with the user's location
+    map.on('locationfound', function(e) {
+    map.fitBounds(e.bounds, { maxZoom: 18});
+    }); 
+    
     //Geocoder!
     //Create the geocoding control and add it to the map
     var searchControl = L.esri.Geocoding.geosearch({
@@ -450,8 +463,9 @@ function closeForm() {
 
     //Create an empty layer group to store the results and add it to the map
     var results = L.layerGroup().addTo(map);
-
     
+
+
     //Listen for the results event and add every result to the map
     searchControl.on('results', function(data) {
         
@@ -460,10 +474,10 @@ function closeForm() {
             if (data.results.length > 0) {
 
                 // set map view
-                map.setView(data.results[0].latlng, 17);
+                map.setView(data.results[0].latlng);
 
                 // open pop-up for location
-                var popup = L.popup({closeOnClick: true, openOnClick: true, maxWidth: 5000, closeButton: false}).setLatLng(data.results[0].latlng).setContent(data.results[0].text).openOn(map);
+                var popup = L.popup({closeOnClick: true, reOpenOnClick: true, maxWidth: 5000, closeButton: false}).setLatLng(data.results[0].latlng).setContent(data.results[0].text).openOn(map);
             }  
         
             for (var i = data.results.length - 1; i >= 0; i--) {
@@ -471,16 +485,20 @@ function closeForm() {
             }
     });
 
-    //Always bring map to zoom level 16
+    var zoomToPortal = document.getElementById('zoom_to_portal');
+
+
+    //Turn controls on or off by zoom level
     map.on('zoomend', function() {
         if (map.getZoom() >16){
             map.removeControl(searchControl);
+            map.removeControl(zoomToPortal);
         }
         else {
             map.addControl(searchControl);
+            map.addControl(zoomToPortal);
         }
     });
-
 
 
     // Add attribution   

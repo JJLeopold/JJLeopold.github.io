@@ -212,9 +212,8 @@ me:hover {
  line-height: 1;
  font-size: 60px;
  font-weight: 900;
+ font-family: sans-serif;
 }
-
-
 
 
 
@@ -591,6 +590,7 @@ data2:hover {
   background: #009EFF; 
 }
 
+
 .resline {
     background-color: #009EFF;
     width: 50%;  
@@ -602,3 +602,29 @@ hr{
   border: none;
 }
 
+#zoom_to_portal{
+    padding: 10px;
+    background: transparent;
+    border: solid;
+    border-color: #ffffff;
+    border-radius: 100px;
+    border-width: 0px;
+    box-shadow: 0 0 0px 0px #009EFF;
+    z-index: 9000 !important;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    top: 76%;
+    cursor:grab;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    display: inline-block;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    outline: none;
+    word-wrap: break-word;
+    text-shadow: 1px 1px 5px #009EFF;
+}
