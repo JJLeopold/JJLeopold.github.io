@@ -609,15 +609,12 @@ hr{
     border-color: #ffffff;
     border-radius: 100px;
     border-width: 0px;
-    box-shadow: 0 0 0px 0px #009EFF;
     z-index: 600 !important;
     height: 0px;
     width: 100%;
     position: absolute;
-    top: 76%;
+    top: 95px;
     cursor: grab;
-    font-size: 30px;
-    font-weight: 700;
     color: #ffffff;
     display: inline-block;
     text-align: center;
@@ -626,5 +623,14 @@ hr{
     font-weight: 700;
     outline: none;
     word-wrap: break-word;
-    text-shadow: 1px 1px 3px #000000;
+    text-shadow: 0px 0px 0px #000000;
+}
+
+.highlighted {
+    background-color: rgba(0,158,255,.7);
+    border: solid;
+    border-width: 0px;
+    border-radius: 100px;
+    box-shadow: 0 0 0px 0px springgreen;
+
 }
