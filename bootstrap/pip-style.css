@@ -610,12 +610,12 @@ hr{
     border-radius: 100px;
     border-width: 0px;
     box-shadow: 0 0 0px 0px #009EFF;
-    z-index: 9000 !important;
+    z-index: 600 !important;
     height: 30px;
     width: 100%;
     position: absolute;
     top: 76%;
-    cursor:grab;
+    cursor: grab;
     font-size: 18px;
     font-weight: 500;
     color: #ffffff;
