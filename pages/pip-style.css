@@ -613,7 +613,7 @@ hr{
     height: 0px;
     width: 100%;
     position: absolute;
-    top: 77%;
+    top: 77.5%;
     cursor: grab;
     color: #ffffff;
     display: inline-block;
@@ -627,7 +627,7 @@ hr{
 }
 
 .highlighted {
-    background-color: rgba(0,158,255,.75);
+    background-color: rgba(0,158,255,.7);
     border: solid;
     border-width: 0px;
     border-radius: 100px;
