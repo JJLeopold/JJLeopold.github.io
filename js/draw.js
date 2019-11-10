@@ -414,7 +414,7 @@ function closeForm() {
             
             setTimeout(function() {
                 location.reload();         
-            }, 3000); 
+            }, 2000); 
                           
         }
         
@@ -496,9 +496,9 @@ function closeForm() {
         }
         else {
             map.addControl(searchControl);
-            map.addControl(zoomToPortal);
         }
     });
+
 
 
     // Add attribution   
