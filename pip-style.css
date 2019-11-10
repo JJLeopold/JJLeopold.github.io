@@ -613,7 +613,7 @@ hr{
     height: 0px;
     width: 100%;
     position: absolute;
-    top: 88px;
+    bottom: 45px;
     cursor: grab;
     color: #ffffff;
     display: inline-block;
