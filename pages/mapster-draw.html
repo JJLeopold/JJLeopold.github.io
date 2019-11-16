@@ -35,18 +35,17 @@
         <div id="zoom_to_portal"><span class = highlighted> &nbsp;&nbsp;Zoom in to create a portal&nbsp;&nbsp; </span></div>
         <a id='next' onclick="openForm()">NEXT</a>
         <a href="https://jjleopold.github.io/mapster" role="button"><div id='back'>BACK</div></a>
-        
         <form id="form-popup">
+        <div id=form_container>
         <div id="form_header">
         <li type="button" id="form-sitename" >Mapster</li>        
         </div>
             <br><br><br><br>
-        <input type="text" id="name" placeholder="Enter portal name" name="name" maxlength="28"  autofocus/>  
-            
+        <input type="text" id="name" placeholder="Enter portal name" name="name" maxlength="28"  />  
                 <br><br><br>
-        <input type="text" id="link1" placeholder="Enter link" name="link1" maxlength="500"/>    
+        <input type="text" id="link1" placeholder="Enter link" name="link1" maxlength="500"/> 
                 <br><br><br>
-        <input type="text" id="link2" placeholder="Enter link"name="link2" maxlength="500"/>        
+        <input type="text" id="link2" placeholder="Enter link"name="link2" maxlength="500"/>   
                 <br><br><br>      
         <input type="text" id="link3" placeholder="Enter link"name="link3" maxlength="500"/>
                 <br><br><br>
@@ -54,6 +53,7 @@
                 <br><br><br><br>
         <button type="button" id="submit" onclick="closeForm()">Submit</button>        
         <button type="button" id="cancel" onclick="closeForm()">Cancel</button>
+        </div>
         </form>
         </div>
         <script src="lib/jquery-3.3.1.js"></script>
