@@ -487,7 +487,6 @@ function closeForm() {
 
     var zoomToPortal = document.getElementById('zoom_to_portal');
 
-
     //Turn controls on or off by zoom level
     map.on('zoomend', function() {
         if (map.getZoom() >16){
@@ -514,11 +513,65 @@ function closeForm() {
                   $("#form-popup")[0].reset();
 
         }
+        
+        
+        //limit textbox characters
+        function maxLength(el) {    
+            if (!('maxLength' in el)) {
+                var max = el.attributes.maxLength.value;
+                el.onkeypress = function () {
+                    if (this.value.length >= max) return false;
+                };
+            }
+        }
+        maxLength(document.getElementById("name"));
 
+        function maxLength(el) {    
+            if (!('maxLength' in el)) {
+                var max = el.attributes.maxLength.value;
+                el.onkeypress = function () {
+                    if (this.value.length >= max) return false;
+                };
+            }
+        }
+        maxLength(document.getElementById("link1"));
+
+        function maxLength(el) {    
+            if (!('maxLength' in el)) {
+                var max = el.attributes.maxLength.value;
+                el.onkeypress = function () {
+                    if (this.value.length >= max) return false;
+                };
+            }
+        }
+        maxLength(document.getElementById("link2"));
+
+        function maxLength(el) {    
+            if (!('maxLength' in el)) {
+                var max = el.attributes.maxLength.value;
+                el.onkeypress = function () {
+                    if (this.value.length >= max) return false;
+                };
+            }
+        }
+        maxLength(document.getElementById("link3"));
+
+        function maxLength(el) {    
+            if (!('maxLength' in el)) {
+                var max = el.attributes.maxLength.value;
+                el.onkeypress = function () {
+                    if (this.value.length >= max) return false;
+                };
+            }
+        }
+        maxLength(document.getElementById("messages"));
         
         
         
         
+
+
+
         
         
         
