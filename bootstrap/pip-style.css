@@ -412,6 +412,7 @@ textarea:focus {
   z-index: 9999 !important;
   background-color: #009EFF;
   box-shadow: 0 0 2px .01px #009EFF;
+  align-content: space-between !important;
 }
 
 
