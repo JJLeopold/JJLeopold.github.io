@@ -511,7 +511,7 @@ data:hover {
     max-height: 110px;
     width: 100%;
     position: absolute;
-    top: 3%;
+    top: 20px;
     cursor: pointer;
     font-size: 18px;
     color: springgreen;
@@ -530,11 +530,11 @@ data:hover {
     background-color: transparent;
     opacity: 150 !important;
     z-index: 120000 !important;
-    min-height: 180px;
-    max-height: 180px;
+    min-height: 200px;
+    max-height: 200px;
     width: 99%;
     position: absolute;
-    top: 20%;
+    top: 150px;
     cursor: pointer;
     font-size: 18px;
     color: #009EFF;
@@ -557,11 +557,11 @@ data2:hover {
     background-color: transparent;
     opacity: 150 !important;
     z-index: 120000 !important;
-    min-height: 220px;
-    max-height: 220px;
+    min-height: 200px;
+    max-height: 200px;
     width: 99%;
     position: absolute;
-    top: 57%;
+    top: 370px;
     cursor: pointer;
     font-size: 18px;
     color: #009EFF;
