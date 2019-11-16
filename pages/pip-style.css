@@ -225,8 +225,7 @@ me:hover {
 input[type="text"] {
   padding: 5px;
   width: 80% !important;
-  height: auto !important;
-  margin-top: 45px;
+  height: 4% !important;
   margin-left: 10%;
   margin-right: 10%;
   z-index: 50000 !important;
@@ -245,8 +244,7 @@ input[type="text"] {
 input[type="text"]:focus {
   padding: 5px;
   width: 80% !important;
-  height: auto !important;
-  margin-top: 45px;
+  height: 4% !important;
   margin-left: 10%;
   margin-right: 10%;
   z-index: 50000 !important;
@@ -265,8 +263,7 @@ input[type="text"]:focus {
 textarea {
   padding: 5px;
   width: 80% !important;
-  height: 10% !important;
-  margin-top: 45px;
+  height: 15% !important;
   margin-left: 10%;
   margin-right: 10%;
   z-index: 50000 !important;
@@ -288,8 +285,7 @@ textarea {
 textarea:focus {
   padding: 5px;
   width: 80% !important;
-  height: 10% !important;
-  margin-top: 45px;
+  height: 15% !important;
   margin-left: 10%;
   margin-right: 10%;
   z-index: 50000 !important;
@@ -318,7 +314,7 @@ textarea:focus {
     position: absolute;
     margin-right:35%;
     margin-left:35%;
-    top:70%;
+    top:77% !important;
     cursor: pointer;
     font-size: 16px;
     color: #009EFF;
@@ -353,7 +349,7 @@ textarea:focus {
     position: absolute !important;
     margin-right:35%;
     margin-left:35%;
-    top:60%;
+    top:67% !important;
     cursor: pointer;
     font-size: 16px;
     color: #ffffff;
@@ -435,6 +431,8 @@ textarea:focus {
  font-size: 60px;
  font-weight: 900;
  cursor: pointer;
+  height: auto !important;
+
 }
 
 #form-sitename {
@@ -450,6 +448,12 @@ textarea:focus {
  border: none;
  margin: 0;
  padding: 0;
+}
+
+#form_container{
+ height: 80%;
+ margin-top: 120px;
+ background-color: transparent;
 }
 
 #data_view {
