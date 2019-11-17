@@ -1,1 +1,0 @@
-L.control.locate().addTo(map);
