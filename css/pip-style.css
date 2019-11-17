@@ -574,7 +574,6 @@ data2:hover {
     overflow-y:auto;
     white-space: pre-wrap;
 }
-
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
