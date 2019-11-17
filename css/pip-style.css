@@ -234,7 +234,6 @@ input[type="text"] {
   padding: 5px;
   width: 80% !important;
   min-height: 4% !important;
-  margin-top: 40px;
   margin-left: 10%;
   margin-right: 10%;
   z-index: 50000 !important;
@@ -257,7 +256,6 @@ input[type="text"]:focus {
   padding: 5px;
   width: 80% !important;
   min-height: 4% !important;
-  margin-top: 40px;
   margin-left: 10%;
   margin-right: 10%;
   z-index: 50000 !important;
@@ -281,7 +279,6 @@ textarea {
   width: 80% !important;
   min-height: 15% !important;
   max-height: 30% !important;
-  margin-top: 40px;
   margin-left: 10%;
   margin-right: 10%;
   z-index: 50000 !important;
@@ -308,7 +305,6 @@ textarea:focus {
   width: 80% !important;
   min-height: 15% !important;
   max-height: 30% !important;
-  margin-top: 40px;
   margin-left: 10%;
   margin-right: 10%;
   z-index: 50000 !important;
@@ -326,6 +322,43 @@ textarea:focus {
   overflow-y:auto;
 }
 
+
+#cancel {
+    background-color: red;
+    opacity: 100 !important;
+    z-index: 500 !important;
+    min-height: 6%;
+    max-height: 6%;
+    width: 30%;
+    position: absolute !important;
+    margin-right:35%;
+    margin-left:35%;
+    margin-top: 55px;
+    margin-bottom: 40px;
+    bottom: 12%;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    border: solid;
+    border-width: 2px;
+    border-color: #ffffff;
+    border-radius: 5px;
+    font-weight: 700;
+    font-family: sans-serif;
+    box-shadow: 0 0 2px .01px #009EFF;
+}
+
+#cancel:hover {
+	background-color: #ff3333;
+    color: #ffffff;
+    border: solid;
+    border-width: 2px;
+    border-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 .01px .01px #009EFF;
+	}
 
 #submit {
     background-color: springgreen;
@@ -364,42 +397,6 @@ textarea:focus {
     box-shadow: 0 0 2px .01px #009EFF;
 	}
 
-#cancel {
-    background-color: red;
-    opacity: 100 !important;
-    z-index: 500 !important;
-    min-height: 6%;
-    max-height: 6%;
-    width: 30%;
-    position: absolute !important;
-    margin-right:35%;
-    margin-left:35%;
-    margin-top: 55px;
-    margin-bottom: 40px;
-    bottom: 12%;
-    cursor: pointer;
-    font-size: 16px;
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-    border: solid;
-    border-width: 2px;
-    border-color: #ffffff;
-    border-radius: 5px;
-    font-weight: 700;
-    font-family: sans-serif;
-    box-shadow: 0 0 2px .01px #009EFF;
-}
-
-#cancel:hover {
-	background-color: #ff3333;
-    color: #ffffff;
-    border: solid;
-    border-width: 2px;
-    border-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 0 .01px .01px #009EFF;
-	}
 
 ::placeholder { 
   color: #009EFF !important;
