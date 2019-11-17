@@ -249,7 +249,7 @@
 	}
 
 .leaflet-container a {
-	color: #5CFFAD;
+	color: springgreen;
     outline: #fff;
     font-weight: bold;
     background-color:#009EFF;
@@ -261,7 +261,7 @@
 
 .leaflet-container a:hover {
     color: #009EFF;
-    background-color: #5CFFAD;
+    background-color: springgreen;
 	}
 
 .leaflet-container a.leaflet-active {
@@ -295,7 +295,7 @@
 .leaflet-bar:focus {
     border-color: #ffffff !important;
 	border-radius: 4px;
-    background-color: #5CFFAD;
+    background-color: springgreen;
     font-size: 14px;
     font-weight: none;
     color: #009EFF;
@@ -303,7 +303,7 @@
     padding: 3px !important;
 	}
 .leaflet-bar:hover {
-    background-color: #5CFFAD;
+    background-color: springgreen;
     font-size: 14px;
 	}
 
@@ -316,10 +316,10 @@
 	display: block;
 	text-align: center;
 	text-decoration: none;
-	color: #5CFFAD;
+	color: springgreen;
 	}
 .leaflet-bar a:hover {
-	background-color: #5CFFAD;
+	background-color: springgreen;
 	width: 40px;
 	height: 30px;
 	border-bottom: 2px solid #ffffff;
@@ -487,7 +487,7 @@
     font-size: 16px !important;
     text-align: center !important; 
     padding-bottom: 1px !important;
-    color: #5CFFAD !important;
+    color: springgreen !important;
     -webkit-animation: fa-spin 1.25s infinite linear !important;
     animation: fa-spin 1.25s infinite linear !important;
 }
@@ -527,7 +527,7 @@
     height: 255px !important;
 	color: #009EFF;
     padding: 5px;
-	background: #5CFFAD;
+	background: springgreen;
 	}
 
 .leaflet-control-layers-expanded .leaflet-control-layers-list, 
@@ -678,7 +678,7 @@ label {
 .leaflet-popup-content-wrapper {
 	padding: 0px;
 	border-radius: 10px;
-    background-color: #5CFFAD!important;
+    background-color: springgreen!important;
     cursor: auto;
 	}
 .leaflet-popup-content {
@@ -755,14 +755,14 @@ leaflet-popup-tip {
 .leaflet-oldie .leaflet-control-layers,
 .leaflet-oldie .leaflet-popup-content-wrapper,
 .leaflet-oldie .leaflet-popup-tip {
-	border: 1px solid #5CFFAD;
+	border: 1px solid springgreen;
 	}
 
 
 /* div icon */
 
 .leaflet-div-icon {
-	background: #5CFFAD;
+	background: springgreen;
 	border: 5px solid #009EFF;
     border-radius: 100px;
     box-shadow: 0 0 2px 2px #ffffff !important;

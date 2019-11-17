@@ -40,7 +40,7 @@ html, body, #map {
     cursor: pointer;
     font-family: sans-serif;
     font-size: 20px;
-    color: #5CFFAD;
+    color: springgreen;
     display: inline-block;
     text-align: center;
     font-weight: 700;
@@ -65,7 +65,7 @@ me:hover {
     cursor: pointer;
     outline: none;
     border: none;
-    box-shadow: 0 0 5px 2px #5CFFAD;
+    box-shadow: 0 0 5px 2px springgreen;
     padding: 6px;
 }
 
@@ -84,14 +84,14 @@ me:hover {
 @keyframes myfirst
 {
     outline: none;
-    from {box-shadow: 0 0 5px 2px #5CFFAD;}
+    from {box-shadow: 0 0 5px 2px springgreen;}
     to {box-shadow: 0 0 10px 6px #009EFF;}
 }
 
 @-webkit-keyframes myfirst /* Safari and Chrome */
 {
     outline: none;
-    from {box-shadow: 0 0 5px 2px #5CFFAD;}
+    from {box-shadow: 0 0 5px 2px springgreen;}
     to {box-shadow: 0 0 10px 6px #009EFF;}
 }
 
@@ -108,7 +108,7 @@ me:hover {
     right: 10px;
     cursor: pointer;
     font-size: 12px;
-    color: #5CFFAD;
+    color: springgreen;
     text-align: center;
     padding-top: 10px;
     border: solid;
@@ -121,7 +121,7 @@ me:hover {
 }
 
 #add:hover {
-	background-color: #5CFFAD;
+	background-color: springgreen;
     color: #009EFF;
 	}
 
@@ -141,7 +141,7 @@ me:hover {
     right:10px;
     cursor: pointer;
     font-size: 12px;
-    color: #5CFFAD;
+    color: springgreen;
     text-align: center;
     padding-top: 10px;
     text-decoration: none;
@@ -154,7 +154,7 @@ me:hover {
 }
 
 #next:hover {
-	background-color: #5CFFAD;
+	background-color: springgreen;
     color: #009EFF;
 	}
 
@@ -169,7 +169,7 @@ me:hover {
     right: 10px;
     cursor: pointer;
     font-size: 12px;
-    color: #5CFFAD;
+    color: springgreen;
     text-align: center;
     padding-top: 10px;
     text-decoration: none;
@@ -183,7 +183,7 @@ me:hover {
 }
 
 #back:hover {
-	background-color: #5CFFAD;
+	background-color: springgreen;
     color: #009EFF;
 }
 
@@ -251,7 +251,7 @@ input[type="text"]:focus {
   margin-right: 10%;
   z-index: 50000 !important;
   opacity: 100 !important;
-  border-color: #5CFFAD;
+  border-color: springgreen;
   border-style: solid;
   border-width: 2px;
   color: #009EFF;
@@ -296,7 +296,7 @@ textarea:focus {
   margin-right: 10%;
   z-index: 50000 !important;
   opacity: 100 !important;
-  border-color: #5CFFAD;
+  border-color: springgreen;
   border-style: solid;
   border-width: 2px;
   color: #009EFF;
@@ -468,7 +468,7 @@ textarea:focus {
   margin-left: 5%;
   margin-right: 5%;
   z-index: 50000 !important;
-  border-color: #5CFFAD;
+  border-color: springgreen;
   border-style: solid;
   border-width: 2px;
   color: #009EFF;
@@ -480,11 +480,11 @@ a {
   color: #009EFF;
 }
 a:hover {
-  color: #5CFFAD;
+  color: springgreen;
 }
 
 a:focus {
-  color: #5CFFAD;
+  color: springgreen;
 }
 
 #data {
@@ -499,7 +499,6 @@ a:focus {
 
 data:hover {
 	background-color: #00B1FF;
-    color: #5CFFAD;
 	}
 
 #data1 {
@@ -514,7 +513,7 @@ data:hover {
     top: 20px;
     cursor: pointer;
     font-size: 18px;
-    color: #5CFFAD;
+    color: springgreen;
     display: inline-block;
     text-align: center;
     text-shadow: 1px 1px 1px #00B1FF;
@@ -547,11 +546,6 @@ data:hover {
     overflow-y:auto;
 }
 
-data2:hover {
-	background-color: #00B1FF;
-    color: #5CFFAD;
-	}
-
 #data3 {
     padding: 20px;
     background-color: transparent;
@@ -581,7 +575,7 @@ data2:hover {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #5CFFAD; 
+  box-shadow: inset 0 0 5px springgreen; 
   border-radius: 10px;
 }
  
@@ -636,6 +630,4 @@ hr{
     border: solid;
     border-width: 0px;
     border-radius: 100px;
-    box-shadow: 0 0 0px 0px #5CFFAD;
-
 }
