@@ -373,8 +373,8 @@ textarea:focus {
     margin-right:35%;
     margin-left:35%;
     margin-top: 5px;
-    margin-bottom: 45px;
-    bottom: 2%;
+    margin-bottom: 0px;
+    bottom: 10px;
     cursor: pointer;
     font-size: 16px;
     color: #009EFF;
