@@ -234,7 +234,7 @@ input[type="text"] {
   padding: 5px;
   width: 80% !important;
   min-height: 4% !important;
-  margin-top: 2%;
+  margin-top: 40px;
   margin-left: 10%;
   margin-right: 10%;
   z-index: 50000 !important;
@@ -257,7 +257,7 @@ input[type="text"]:focus {
   padding: 5px;
   width: 80% !important;
   min-height: 4% !important;
-  margin-top: 2%;
+  margin-top: 40px;
   margin-left: 10%;
   margin-right: 10%;
   z-index: 50000 !important;
@@ -267,7 +267,7 @@ input[type="text"]:focus {
   border-width: 2px;
   color: #009EFF;
   position: absolute !important;
-  text-align: left;
+  text-align: left
   background-color : #ffffff; 
   box-shadow: 0 0 0px px #ffffff;
   outline: none !important;
@@ -281,7 +281,7 @@ textarea {
   width: 80% !important;
   min-height: 15% !important;
   max-height: 30% !important;
-  margin-top: 2%;
+  margin-top: 40px;
   margin-left: 10%;
   margin-right: 10%;
   z-index: 50000 !important;
@@ -308,7 +308,7 @@ textarea:focus {
   width: 80% !important;
   min-height: 15% !important;
   max-height: 30% !important;
-  margin-top: 2%;
+  margin-top: 40px;
   margin-left: 10%;
   margin-right: 10%;
   z-index: 50000 !important;
@@ -337,9 +337,9 @@ textarea:focus {
     position: absolute;
     margin-right:35%;
     margin-left:35%;
-    margin-top: 45px;
-    margin-bottom: 30px;
-    bottom: 4%;
+    margin-top: 5px;
+    margin-bottom: 45px;
+    bottom: 2%;
     cursor: pointer;
     font-size: 16px;
     color: #009EFF;
@@ -374,9 +374,9 @@ textarea:focus {
     position: absolute !important;
     margin-right:35%;
     margin-left:35%;
-    margin-top: 30px;
-    margin-bottom: 45px;
-    bottom: 14%;
+    margin-top: 55px;
+    margin-bottom: 40px;
+    bottom: 12%;
     cursor: pointer;
     font-size: 16px;
     color: #ffffff;
