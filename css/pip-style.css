@@ -333,8 +333,8 @@ textarea:focus {
     position: absolute !important;
     margin-right:35%;
     margin-left:35%;
-    margin-top: 70px;
-    margin-bottom: 55px;
+    margin-top: 55px;
+    margin-bottom: 40px;
     bottom: 12%;
     cursor: pointer;
     font-size: 16px;
@@ -360,6 +360,8 @@ textarea:focus {
     box-shadow: 0 0 .01px .01px #009EFF;
 	}
 
+
+
 #submit {
     background-color: springgreen;
     opacity: 100 !important;
@@ -372,7 +374,7 @@ textarea:focus {
     margin-left:35%;
     margin-top: 5px;
     margin-bottom: 45px;
-    bottom: 1%;
+    bottom: 2%;
     cursor: pointer;
     font-size: 16px;
     color: #009EFF;
