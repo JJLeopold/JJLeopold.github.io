@@ -334,7 +334,7 @@ textarea:focus {
     margin-right:35%;
     margin-left:35%;
     margin-top: 55px;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
     bottom: 12%;
     cursor: pointer;
     font-size: 16px;
@@ -396,7 +396,6 @@ textarea:focus {
     border-radius: 5px;
     box-shadow: 0 0 2px .01px #009EFF;
 	}
-
 
 ::placeholder { 
   color: #009EFF !important;
