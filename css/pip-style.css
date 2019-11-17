@@ -333,8 +333,8 @@ textarea:focus {
     position: absolute !important;
     margin-right:35%;
     margin-left:35%;
-    margin-top: 55px;
-    margin-bottom: 40px;
+    margin-top: 60px;
+    margin-bottom: 35px;
     bottom: 12%;
     cursor: pointer;
     font-size: 16px;
