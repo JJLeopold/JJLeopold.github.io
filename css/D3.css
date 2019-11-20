@@ -24,7 +24,9 @@ html, body{
     position: absolute; 
     margin: 0 !important;
     background-color: sandybrown;
-
+    background: -moz-linear-gradient(top, skyblue, skyblue, springgreen, sandybrown, sandybrown);
+    background: -ms-linear-gradient(top, skyblue, skyblue, springgreen, sandybrown, sandybrown);
+    background: -webkit-linear-gradient(top, skyblue, skyblue, springgreen, sandybrown, sandybrown);
 }
 
 .chart {
