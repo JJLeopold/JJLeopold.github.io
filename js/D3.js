@@ -47,8 +47,8 @@
 
         //use queue to load both data types at the same time
         d3.queue()
-            .defer(d3.csv, "file:data/usa_renewables.csv") //load attributes from csv file
-            .defer(d3.json, "file:data/statesdata.topojson") //load background spatial data
+            .defer(d3.csv, "data/usa_renewables.csv") //load attributes from csv file
+            .defer(d3.json, "data/statesdata.topojson") //load background spatial data
             .await(callback);
 
         function callback(error, csvData, usa) {
