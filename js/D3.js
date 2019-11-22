@@ -62,6 +62,7 @@
             America = joinData(America, csvData);
 
             //create the color scale
+            +0
             var colorScale = makeColorScale(csvData);
 
             //Loop through csv to assign each set of csv attribute values to geojson
@@ -324,7 +325,7 @@ function changeAttribute(attribute, csvData){
         })
         .transition() //add animation
         .delay(function(d, i){
-            return i * 20
+            return i * 0 //duration
         })
         .duration(500);
     
@@ -406,9 +407,8 @@ function moveLabel(){
     var labelWidth = d3.select(".infolabel")
         .node()
         
-
     //use coordinates of mousemove event to set label coordinates
-    var x1 = d3.event.clientX + 10,
+    var x1 = d3.event.clientX + 50,
         y1 = d3.event.clientY - 75,
         x2 = d3.event.clientX - labelWidth - 10,
         y2 = d3.event.clientY + 25;
