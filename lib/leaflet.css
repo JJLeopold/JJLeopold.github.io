@@ -300,7 +300,8 @@
     font-weight: none;
     color: #009EFF;
     box-shadow: 0 0 2px .01px #009EFF !important;
-    padding: 3px !important;
+    padding: 7px !important;
+    line-height: normal !important;
 	}
 .leaflet-bar:hover {
     background-color: springgreen;
@@ -524,7 +525,7 @@
 .leaflet-control-layers-expanded .leaflet-control-layers-toggle {
 	display: none;
     width: 180px !important;
-    height: 255px !important;
+    height: 258px !important;
 	color: #009EFF;
     padding: 5px;
 	background: springgreen;
