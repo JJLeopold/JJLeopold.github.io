@@ -348,6 +348,7 @@ textarea:focus {
     font-weight: 700;
     font-family: sans-serif;
     box-shadow: 0 0 2px .01px #009EFF;
+    outline: none;
 }
 
 #cancel:hover {
@@ -387,6 +388,7 @@ textarea:focus {
     font-weight: 700;
     font-family: sans-serif;
     box-shadow: 0 0 2px .01px #009EFF;
+    outline: none;
 }
 
 #submit:hover {
@@ -639,11 +641,10 @@ hr{
     display: inline-block;
     text-align: center;
     font-family: sans-serif;
-    font-size: 22px;
+    font-size: 21.5px;
     font-weight: 700;
     outline: none;
     word-wrap: break-word;
-    text-shadow: 0px 0px 0px #000000;
 }
 
 .highlighted {
