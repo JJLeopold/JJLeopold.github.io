@@ -451,7 +451,7 @@ module.exports = leafletPip;
     map = L.map('map',{
     center: [38, -96],
     zoomControl: false,
-    zoom: 2,
+    zoom: 3,
     minZoom: 2,
     maxZoom: 20,
     maxBounds: [
