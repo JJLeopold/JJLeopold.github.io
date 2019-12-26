@@ -389,6 +389,7 @@ function closeForm() {
 					dataType: 'json',
 					success: function (responseData, textStatus, jqXHR) {
 						console.log("Data saved");
+                        setTimeout("location.href = 'https://jjleopold.github.io/mapster';",1000);
 					},
 					error: function (responseData, textStatus, errorThrown) {
 						console.log("Problem saving the data");
@@ -411,10 +412,6 @@ function closeForm() {
             submitData(layers);
         
             closeForm();
-            
-            setTimeout(function() {
-                location.reload();         
-            }, 2000); 
                           
         }
         
