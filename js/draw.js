@@ -389,16 +389,21 @@ function closeForm() {
 					dataType: 'json',
 					success: function (responseData, textStatus, jqXHR) {
 						console.log("Data saved");
-                        setTimeout("location.href = 'https://jjleopold.github.io/mapster';",1000);
+                        document.getElementById('notify').innerHTML = 'Portal Added!';
+                        setTimeout(function() {
+                            location.reload();         
+                        }, 3000);
+                        /*setTimeout("location.href = 'https://jjleopold.github.io/mapster';",2000);*/
 					},
 					error: function (responseData, textStatus, errorThrown) {
 						console.log("Problem saving the data");
+                        document.getElementById('notify').innerHTML = 'Error. Portal Not Added.';
 					}
 				});
 
 			});
 		}
-
+                  
 
     map.on('draw:created', function(e) {
         {
@@ -408,13 +413,9 @@ function closeForm() {
         }
 
         document.getElementById('submit').onclick = function(e) {
-                    
             submitData(layers);
-        
-            closeForm();
-                          
+            closeForm();             
         }
-        
     });
 
     map.on("draw:created", function (e) {

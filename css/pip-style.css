@@ -653,3 +653,27 @@ hr{
     border-width: 0px;
     border-radius: 100px;
 }
+
+#notify {
+    background-color: transparent;
+    opacity: 150 !important;
+    z-index: 120000 !important;
+    height: 0px;
+    text-shadow: 2px 1px 1px #009EFF;
+    width: 70%;
+    margin-left: 15%;
+    border-radius: 0%;
+    border-width: 0px;
+    position: absolute;
+    top:76%;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 22px;
+    color: #ffffff;
+    display: inline-block;
+    text-align: center;
+    font-weight: 700;
+    font-family: sans-serif;
+    outline: none;
+    word-wrap: break-word;
+}
