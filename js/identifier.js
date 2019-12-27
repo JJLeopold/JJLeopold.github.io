@@ -668,6 +668,12 @@ module.exports = leafletPip;
                 document.getElementById('me').innerHTML = 'Open Portal';
         }
         
+        document.getElementById('form-sitename').onclick = function(e) {
+        
+                closeForm();
+                document.getElementById('me').innerHTML = 'Open Portal';
+        }
+        
         document.getElementById('me').onclick = function(e) {
         
                 openForm();
