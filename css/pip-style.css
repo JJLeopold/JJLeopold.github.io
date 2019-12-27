@@ -8,6 +8,7 @@ html, body, #map {
 
 body.modal-open {
     overflow: hidden;
+    position: fixed;
 }
 
 #banner {
