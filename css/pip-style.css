@@ -6,7 +6,7 @@ html, body, #map {
     margin-bottom: -2px !important;
 }
 
-body.modal-open {
+#map.modal-open {
     overflow: hidden;
     position: fixed;
 }
