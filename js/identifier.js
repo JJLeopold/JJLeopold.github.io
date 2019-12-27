@@ -529,7 +529,7 @@ module.exports = leafletPip;
         //Find and zoom to location
         lc.start(); 
         
-        document.getElementById('me').innerHTML = 'finding your location...';
+        document.getElementById('me').innerHTML = '.  .  .  .  .  .  .';
          
         
         //Works only on mobile devices without this stop/start
@@ -662,7 +662,7 @@ module.exports = leafletPip;
     });*/
     
 
-        document.getElementById('form-sitename').onclick = function(e) {
+        document.getElementById('close').onclick = function(e) {
         
                 closeForm();
                 document.getElementById('me').innerHTML = 'Open Portal';

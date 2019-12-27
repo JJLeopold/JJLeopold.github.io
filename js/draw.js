@@ -392,7 +392,7 @@ function closeForm() {
                         document.getElementById('notify').innerHTML = 'Portal Added!';
                         setTimeout(function() {
                             location.reload();         
-                        }, 3000);
+                        }, 1500);
                         /*setTimeout("location.href = 'https://jjleopold.github.io/mapster';",2000);*/
 					},
 					error: function (responseData, textStatus, errorThrown) {
@@ -403,7 +403,7 @@ function closeForm() {
 
 			});
 		}
-                  
+          
 
     map.on('draw:created', function(e) {
         {
