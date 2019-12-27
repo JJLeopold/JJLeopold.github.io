@@ -508,9 +508,7 @@ module.exports = leafletPip;
       document.getElementById("form-popup").style.display = "none";
     }
     
-    function openForm() {
-      document.getElementById("form-popup").style.display = "block";
-    }
+
 
 
         //Greeting!
@@ -529,7 +527,7 @@ module.exports = leafletPip;
         //Find and zoom to location
         lc.start(); 
         
-        document.getElementById('me').innerHTML = '.  .  .  .  .  .  .';
+        document.getElementById('me').innerHTML = 'Hang on...';
          
         
         //Works only on mobile devices without this stop/start
@@ -564,8 +562,26 @@ module.exports = leafletPip;
                                                                   
                         document.getElementById('data3').innerHTML =res[0].feature.properties.messages;
                         
+                        
+                          function openForm() {
+                                if (document.getElementById('me').innerHTML = 'Open Portal') {
+                                    document.getElementById("form-popup").style.display = "block";        
+                                } else {
+                                    document.getElementById("form-popup").style.display = "none";        
+                                }
+                          }
+                        
+                        document.getElementById('me').onclick = function(e) {
+                                    openForm();
+                                    document.getElementById('me').innerHTML = '';
+                        }                     
+                        
+                        
                     } else {
-                        document.getElementById('me').innerHTML = 'out of bounds';
+                        document.getElementById('me').innerHTML = 'Out of bounds';
+                        function openForm() {
+                            document.getElementById("form-popup").style.display = "none";
+                        }
                     } 
 
                 });
@@ -674,11 +690,7 @@ module.exports = leafletPip;
                 document.getElementById('me').innerHTML = 'Open Portal';
         }
         
-        document.getElementById('me').onclick = function(e) {
-        
-                openForm();
-                document.getElementById('me').innerHTML = '';
-        }
+
 
     
     
