@@ -6,6 +6,9 @@ html, body, #map {
     margin-bottom: -2px !important;
 }
 
+#map-canvas {
+    position: fixed;
+}
 
 #banner {
     background-color: transparent;
