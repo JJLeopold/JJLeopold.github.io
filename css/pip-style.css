@@ -6,9 +6,6 @@ html, body, #map {
     margin-bottom: -2px !important;
 }
 
-#map-canvas {
-    position: fixed;
-}
 
 #banner {
     background-color: transparent;
@@ -669,7 +666,7 @@ hr{
     border-radius: 0%;
     border-width: 0px;
     position: absolute;
-    top:76%;
+    top:50%;
     cursor: pointer;
     font-family: sans-serif;
     font-size: 22px;
