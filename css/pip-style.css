@@ -4,6 +4,7 @@ html, body, #map {
     position: absolute;
     margin: 0;
     margin-bottom: -2px !important;
+    overflow-y: hidden !important;
 }
 
 #map {
