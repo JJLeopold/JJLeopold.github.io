@@ -692,7 +692,16 @@ module.exports = leafletPip;
         
 
 
-    
+    Webflow.push(function() {
+      $('#go').click(function(e) {
+        e.preventDefault();
+        $('body').css('overflow', 'hidden');
+      });
+      $('#close').click(function(e) {
+        e.preventDefault();
+        $('body').css('overflow', 'auto');
+      });
+    });
     
     
     

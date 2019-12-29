@@ -6,13 +6,6 @@ html, body, #map {
     margin-bottom: -2px !important;
 }
 
-body {
-    overflow-y: hidden !important;
-}
-
-#map {
-    overflow: hidden !important;
-}
 
 #banner {
     background-color: transparent;
