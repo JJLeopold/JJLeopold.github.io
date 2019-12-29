@@ -498,11 +498,11 @@ function closeForm() {
 
 
     Webflow.push(function() {
-      $('#next').click(function(e) {
+      $('.next').click(function(e) {
         e.preventDefault();
         $('body').css('overflow', 'hidden');
       });
-      $('#cancel').click(function(e) {
+      $('.cancel').click(function(e) {
         e.preventDefault();
         $('body').css('overflow', 'auto');
       });
