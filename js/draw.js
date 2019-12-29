@@ -497,18 +497,6 @@ function closeForm() {
     });
 
 
-    Webflow.push(function() {
-      $('.next').click(function(e) {
-        e.preventDefault();
-        $('body').css('overflow', 'hidden');
-      });
-      $('.cancel').click(function(e) {
-        e.preventDefault();
-        $('body').css('overflow', 'auto');
-      });
-    });
-
-
 
     // Add attribution   
     /*var attribution = L.control.attribution();
