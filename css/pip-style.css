@@ -6,6 +6,9 @@ html, body, #map {
     margin-bottom: -2px !important;
 }
 
+#map {
+    overflow: hidden !important;
+}
 
 #banner {
     background-color: transparent;
