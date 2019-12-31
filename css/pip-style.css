@@ -6,6 +6,9 @@ html, body, #map {
     margin-bottom: -2px !important;
 }
 
+body {
+    overflow: hidden !important;
+}
 
 #banner {
     background-color: transparent;
@@ -433,6 +436,7 @@ textarea:focus {
   background-color: #009EFF;
   box-shadow: 0 0 2px .01px #009EFF;
   align-content:space-around;
+  overflow: scroll !important;
 }
 
 
