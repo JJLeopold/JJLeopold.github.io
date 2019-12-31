@@ -511,3 +511,11 @@ function closeForm() {
                   $("#form-popup")[0].reset();
 
         }   
+        
+        
+        
+        $("#form-popup").on("show", function () {
+          $("body").addClass("modal-open");
+        }).on("hidden", function () {
+          $("body").removeClass("modal-open")
+        });

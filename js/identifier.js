@@ -697,7 +697,17 @@ module.exports = leafletPip;
         attribution.setPrefix('');
         attribution.addAttribution('Powered by<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
         attribution.addTo(map);*/
+        
+        
+        
+            $("#form-popup").on("show", function () {
+              $("body").addClass("modal-open");
+            }).on("hidden", function () {
+              $("body").removeClass("modal-open")
+            });
     
+    
+
 },{"../":1}]},{},[3]);
 
 
