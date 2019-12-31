@@ -700,16 +700,15 @@ module.exports = leafletPip;
         
         
         
-        Webflow.push(function() {
           $('#go').click(function(e) {
             e.preventDefault();
             $('html, body, #map').css('position', 'fixed');
           });
+    
           $('#close').click(function(e) {
             e.preventDefault();
             $('html, body, #map').css('position', 'absolute');
           });
-        });
     
 
 },{"../":1}]},{},[3]);

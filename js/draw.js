@@ -514,14 +514,13 @@ function closeForm() {
         
         
         
-        Webflow.push(function() {
           $('#next').click(function(e) {
             e.preventDefault();
             $('html, body, #map').css('position', 'fixed');
           });
+
           $('#cancel').click(function(e) {
             e.preventDefault();
             $('html, body, #map').css('position', 'absolute');
           });
-        });
     
