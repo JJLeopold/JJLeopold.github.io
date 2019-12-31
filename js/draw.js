@@ -517,11 +517,11 @@ function closeForm() {
         Webflow.push(function() {
           $('#next').click(function(e) {
             e.preventDefault();
-            $('body').css('position', 'fixed');
+            $('html, body, #map').css('position', 'fixed');
           });
           $('#cancel').click(function(e) {
             e.preventDefault();
-            $('body').css('position', 'absolute');
+            $('html, body, #map').css('position', 'absolute');
           });
         });
     
