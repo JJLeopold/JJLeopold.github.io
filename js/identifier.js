@@ -701,11 +701,11 @@ module.exports = leafletPip;
         
         
         Webflow.push(function() {
-          $('#next').click(function(e) {
+          $('#go').click(function(e) {
             e.preventDefault();
             $('html, body, #map').css('position', 'fixed');
           });
-          $('#cancel').click(function(e) {
+          $('#close').click(function(e) {
             e.preventDefault();
             $('html, body, #map').css('position', 'absolute');
           });
