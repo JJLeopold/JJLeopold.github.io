@@ -701,9 +701,9 @@ module.exports = leafletPip;
         
         
             $("#form-popup").on("show", function () {
-              $("body").addClass("modal-open");
+              $("html, body, #map").addClass("modal-open");
             }).on("hidden", function () {
-              $("body").removeClass("modal-open")
+              $("html, body, #map").removeClass("modal-open")
             });
     
     

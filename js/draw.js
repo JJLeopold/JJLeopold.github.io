@@ -514,8 +514,8 @@ function closeForm() {
         
         
         
-        $("#form-popup").on("show", function () {
-          $("body").addClass("modal-open");
-        }).on("hidden", function () {
-          $("body").removeClass("modal-open")
-        });
+            $("#form-popup").on("show", function () {
+              $("html, body, #map").addClass("modal-open");
+            }).on("hidden", function () {
+              $("html, body, #map").removeClass("modal-open")
+            });
