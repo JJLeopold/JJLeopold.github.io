@@ -700,11 +700,16 @@ module.exports = leafletPip;
         
         
         
-            $("#form-popup").on("show", function () {
-              $("html, body, #map").addClass("modal-open");
-            }).on("hidden", function () {
-              $("html, body, #map").removeClass("modal-open")
-            });
+        Webflow.push(function() {
+          $('#next').click(function(e) {
+            e.preventDefault();
+            $('body').css('position', 'fixed');
+          });
+          $('#cancel').click(function(e) {
+            e.preventDefault();
+            $('body').css('position', 'absolute');
+          });
+        });
     
     
 
