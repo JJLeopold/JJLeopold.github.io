@@ -414,10 +414,7 @@ function closeForm() {
 
         document.getElementById('submit').onclick = function(e) {
             submitData(layers);
-            closeForm();  
-            $(function() {
-               $('body').scrollTop(0);
-            });
+            closeForm();             
         }
     });
 
@@ -513,4 +510,7 @@ function closeForm() {
         
                   $("#form-popup")[0].reset();
 
-        }       
+        }   
+        
+        
+    
