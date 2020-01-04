@@ -1,9 +1,19 @@
-html, body, #map {
+html, #map {
     width: 100%;
     height: 100%;
     position: absolute;
     margin: 0;
     margin-bottom: -2px !important;
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: 0;
+    margin-bottom: -2px !important;
+    -webkit-overflow-scrolling: touch;
 }
 
 
@@ -433,7 +443,7 @@ textarea:focus {
   background-color: #009EFF;
   box-shadow: 0 0 2px .01px #009EFF;
   align-content:space-around;
-  overflow-y: auto;
+  overflow-y:hidden;
 }
 
 /* Important part */
