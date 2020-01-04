@@ -6,11 +6,6 @@ html, body, #map {
     margin-bottom: -2px !important;
 }
 
-#scrollable-content {
-  height: 100%;
-  overflow-y: scroll;
-}
-
 
 #banner {
     background-color: transparent;
