@@ -1,27 +1,14 @@
-html {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    margin: 0;
-    margin-bottom: -2px !important;
-    overflow: hidden;
-}
-
-body {
+html, body, #map {
     width: 100%;
     height: 100%;
     position: absolute;
     margin: 0;
     margin-bottom: -2px !important;
-    -webkit-overflow-scrolling: touch;
 }
 
-#map {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    margin: 0;
-    margin-bottom: -2px !important;
+#scrollable-content {
+  height: 100%;
+  overflow-y: scroll;
 }
 
 
