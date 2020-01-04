@@ -433,6 +433,12 @@ textarea:focus {
   background-color: #009EFF;
   box-shadow: 0 0 2px .01px #009EFF;
   align-content:space-around;
+  overflow-y: auto;
+}
+
+/* Important part */
+#form-popup-dialog{
+    overflow-y: initial !important
 }
 
 
@@ -692,7 +698,7 @@ hr{
     margin-top: 162px;
     top: 70%;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     color: #ffffff;
     text-align: center;
     text-decoration: none;
@@ -705,3 +711,4 @@ hr{
     box-shadow: 0 0 2px .01px #009EFF;
     outline: none;
 }
+
