@@ -682,12 +682,14 @@ module.exports = leafletPip;
         
                 closeForm();
                 document.getElementById('me').innerHTML = 'Open Portal';
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
         }
         
         document.getElementById('form-sitename').onclick = function(e) {
         
                 closeForm();
                 document.getElementById('me').innerHTML = 'Open Portal';
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
         }
         
 
@@ -697,6 +699,7 @@ module.exports = leafletPip;
         attribution.setPrefix('');
         attribution.addAttribution('Powered by<a href="https://www.esri.com/en-us/home">Esri</a> | <a href="https://www.mapbox.com/about/maps">© Mapbox</a> | <a href="http://openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
         attribution.addTo(map);*/
+
 
 
 },{"../":1}]},{},[3]);
