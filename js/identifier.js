@@ -682,14 +682,18 @@ module.exports = leafletPip;
         
                 closeForm();
                 document.getElementById('me').innerHTML = 'Open Portal';
-                document.body.scrollTop = document.documentElement.scrollTop = 0;
+                $(function() {
+                   $('body').scrollTop(0);
+                });
         }
         
         document.getElementById('form-sitename').onclick = function(e) {
         
                 closeForm();
                 document.getElementById('me').innerHTML = 'Open Portal';
-                document.body.scrollTop = document.documentElement.scrollTop = 0;
+                $(function() {
+                   $('body').scrollTop(0);
+                });
         }
         
 
