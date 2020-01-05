@@ -337,7 +337,7 @@ textarea:focus {
     margin-bottom: 40px;
     bottom: 12%;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 18px;
     color: #ffffff;
     text-align: center;
     text-decoration: none;
@@ -377,7 +377,7 @@ textarea:focus {
     margin-bottom: 45px;
     bottom: 2%;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 18px;
     color: #009EFF;
     text-align: center;
     text-decoration: none;
@@ -692,7 +692,7 @@ hr{
     margin-top: 162px;
     top: 70%;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 18px;
     color: #ffffff;
     text-align: center;
     text-decoration: none;
