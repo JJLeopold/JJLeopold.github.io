@@ -341,7 +341,6 @@ function openForm() {
 
 function closeForm() {
   document.getElementById("form-popup").style.display = "none";
-  window.scrollTo(0,0); 
 }
 
 
