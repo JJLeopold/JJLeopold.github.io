@@ -108,7 +108,7 @@ me:hover {
     z-index: 500 !important;
     height: 40px;
     width: 42px;
-    position: fixed;
+    position: absolute;
     bottom: 30px;
     right: 10px;
     cursor: pointer;
@@ -561,7 +561,7 @@ hr{
     z-index: 600 !important;
     height: 0px;
     width: 100%;
-    position: fixed;
+    position: absolute;
     bottom: 45px;
     cursor: grab;
     color: #ffffff;
@@ -616,7 +616,7 @@ hr{
     margin-right:35%;
     margin-left:35%;
     margin-top: 162px;
-    top: 70%;
+    top: 68%;
     cursor: pointer;
     font-size: 18px;
     color: #ffffff;
