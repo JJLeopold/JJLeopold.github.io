@@ -127,7 +127,6 @@
 	pointer-events: none;
 	}
 .leaflet-top {
-	top: 70px;
 	}
 .leaflet-right {
 	right: 0;
@@ -537,6 +536,9 @@
 	position: relative;
 }
 
+.leaflet-control-layers-expanded {
+    z-index: 1000 !important;
+}
 
 
 leaflet-control-geocoder {

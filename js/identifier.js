@@ -456,7 +456,7 @@ module.exports = leafletPip;
     maxZoom: 20,
     maxBounds: [
         //south west
-        [-79, -180],
+        [-90, -180],
         //north east
         [90, 180]
         ],
